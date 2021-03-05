@@ -1,0 +1,32 @@
+// bug in sharen-sword:
+// 克制xuezhan-spear的code不會出現。
+
+mapping reverse_skill = ([
+"taiji-sword" : "doomsword",
+"feixian-sword" : "doomsword",
+"shortsong-blade"  : "diesword",
+"diesword"  : "shortsong-blade",
+"bat-blade"  : "longfenghuan",
+"ittouryu"  : "assassin-hammer",
+"xuanyuan-axe"  : "bat-blade",
+"wuche-axe"  : "bat-blade",
+"thunderwhip" : "dagou-stick",
+"softsword" : "fy-sword",
+"ill-quan" : "gong-skill",
+"changquan" : "ill-quan",
+"snowshade-sword" : "lefthand-sword",
+"xuanyuan-axe" : "lianxin-blade",
+"dragonstrike" : "tanzhi-shentong",
+"doomsword"  : "softsword",
+"cloudstaff"  : "sharen-sword",
+"three-sword" : "siqi-sword",
+"nine-moon-claw" : "yiyangzhi",
+"liuxing-hammer" : "thunderwhip",
+"pangu-hammer" : "wind-blade",
+"assassin-hammer" : "thunderwhip",
+"xuezhan-spear" : "xuanyuan-axe",
+"yue-spear" : "xuanyuan-axe",
+"duanhun-spear" : "xuanyuan-axe",
+"tanzhi-shentong" : "demon-blade",
+//"xuezhan-spear"  : "sharen-sword",
+]);

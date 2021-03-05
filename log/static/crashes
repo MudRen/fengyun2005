@@ -1,0 +1,198 @@
+风云Ⅳ crashed on: Tue Dec 15 18:33:24 2020, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Tue Dec 15 18:38:14 2020, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Thu Feb 25 20:15:27 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Thu Feb 25 20:25:57 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): /obj/user#32 ("史矛革")
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Thu Feb 25 20:28:55 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): /obj/user#38 ("史矛革")
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Thu Feb 25 20:29:39 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Fri Mar 05 16:47:42 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Fri Mar 05 16:50:21 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Fri Mar 05 16:53:20 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Fri Mar 05 16:55:08 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0
+风云Ⅳ crashed on: Fri Mar 05 19:11:32 2021, error: SIGINT: Process interrupted
+command_giver: none
+current_object: none
+call_stack(0): ({ /* sizeof() == 1 */
+  "/adm/obj/master.c"
+})
+call_stack(1): ({ /* sizeof() == 1 */
+  /adm/obj/master
+})
+call_stack(2): ({ /* sizeof() == 1 */
+  "crash"
+})
+call_stack(3): ({ /* sizeof() == 1 */
+  "driver"
+})
+this_player(): 0
+this_player(1): 0
+this_player_command: noneprevious_object(): 0

@@ -1,0 +1,15 @@
+
+#  by Silencer@fy4 3/6/2003
+#  The two lines defines the data format
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+#  name:  巡捕名字 
+#  id:    巡捕 id		
+#  join_time:  加入巡捕日期
+#  rewarded:   缉捕成功次数
+
+name:id:join_time:rewarded
+%s:%s:%d:%d
+

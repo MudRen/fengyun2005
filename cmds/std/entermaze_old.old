@@ -1,0 +1,146 @@
+
+#include <ansi.h>
+inherit F_CLEAN_UP;
+
+int main(object me, string arg)
+{
+	object room,room2,who,*mem;
+	int pwd, i, j,count, max_exp, combatexp;
+	string name; 
+
+	seteuid(getuid());
+	
+	// This is the primary quest owner 
+	if (me->query("private_maze/destination") == base_name(environment(me))+".c"
+		 && me->query("quest/quest")== "垂笠老僧的任务"
+		 && me->query("private_maze/create")) {
+		
+		me->set("private_maze/create",0);	// 因为在销毁ｍａｚｅ时我们允许owner退出，所以必须限制create的次数．
+		
+		room2 = find_object("/obj/dungeon/standardmaze/"+me->query("id")+"/entry");
+		if (!room2)
+			room2=load_object("/obj/dungeon/standardmaze/"+me->query("id")+"/entry");
+		if (!room2)	
+			room2="/obj/dungeon/standardmaze"->query_maze_room(me->query("id")+"/entry");
+		if (!room2) {
+			write("Oops.Please report to wizards. \n");	
+			return 1;
+		}
+		// If it's the first time, prepare the instance parameters for other people's entry.
+		if (!room2->query("maze/pwd"))	{
+			
+			// Maze_exp 决定于队伍中最高的经验值，这样队伍中的人肯定能帮忙
+			mem = pointerp(me->query_team()) ? me->query_team() : ({ me });
+    		j = sizeof (mem);
+    		while (j--)	{
+				if (mem[j]) {
+		    		max_exp = mem[j]->query("combat_exp");
+		    		if (max_exp > 15000000) max_exp = 15000000;
+		    		combatexp = (max_exp>combatexp) ? max_exp : combatexp;
+				}
+    		}
+			room2->set("maze/exp", 	combatexp); 			
+
+			room2->set("maze/type", me->query("private_maze/type"));
+			room2->set("maze/exit", me->query("private_maze/destination"));
+			room2->set("maze/name", me->query("private_maze/orig_name"));
+			room2->set("maze/sig",	me->query("private_maze/maze"));
+
+					room2->query("maze/sig")->set_link_exit_room(room2->query("maze/exit"));
+					room2->query("maze/sig")->set_link_entry_room(room2->query("maze/exit"));
+
+			room2->set("maze/boss",		"/obj/dungeon/boss");	
+			room2->set("maze/blocker",	"/obj/dungeon/blocker");	
+			room2->set("maze/npc_pfm_chance", me->query("private_maze/difficulty"));
+						
+		}
+		// Owner can change password  anytime he enters
+		if (arg)	pwd = atoi(arg);
+		if (!pwd)	pwd = 123;
+		room2->set("maze/pwd", pwd);
+		
+		count = sizeof(room2->get_players());
+		if (count >= room2->query("maze/type"))
+			return notify_fail("此任务甚为机密，不宜人多，已不能再进入了。\n");
+		
+//		me->set_temp("maze_entry",environment(me));	
+				
+		me->move(room2);
+		write(WHT"\n进入垂笠老人的任务区域：" + me->query("private_maze/orig_name")+ "，入口密码设为"+ pwd +"。\n"NOR);
+		return 1;	
+	}
+	
+	// Following is for other ppl's entry
+	
+	if (!arg || sscanf(arg, "%s %d", name, pwd)!= 2)
+		return notify_fail("进入任务区的命令格式为 entermaze 任务持有者英文名 密码，比如 entermaze abcd 249 \n");
+		
+	if (!name || !pwd)
+		return notify_fail("进入任务区的命令格式为 entermaze 任务持有者英文名 密码，比如 entermaze abcd 249 \n");
+		
+	room2 = find_object("/obj/dungeon/standardmaze/"+name+"/entry");
+	if (!room2)
+		return notify_fail("此地没有你指定对象的任务区。\n");
+		
+	if (!room2->query("maze/pwd"))
+		return notify_fail("任务区需要接到任务者首先进入。\n");
+		
+	if (room2->query("maze/pwd") != pwd)
+		return notify_fail("你的密码不对，无法进入指定对象的任务区。\n");
+		
+	if (F_LEVEL->get_level(me->query("combat_exp")) > F_LEVEL->get_level(room2->query("maze/exp")) +5)
+		return notify_fail("进入该任务区的最高等级不能超过"+ (F_LEVEL->get_level(room2->query("maze/exp"))+5)+"。\n");
+	
+	count = sizeof(room2->get_players());
+	
+	if (count >= room2->query("maze/type"))
+		return notify_fail("此任务甚为机密，不宜人多，已不能再进入了。\n");
+		
+	me->set_temp("maze_entry",environment(me));	
+	me->move(room2);
+	
+	write(WHT"\n顺利进入"+ room2->query("mark_ob") + "的：" + room2->query("maze/name")+ "，你的任务是彻底摧毁这里。\n"NOR);
+	return 1;
+}
+
+int help (object me)
+{
+	write(@HELP
+[0;1;37m────────────────────────────────[0m
+[1;36m		entermaze [name] [password]	
+[0;1;37m────────────────────────────────[0m   
+ 
+该命令可进入进入自己或他人的任务区域
+该任务由风云城隍庙的垂笠老人给出
+接到任务后寻找到相关地点，使用该命令后便能进入一个独立的区域
+
+对于持有任务者来说，只需输入 entermaze 便能进入
+
+不同的任务区可能有不同的人数限制，在给出任务时会有相关说明。
+人数上限高的，难度就会大一些，自然奖励也更高。
+
+如果你觉得任务太难，想叫上些朋友来助阵，那么你就要设一个进入
+此地的密码，命令为 entermaze password
+比如说 entermaze 890 便是设定密码为 890
+（如果你不设定，则系统自动定为123，也就是说，如果你仅仅用了不
+带参数的entermaze命令，其他人可用密码123进入）
+
+叫来的帮手进入该任务区的命令为 entermaze name password
+其中name为任务持有者的英文名，password为人物持有者设定的密码。
+
+完成任务后，奖励将由当时处在该任务区的所有人分享。
+
+此任务没有组队限制，只要知道密码，即使不在队伍中的，只要经验等
+级不是显著高于队伍，也能进入。也就是说，即使你是在单干，如果发
+现太难，可以随时拉个朋友来帮忙。
+
+任务区一般存在１５－３０分钟，时间到或者完成后自动销毁，销毁时
+所有人、尸体移动到入口房间。
+
+
+[0;1;37m────────────────────────────────[0m    
+HELP
+	);
+	return 1;
+}
+

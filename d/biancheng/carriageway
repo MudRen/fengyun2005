@@ -1,0 +1,41 @@
+
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+
+#format
+room_file:cmd_table:delay_time
+%s:%s:%d
+
+# The following lines are data, each non-blank line will fill in each field
+# in each record sequently.
+
+#room
+#command;command;....
+#delay
+
+/d/biancheng/nstreet4
+say 万马堂迎宾，闲人让道。。;north
+4
+
+/d/biancheng/grassland1
+say 万马堂迎宾，闲人让道。。;north
+4
+
+/d/biancheng/grassland1a
+say 万马堂迎宾，闲人让道。。;north
+4
+
+/d/biancheng/grassland2
+say 万马堂迎宾，闲人让道。。;north
+4
+
+/d/biancheng/gate
+say 三老板的客人，把大门打开。;enter
+6
+
+/d/biancheng/yard
+north;sweat;say 万马堂迎宾大厅就在前面，客人请下车。
+-10
+

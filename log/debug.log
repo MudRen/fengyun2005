@@ -1,0 +1,206 @@
+========================================================================
+Full Command Line: F:\Favorites\mudren-Lib-master\fy4\driver.exe config.ini 
+Boot Time: Fri Mar 05 19:11:19 2021
+Version: fluffos v2019.20201121-27-g2908c5ff (Microsoft Windows)
+jemalloc Version: 5.2.1-0-gea6b3e973b477b8061e0076bb257dbd7f3faa756
+ICU Version: 67.1
+========================================================================
+Warning: Signal handler installation failed, not backtrace on crash!
+Final Debug Level: 0
+Processing config file: config.ini
+maximum local variables: invalid new value, resetting to default.
+New Debug log location: "log/debug.log".
+Initializing internal stuff ....
+Event backend in use: win32
+WARNING: Platform doesn't support eval limit!
+==== Runtime Config Table ====
+time to clean up : 50000 # default: 600
+time to reset : 900
+time to swap : 5000 # default: 300
+evaluator stack size : 1000 # default: 65536
+inherit chain size : 60 # default: 30
+maximum evaluation cost : 50000000 # default: 30000000
+maximum local variables : 64
+maximum call depth : 30 # default: 150
+maximum array size : 25000 # default: 15000
+maximum buffer size : 600000 # default: 400000
+maximum mapping size : 100000 # default: 150000
+maximum string length : 300000 # default: 200000
+maximum bits in a bitfield : 1200 # default: 12000
+maximum byte transfer : 10000 # default: 200000
+maximum read file size : 300000 # default: 200000
+hash table size : 65535 # default: 7001
+object table size : 32 # default: 1501
+living hash table size : 4096 # default: 256
+gametick msec : 1000
+heartbeat interval msec : 1000
+sane explode string : 1
+reversible explode string : 0
+sane sorting : 1
+warn tab : 0
+wombles : 0
+call other type check : 0
+call other warn : 0
+mudlib error handler : 1
+no resets : 0
+lazy resets : 0
+randomized resets : 0 # default: 1
+no ansi : 1
+strip before process input : 1
+this_player in call_out : 1
+trace : 1
+trace code : 0
+interactive catch tell : 0
+receive snoop : 1
+snoop shadowed : 0
+reverse defer : 0
+has console : 1
+noninteractive stderr write : 0
+trap crashes : 1
+old type behavior : 0
+old range behavior : 0
+warn old range behavior : 1
+suppress argument warnings : 1
+enable_commands call init : 1
+sprintf add_justified ignore ANSI colors : 1
+call_out(0) nest level : 1000
+trace lpc execution context : 0
+trace lpc instructions : 0
+enable mxp : 0
+enable gmcp : 0
+enable zmp : 0
+enable mssp : 1
+==============================
+==== LPC Predefines ====
+#define FLUFFOS 
+#define HAS_DEBUG_LEVEL 
+#define HAS_ED 
+#define HAS_PRINTF 
+#define MAX_FLOAT 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000
+#define MAX_INT 9223372036854775807
+#define MIN_FLOAT 0.000000
+#define MIN_INT -9223372036854775808
+#define MUDOS 
+#define MUD_NAME "风云Ⅳ"
+#define SIZEOFINT 8
+#define __ARCH__ "Microsoft Windows"
+#define __ARGUMENTS_IN_TRACEBACK__ 
+#define __ARRAY_STATS__ 
+#define __AUTO_SETEUID__ 
+#define __CACHE_STATS__ 
+#define __CALLOUT_HANDLES__ 
+#define __CFG_COMPILER_STACK_SIZE__ 600
+#define __CFG_EVALUATOR_STACK_SIZE__ 65536
+#define __CFG_LIVING_HASH_SIZE__ 256
+#define __CFG_MAX_CALL_DEPTH__ 150
+#define __CFG_MAX_GLOBAL_VARIABLES__ 65536
+#define __CLASS_STATS__ 
+#define __COMMAND_BUF_SIZE__ 2000
+#define __COMPILER__ "C:/msys64/mingw64/bin/g++.exe"
+#define __CXXFLAGS__ "Broken"
+#define __DEBUG_MACRO__ 
+#define __DEFAULT_DB__ 1
+#define __DEFAULT_PRAGMAS__ PRAGMA_WARNINGS + PRAGMA_SAVE_TYPES + PRAGMA_ERROR_CONTEXT + PRAGMA_OPTIMIZE
+#define __DSLIB__ 
+#define __ED_INDENT_SPACES__ 4
+#define __ED_TAB_WIDTH__ 8
+#define __GET_CHAR_IS_BUFFERED__ 
+#define __HAS_CONSOLE__ 
+#define __HAVE_DIRENT_H__ 1
+#define __HAVE_JEMALLOC__ 1
+#define __HAVE_SIGNAL_H__ 1
+#define __HAVE_SYS_STAT_H__ 1
+#define __HAVE_SYS_TIME_H__ 1
+#define __HAVE_TIME_H__ 1
+#define __LARGEST_PRINTABLE_STRING__ 65535
+#define __LARGE_STRING_SIZE__ 1000
+#define __LOCALS_IN_TRACEBACK__ 
+#define __MAX_SAVE_SVALUE_DEPTH__ 100
+#define __MUDLIB_ERROR_HANDLER__ 
+#define __OLD_ED__ 
+#define __PACKAGES_PACKAGES_H__ 
+#define __PACKAGE_ASYNC__ 
+#define __PACKAGE_COMPRESS__ 
+#define __PACKAGE_CONTRIB__ 
+#define __PACKAGE_CORE__ 
+#define __PACKAGE_CRYPTO__ 
+#define __PACKAGE_DB__ 
+#define __PACKAGE_DEVELOP__ 
+#define __PACKAGE_MATH__ 
+#define __PACKAGE_MATRIX__ 
+#define __PACKAGE_MUDLIB_STATS__ 
+#define __PACKAGE_OPS__ 
+#define __PACKAGE_PARSER__ 
+#define __PACKAGE_PCRE__ 
+#define __PACKAGE_SHA1__ 
+#define __PACKAGE_SOCKETS__ 
+#define __PACKAGE_TRIM__ 
+#define __PACKAGE_UIDS__ 
+#define __PARSE_DEBUG__ 
+#define __PORT__ 6666
+#define __PRIVS__ 
+#define __PROJECT_VERSION__ "fluffos v2019.20201121-27-g2908c5ff"
+#define __RECEIVE_SNOOP__ 
+#define __REF_RESERVED_WORD__ 
+#define __RESTRICTED_ED__ 
+#define __SANE_EXPLODE_STRING__ 
+#define __SANE_SORTING__ 
+#define __SAVE_EXTENSION__ ".o"
+#define __SAVE_GZ_EXTENSION__ ".o.gz"
+#define __SENSIBLE_MODIFIERS__ 
+#define __SMALL_STRING_SIZE__ 100
+#define __STRING_STATS__ 
+#define __STRUCT_CLASS__ 
+#define __STRUCT_STRUCT__ 
+#define __SUPPRESS_ARGUMENT_WARNINGS__ 
+#define __THIS_PLAYER_IN_CALL_OUT__ 
+#define __TIME_WITH_SYS_TIME__ 1
+#define __TRACE__ 
+#define __TRAP_CRASHES__ 
+#define __USE_32BIT_ADDRESSES__ 
+#define __USE_MYSQL__ 1
+#define __VERSION__ "fluffos v2019.20201121-27-g2908c5ff"
+#define __WARN_OLD_RANGE_BEHAVIOR__ 
+========================
+Loading simul_efun file : /adm/obj/simul_efun
+/adm/simul_efun/message.c line 189: Warning: Unused local variable 'message' before 
+Loading master file: /adm/obj/master
+/adm/obj/master.c line 146: Warning: Unused local variable 'name' before the end of line
+/adm/obj/master.c line 146: Warning: Unused local variable 'home' before the end of line
+
+Loading preload files ...
+/adm/daemons/securityd...
+/adm/daemons/encoded...
+/adm/daemons/eventd...
+/adm/daemons/virtuald...
+/adm/daemons/cmd_d...
+/adm/daemons/chinesed...
+/adm/daemons/emoted...
+/adm/daemons/aliasd...
+/adm/daemons/fingerd...
+/adm/daemons/channeld...
+/adm/daemons/natured...
+/adm/daemons/taskd...
+/adm/daemons/coord...
+/adm/daemons/whod...
+/adm/daemons/logind...
+/adm/daemons/voted...
+/adm/daemons/itemd...
+/adm/daemons/sceneryd...
+/adm/daemons/moneyd...
+/adm/daemons/annied...
+/adm/daemons/pkd...
+/std/char/npc_bas...
+/std/char/npc_mid...
+/std/char/npc_adv...
+/adm/daemons/smartd...
+/adm/daemons/spawnd...
+/adm/daemons/brd...
+/obj/void...
+/adm/daemons/suifeng_d...
+Accepting telnet connections on 0.0.0.0:6666.
+Initializations complete.
+
+******** FATAL ERROR: SIGINT: Process interrupted
+FluffOS driver attempting to exit gracefully.
+crash() in master called successfully.  Aborting.

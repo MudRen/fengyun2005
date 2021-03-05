@@ -1,0 +1,18 @@
+清平山庄
+
+山庄大门            『陆五川』『劲装少年』『黑色庄服』 
+大厅                『公孙不智』n 『莫不屈』
+内院门              『胡不愁』
+卧室                『金不畏』
+书房                『中年书生』『笔』『紫长袍』『云步靴』
+                    『风筝』get all from wall   『锦囊』『密信』get all from desk     
+后花园              『鸟蛋』『钥匙』#2 climb tree;search;get all from nest;#2 jump down
+后花园              『燕儿』『草编蚂蚱』
+拱桥                『琴儿』
+小厅                『兰儿』
+后门                『发黄的纸』get all from flower
+池塘                『小宝儿』『锦衣』
+                    『蚯蚓』get all from ground
+                    『竹夫人』get all from 竹榻 
+                    
+关于『大锦鲤』『小锦鲤』的钓法：到清平山庄后院的池塘那里climb tree，fishing(如果掉下去只要一直up就可以上来了)

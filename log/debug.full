@@ -1,0 +1,1282 @@
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:35:39 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /adm/daemons/eventd
+        [ 程式档案 ]: /adm/daemons/eventd.c
+        [ 函式名称 ]: run_heart_beat()
+        [ 呼叫行数 ]: 65
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)1614933339
+                   ** (int)1614933338
+                   ** (int)0
+                   ** (array)({ /* sizeof() == 1 */
+                        ({ /* sizeof() == 2 */
+                          /adm/daemons/taskd,
+                          (: init_dynamic_quest,     1 :)
+                        })
+                      })
+    -- 第  2  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  3  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /adm/daemons/taskd.c
+        [ 函式名称 ]: init_dynamic_quest(int)
+        [ 呼叫行数 ]: 128
+        [ 传入参数 ]:
+                   ** (int)1
+        [ 程式变数 ]:
+                   ** (int)60
+    -- 第  4  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /adm/daemons/taskd.c
+        [ 函式名称 ]: spread_quest(mapping, int)
+        [ 呼叫行数 ]: 179
+        [ 传入参数 ]:
+                   ** (mapping)([ /* sizeof() == 3 */
+                        "fin_func" : "NULL",
+                        "owner_name" : "/d/baiyun/npc/zhongpu",
+                        "file_name" : "/questobj/ouxuepu",
+                      ])
+                   ** (int)1
+        [ 程式变数 ]:
+                   ** (int)1
+                   ** (int)0
+                   ** (object)/d/zangbei/linchang2
+                   ** (int)0
+                   ** (array)({ /* sizeof() == 2 */
+                        /d/zangbei/obj/stump#51 ("大树根"),
+                        /d/zangbei/obj/stump#50 ("大树根")
+                      })
+                   ** (array)({ })
+                   ** (int)0
+                   ** (int)2
+                   ** (string)"/d/wolfmount/cliffroad3.c"
+    -- 第  5  笔 --
+        [ 触动物件 ]: /d/wolfmount/cliffroad3
+        [ 程式档案 ]: /d/wolfmount/cliffroad3.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 27
+        [ 传入参数 ]:
+
+    -- 第  6  笔 --
+        [ 触动物件 ]: /d/wolfmount/cliffroad3
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: setup()
+        [ 呼叫行数 ]: 153
+        [ 传入参数 ]:
+
+    -- 第  7  笔 --
+        [ 触动物件 ]: /d/wolfmount/cliffroad3
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: reset()
+        [ 呼叫行数 ]: 87
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 1 */
+                        "/d/wolfmount/npc/toutuo" : 1,
+                      ])
+                   ** (mapping)([ ])
+                   ** (array)({ /* sizeof() == 1 */
+                        "/d/wolfmount/npc/toutuo"
+                      })
+                   ** (int)0
+                   ** (int)0
+                   ** (array)({ })
+    -- 第  8  笔 --
+        [ 触动物件 ]: /d/wolfmount/cliffroad3
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: make_inventory(string)
+        [ 呼叫行数 ]: 36
+        [ 传入参数 ]:
+                   ** (string)"/d/wolfmount/npc/toutuo"
+        [ 程式变数 ]:
+                   ** (int)0
+    -- 第  9  笔 --
+        [ 触动物件 ]: /d/wolfmount/npc/toutuo ("血头陀")
+        [ 程式档案 ]: /d/wolfmount/npc/toutuo.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 16
+        [ 传入参数 ]:
+
+    -- 第  10 笔 --
+        [ 触动物件 ]: /d/wolfmount/npc/toutuo ("血头陀")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: create_family(string, int, string)
+        [ 呼叫行数 ]: 55
+        [ 传入参数 ]:
+                   ** (string)"狼山"
+                   ** (int)4
+                   ** (string)"弟子"
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "狼山",
+                        "privs" : -1,
+                        "generation" : 4,
+                        "title" : "弟子",
+                      ])
+    -- 第  11 笔 --
+        [ 触动物件 ]: /d/wolfmount/npc/toutuo ("血头陀")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: assign_title(string, int)
+        [ 呼叫行数 ]: 37
+        [ 传入参数 ]:
+                   ** (string)"弟子"
+                   ** (int)0
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "狼山",
+                        "privs" : -1,
+                        "generation" : 4,
+                        "title" : "弟子",
+                      ])
+                   ** (int)4
+    -- 第  12 笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)4
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:36:21 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /adm/daemons/logind
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  2  笔 --
+        [ 触动物件 ]: /adm/daemons/logind
+        [ 程式档案 ]: /adm/daemons/logind.c
+        [ 函式名称 ]: get_encoding(string, object)
+        [ 呼叫行数 ]: 154
+        [ 传入参数 ]:
+                   ** (string)"0"
+                   ** (object)/obj/login#52
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+    -- 第  3  笔 --
+        [ 触动物件 ]: /cmds/usr/uptime
+        [ 程式档案 ]: /cmds/usr/uptime.c
+        [ 函式名称 ]: main()
+        [ 呼叫行数 ]: 26
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)1
+                   ** (int)43
+                   ** (int)0
+                   ** (string)""
+                   ** (int)0
+    -- 第  4  笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)1
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:37:05 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /adm/daemons/logind
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  2  笔 --
+        [ 触动物件 ]: /adm/daemons/logind
+        [ 程式档案 ]: /adm/daemons/logind.c
+        [ 函式名称 ]: get_encoding(string, object)
+        [ 呼叫行数 ]: 154
+        [ 传入参数 ]:
+                   ** (string)"1"
+                   ** (object)/obj/login#56
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+    -- 第  3  笔 --
+        [ 触动物件 ]: /cmds/usr/uptime
+        [ 程式档案 ]: /cmds/usr/uptime.c
+        [ 函式名称 ]: main()
+        [ 呼叫行数 ]: 26
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)2
+                   ** (int)27
+                   ** (int)0
+                   ** (string)""
+                   ** (int)0
+    -- 第  4  笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)2
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:37:18 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /adm/daemons/logind
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  2  笔 --
+        [ 触动物件 ]: /adm/daemons/logind
+        [ 程式档案 ]: /adm/daemons/logind.c
+        [ 函式名称 ]: get_encoding(string, object)
+        [ 呼叫行数 ]: 154
+        [ 传入参数 ]:
+                   ** (string)"0"
+                   ** (object)/obj/login#65
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+    -- 第  3  笔 --
+        [ 触动物件 ]: /cmds/usr/uptime
+        [ 程式档案 ]: /cmds/usr/uptime.c
+        [ 函式名称 ]: main()
+        [ 呼叫行数 ]: 26
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)2
+                   ** (int)40
+                   ** (int)0
+                   ** (string)""
+                   ** (int)0
+    -- 第  4  笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)2
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:39:22 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/hong#3 ("李红樱")
+        [ 程式档案 ]: /std/char.c
+        [ 函式名称 ]: heart_beat()
+        [ 呼叫行数 ]: 160
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (mapping)([ /* sizeof() == 47 */
+                        "age" : 53,
+                        "sen" : 6108,
+                        "agi" : 39,
+                        "chat_chance" : 1,
+                        "reward_npc" : 1,
+                        "chat_msg" : ({ /* sizeof() == 2 */
+                            "李红樱道：红樱绿柳，剑中之精。
+                      ",
+                            (: random_move :)
+                          }),
+                        "max_sen" : 6108,
+                        "no_busy" : 5,
+                        "attitude" : "friendly",
+                        "max_atman" : 1480,
+                        "combat
+                      ... 讯息过长省略
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+    -- 第  2  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/hong#3 ("李红樱")
+        [ 程式档案 ]: /std/char/npc.c
+        [ 函式名称 ]: chat()
+        [ 呼叫行数 ]: 151
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (array)({ /* sizeof() == 2 */
+                        "李红樱道：红樱绿柳，剑中之精。
+                      ",
+                        (: random_move :)
+                      })
+                   ** (int)1
+                   ** (int)1
+    -- 第  3  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/hong#3 ("李红樱")
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  4  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/hong#3 ("李红樱")
+        [ 程式档案 ]: /std/char/npc.c
+        [ 函式名称 ]: random_move()
+        [ 呼叫行数 ]: 192
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 2 */
+                        "southeast" : "/d/huangshan/yingke",
+                        "north" : "/d/huangshan/yixian",
+                      ])
+                   ** (array)({ /* sizeof() == 2 */
+                        "north",
+                        "southeast"
+                      })
+                   ** (string)"southeast"
+                   ** (string)"/d/huangshan/yingke"
+                   ** (string)"/d/huangshan/npc/hong#3"
+                   ** (object)/d/huangshan/wenzhu
+    -- 第  5  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/hong#3 ("李红樱")
+        [ 程式档案 ]: /feature/command.c
+        [ 函式名称 ]: command_hook(string)
+        [ 呼叫行数 ]: 45
+        [ 传入参数 ]:
+                   ** (string)"southeast"
+        [ 程式变数 ]:
+                   ** (string)"go"
+                   ** (string)"/cmds/std/go"
+    -- 第  6  笔 --
+        [ 触动物件 ]: /cmds/std/go
+        [ 程式档案 ]: /cmds/std/go.c
+        [ 函式名称 ]: main(object, string)
+        [ 呼叫行数 ]: 141
+        [ 传入参数 ]:
+                   ** (object)/d/huangshan/npc/hong#3 ("李红樱")
+                   ** (string)"southeast"
+        [ 程式变数 ]:
+                   ** (string)"/d/huangshan/yingke"
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (object)/d/huangshan/wenzhu
+                   ** (int)0
+                   ** (mapping)([ /* sizeof() == 2 */
+                        "southeast" : "/d/huangshan/yingke",
+                        "north" : "/d/huangshan/yixian",
+                      ])
+    -- 第  7  笔 --
+        [ 触动物件 ]: /d/huangshan/yingke
+        [ 程式档案 ]: /d/huangshan/yingke.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 25
+        [ 传入参数 ]:
+
+    -- 第  8  笔 --
+        [ 触动物件 ]: /d/huangshan/yingke
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: setup()
+        [ 呼叫行数 ]: 153
+        [ 传入参数 ]:
+
+    -- 第  9  笔 --
+        [ 触动物件 ]: /d/huangshan/yingke
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: reset()
+        [ 呼叫行数 ]: 87
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 2 */
+                        "/d/huangshan/npc/huo" : 1,
+                        "/d/huangshan/npc/du" : 1,
+                      ])
+                   ** (mapping)([ ])
+                   ** (array)({ /* sizeof() == 2 */
+                        "/d/huangshan/npc/du",
+                        "/d/huangshan/npc/huo"
+                      })
+                   ** (int)0
+                   ** (int)0
+                   ** (array)({ })
+    -- 第  10 笔 --
+        [ 触动物件 ]: /d/huangshan/yingke
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: make_inventory(string)
+        [ 呼叫行数 ]: 36
+        [ 传入参数 ]:
+                   ** (string)"/d/huangshan/npc/du"
+        [ 程式变数 ]:
+                   ** (int)0
+    -- 第  11 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/du ("杜吟")
+        [ 程式档案 ]: /d/huangshan/npc/du.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 11
+        [ 传入参数 ]:
+
+    -- 第  12 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/du ("杜吟")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: create_family(string, int, string)
+        [ 呼叫行数 ]: 55
+        [ 传入参数 ]:
+                   ** (string)"黄山派"
+                   ** (int)6
+                   ** (string)"弟子"
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "黄山派",
+                        "privs" : -1,
+                        "generation" : 6,
+                        "title" : "弟子",
+                      ])
+    -- 第  13 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/du ("杜吟")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: assign_title(string, int)
+        [ 呼叫行数 ]: 37
+        [ 传入参数 ]:
+                   ** (string)"弟子"
+                   ** (int)0
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "黄山派",
+                        "privs" : -1,
+                        "generation" : 6,
+                        "title" : "弟子",
+                      ])
+                   ** (int)6
+    -- 第  14 笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)6
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:41:14 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#68 ("冰冰")
+        [ 程式档案 ]: /std/char/smart_npc.c
+        [ 函式名称 ]: heart_beat()
+        [ 呼叫行数 ]: 183
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (mapping)([ /* sizeof() == 54 */
+                        "age" : 15,
+                        "sen" : 6058,
+                        "agi" : 35,
+                        "chat_chance" : 10,
+                        "chat_msg" : ({ /* sizeof() == 1 */
+                            (: random_move :)
+                          }),
+                        "max_sen" : 6058,
+                        "attitude" : "peaceful",
+                        "max_atman" : 1515,
+                        "combat_exp" : 4500000,
+                        "tol" : 35,
+                        "atman" : 1515,
+                        "gender" : "女性",
+                        "cps"
+                      ... 讯息过长省略
+                   ** (int)0
+    -- 第  2  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#68 ("冰冰")
+        [ 程式档案 ]: /std/char/npc.c
+        [ 函式名称 ]: chat()
+        [ 呼叫行数 ]: 151
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (array)({ /* sizeof() == 1 */
+                        (: random_move :)
+                      })
+                   ** (int)10
+                   ** (int)0
+    -- 第  3  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#68 ("冰冰")
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  4  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#68 ("冰冰")
+        [ 程式档案 ]: /std/char/npc.c
+        [ 函式名称 ]: random_move()
+        [ 呼叫行数 ]: 192
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 3 */
+                        "eastdown" : "/d/huangshan/guanyin",
+                        "northwest" : "/d/huangshan/wenzhu",
+                        "southwest" : "/d/huangshan/yuping",
+                      ])
+                   ** (array)({ /* sizeof() == 3 */
+                        "northwest",
+                        "southwest",
+                        "eastdown"
+                      })
+                   ** (string)"southwest"
+                   ** (string)"/d/huangshan/yuping"
+                   ** (string)"/d/huangshan/npc/bing#68"
+                   ** (object)/d/huangshan/yingke
+    -- 第  5  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#68 ("冰冰")
+        [ 程式档案 ]: /feature/command.c
+        [ 函式名称 ]: command_hook(string)
+        [ 呼叫行数 ]: 45
+        [ 传入参数 ]:
+                   ** (string)"southwest"
+        [ 程式变数 ]:
+                   ** (string)"go"
+                   ** (string)"/cmds/std/go"
+    -- 第  6  笔 --
+        [ 触动物件 ]: /cmds/std/go
+        [ 程式档案 ]: /cmds/std/go.c
+        [ 函式名称 ]: main(object, string)
+        [ 呼叫行数 ]: 141
+        [ 传入参数 ]:
+                   ** (object)/d/huangshan/npc/bing#68 ("冰冰")
+                   ** (string)"southwest"
+        [ 程式变数 ]:
+                   ** (string)"/d/huangshan/yuping"
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (object)/d/huangshan/yingke
+                   ** (int)0
+                   ** (mapping)([ /* sizeof() == 3 */
+                        "eastdown" : "/d/huangshan/guanyin",
+                        "northwest" : "/d/huangshan/wenzhu",
+                        "southwest" : "/d/huangshan/yuping",
+                      ])
+    -- 第  7  笔 --
+        [ 触动物件 ]: /d/huangshan/yuping
+        [ 程式档案 ]: /d/huangshan/yuping.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 27
+        [ 传入参数 ]:
+
+    -- 第  8  笔 --
+        [ 触动物件 ]: /d/huangshan/yuping
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: setup()
+        [ 呼叫行数 ]: 153
+        [ 传入参数 ]:
+
+    -- 第  9  笔 --
+        [ 触动物件 ]: /d/huangshan/yuping
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: reset()
+        [ 呼叫行数 ]: 87
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 2 */
+                        "/d/huangshan/npc/monkey1" : 1,
+                        "/d/huangshan/npc/wang" : 1,
+                      ])
+                   ** (mapping)([ ])
+                   ** (array)({ /* sizeof() == 2 */
+                        "/d/huangshan/npc/wang",
+                        "/d/huangshan/npc/monkey1"
+                      })
+                   ** (int)0
+                   ** (int)0
+                   ** (array)({ })
+    -- 第  10 笔 --
+        [ 触动物件 ]: /d/huangshan/yuping
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: make_inventory(string)
+        [ 呼叫行数 ]: 36
+        [ 传入参数 ]:
+                   ** (string)"/d/huangshan/npc/wang"
+        [ 程式变数 ]:
+                   ** (int)0
+    -- 第  11 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/wang ("王莹")
+        [ 程式档案 ]: /d/huangshan/npc/wang.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 11
+        [ 传入参数 ]:
+
+    -- 第  12 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/wang ("王莹")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: create_family(string, int, string)
+        [ 呼叫行数 ]: 55
+        [ 传入参数 ]:
+                   ** (string)"黄山派"
+                   ** (int)6
+                   ** (string)"弟子"
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "黄山派",
+                        "privs" : -1,
+                        "generation" : 6,
+                        "title" : "弟子",
+                      ])
+    -- 第  13 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/wang ("王莹")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: assign_title(string, int)
+        [ 呼叫行数 ]: 37
+        [ 传入参数 ]:
+                   ** (string)"弟子"
+                   ** (int)0
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "黄山派",
+                        "privs" : -1,
+                        "generation" : 6,
+                        "title" : "弟子",
+                      ])
+                   ** (int)6
+    -- 第  14 笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)6
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:46:01 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /adm/daemons/logind
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  2  笔 --
+        [ 触动物件 ]: /adm/daemons/logind
+        [ 程式档案 ]: /adm/daemons/logind.c
+        [ 函式名称 ]: get_encoding(string, object)
+        [ 呼叫行数 ]: 154
+        [ 传入参数 ]:
+                   ** (string)"0"
+                   ** (object)/obj/login#100
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+    -- 第  3  笔 --
+        [ 触动物件 ]: /cmds/usr/uptime
+        [ 程式档案 ]: /cmds/usr/uptime.c
+        [ 函式名称 ]: main()
+        [ 呼叫行数 ]: 26
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)11
+                   ** (int)23
+                   ** (int)0
+                   ** (string)""
+                   ** (int)0
+    -- 第  4  笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)11
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:48:45 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /adm/daemons/eventd
+        [ 程式档案 ]: /adm/daemons/eventd.c
+        [ 函式名称 ]: run_heart_beat()
+        [ 呼叫行数 ]: 65
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)1614934125
+                   ** (int)1614934123
+                   ** (int)0
+                   ** (array)({ /* sizeof() == 1 */
+                        ({ /* sizeof() == 2 */
+                          /adm/daemons/taskd,
+                          (: init_dynamic_quest,     1 :)
+                        })
+                      })
+    -- 第  2  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  3  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /adm/daemons/taskd.c
+        [ 函式名称 ]: init_dynamic_quest(int)
+        [ 呼叫行数 ]: 128
+        [ 传入参数 ]:
+                   ** (int)1
+        [ 程式变数 ]:
+                   ** (int)62
+    -- 第  4  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /adm/daemons/taskd.c
+        [ 函式名称 ]: spread_quest(mapping, int)
+        [ 呼叫行数 ]: 179
+        [ 传入参数 ]:
+                   ** (mapping)([ /* sizeof() == 3 */
+                        "fin_func" : "NULL",
+                        "owner_name" : "/d/ghost/npc/biaoge",
+                        "file_name" : "/questobj/bstu",
+                      ])
+                   ** (int)1
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (array)({ })
+                   ** (int)0
+                   ** (int)0
+                   ** (string)"/d/shaolin/fanting.c"
+    -- 第  5  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /d/shaolin/fanting.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 23
+        [ 传入参数 ]:
+
+    -- 第  6  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: setup()
+        [ 呼叫行数 ]: 153
+        [ 传入参数 ]:
+
+    -- 第  7  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /std/room/door_room.c
+        [ 函式名称 ]: reset()
+        [ 呼叫行数 ]: 64
+        [ 传入参数 ]:
+
+    -- 第  8  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: reset()
+        [ 呼叫行数 ]: 87
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 1 */
+                        "/d/shaolin/npc/monk9" : 1,
+                      ])
+                   ** (mapping)([ ])
+                   ** (array)({ /* sizeof() == 1 */
+                        "/d/shaolin/npc/monk9"
+                      })
+                   ** (int)0
+                   ** (int)0
+                   ** (array)({ })
+    -- 第  9  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: make_inventory(string)
+        [ 呼叫行数 ]: 36
+        [ 传入参数 ]:
+                   ** (string)"/d/shaolin/npc/monk9"
+        [ 程式变数 ]:
+                   ** (int)0
+    -- 第  10 笔 --
+        [ 触动物件 ]: /d/shaolin/npc/monk9 ("空林")
+        [ 程式档案 ]: /d/shaolin/npc/monk9.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 11
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (array)({ /* sizeof() == 7 */
+                        "弈",
+                        "林",
+                        "粹",
+                        "签",
+                        "华",
+                        "阳",
+                        "峙"
+                      })
+    -- 第  11 笔 --
+        [ 触动物件 ]: /d/shaolin/npc/monk9 ("空林")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: create_family(string, int, string)
+        [ 呼叫行数 ]: 55
+        [ 传入参数 ]:
+                   ** (string)"少林寺"
+                   ** (int)23
+                   ** (string)"弟子"
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "少林寺",
+                        "privs" : -1,
+                        "generation" : 23,
+                        "title" : "弟子",
+                      ])
+    -- 第  12 笔 --
+        [ 触动物件 ]: /d/shaolin/npc/monk9 ("空林")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: assign_title(string, int)
+        [ 呼叫行数 ]: 37
+        [ 传入参数 ]:
+                   ** (string)"弟子"
+                   ** (int)0
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "少林寺",
+                        "privs" : -1,
+                        "generation" : 23,
+                        "title" : "弟子",
+                      ])
+                   ** (int)23
+    -- 第  13 笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)23
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:51:29 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#39 ("冰冰")
+        [ 程式档案 ]: /std/char/smart_npc.c
+        [ 函式名称 ]: heart_beat()
+        [ 呼叫行数 ]: 183
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (mapping)([ /* sizeof() == 54 */
+                        "age" : 15,
+                        "sen" : 6175,
+                        "agi" : 36,
+                        "chat_chance" : 10,
+                        "chat_msg" : ({ /* sizeof() == 1 */
+                            (: random_move :)
+                          }),
+                        "max_sen" : 6175,
+                        "attitude" : "peaceful",
+                        "max_atman" : 1515,
+                        "combat_exp" : 4500000,
+                        "tol" : 36,
+                        "atman" : 1515,
+                        "gender" : "女性",
+                        "cps"
+                      ... 讯息过长省略
+                   ** (int)0
+    -- 第  2  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#39 ("冰冰")
+        [ 程式档案 ]: /std/char/npc.c
+        [ 函式名称 ]: chat()
+        [ 呼叫行数 ]: 151
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (array)({ /* sizeof() == 1 */
+                        (: random_move :)
+                      })
+                   ** (int)10
+                   ** (int)0
+    -- 第  3  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#39 ("冰冰")
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  4  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#39 ("冰冰")
+        [ 程式档案 ]: /std/char/npc.c
+        [ 函式名称 ]: random_move()
+        [ 呼叫行数 ]: 192
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 2 */
+                        "southeast" : "/d/huangshan/yingke",
+                        "north" : "/d/huangshan/yixian",
+                      ])
+                   ** (array)({ /* sizeof() == 2 */
+                        "north",
+                        "southeast"
+                      })
+                   ** (string)"southeast"
+                   ** (string)"/d/huangshan/yingke"
+                   ** (string)"/d/huangshan/npc/bing#39"
+                   ** (object)/d/huangshan/wenzhu
+    -- 第  5  笔 --
+        [ 触动物件 ]: /d/huangshan/npc/bing#39 ("冰冰")
+        [ 程式档案 ]: /feature/command.c
+        [ 函式名称 ]: command_hook(string)
+        [ 呼叫行数 ]: 45
+        [ 传入参数 ]:
+                   ** (string)"southeast"
+        [ 程式变数 ]:
+                   ** (string)"go"
+                   ** (string)"/cmds/std/go"
+    -- 第  6  笔 --
+        [ 触动物件 ]: /cmds/std/go
+        [ 程式档案 ]: /cmds/std/go.c
+        [ 函式名称 ]: main(object, string)
+        [ 呼叫行数 ]: 141
+        [ 传入参数 ]:
+                   ** (object)/d/huangshan/npc/bing#39 ("冰冰")
+                   ** (string)"southeast"
+        [ 程式变数 ]:
+                   ** (string)"/d/huangshan/yingke"
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (object)/d/huangshan/wenzhu
+                   ** (int)0
+                   ** (mapping)([ /* sizeof() == 2 */
+                        "southeast" : "/d/huangshan/yingke",
+                        "north" : "/d/huangshan/yixian",
+                      ])
+    -- 第  7  笔 --
+        [ 触动物件 ]: /d/huangshan/yingke
+        [ 程式档案 ]: /d/huangshan/yingke.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 25
+        [ 传入参数 ]:
+
+    -- 第  8  笔 --
+        [ 触动物件 ]: /d/huangshan/yingke
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: setup()
+        [ 呼叫行数 ]: 153
+        [ 传入参数 ]:
+
+    -- 第  9  笔 --
+        [ 触动物件 ]: /d/huangshan/yingke
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: reset()
+        [ 呼叫行数 ]: 87
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 2 */
+                        "/d/huangshan/npc/huo" : 1,
+                        "/d/huangshan/npc/du" : 1,
+                      ])
+                   ** (mapping)([ ])
+                   ** (array)({ /* sizeof() == 2 */
+                        "/d/huangshan/npc/du",
+                        "/d/huangshan/npc/huo"
+                      })
+                   ** (int)0
+                   ** (int)0
+                   ** (array)({ })
+    -- 第  10 笔 --
+        [ 触动物件 ]: /d/huangshan/yingke
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: make_inventory(string)
+        [ 呼叫行数 ]: 36
+        [ 传入参数 ]:
+                   ** (string)"/d/huangshan/npc/du"
+        [ 程式变数 ]:
+                   ** (int)0
+    -- 第  11 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/du ("杜吟")
+        [ 程式档案 ]: /d/huangshan/npc/du.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 11
+        [ 传入参数 ]:
+
+    -- 第  12 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/du ("杜吟")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: create_family(string, int, string)
+        [ 呼叫行数 ]: 55
+        [ 传入参数 ]:
+                   ** (string)"黄山派"
+                   ** (int)6
+                   ** (string)"弟子"
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "黄山派",
+                        "privs" : -1,
+                        "generation" : 6,
+                        "title" : "弟子",
+                      ])
+    -- 第  13 笔 --
+        [ 触动物件 ]: /d/huangshan/npc/du ("杜吟")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: assign_title(string, int)
+        [ 呼叫行数 ]: 37
+        [ 传入参数 ]:
+                   ** (string)"弟子"
+                   ** (int)0
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "黄山派",
+                        "privs" : -1,
+                        "generation" : 6,
+                        "title" : "弟子",
+                      ])
+                   ** (int)6
+    -- 第  14 笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)6
+──────────────<Bugs Report>──────────────
+
+
+──────────────<Bugs Report>──────────────
+[ 错误时间 ]: Fri Mar 05 16:51:31 2021
+[ 错误内容 ]: *Error in loading object '/adm/daemons/chinesed' [m
+[ 错误档案 ]: /adm/simul_efun/chinese.c
+[ 错误行数 ]: 4[m
+[ 资料回溯 ]:
+    -- 第  1  笔 --
+        [ 触动物件 ]: /adm/daemons/eventd
+        [ 程式档案 ]: /adm/daemons/eventd.c
+        [ 函式名称 ]: run_heart_beat()
+        [ 呼叫行数 ]: 65
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (int)1614934291
+                   ** (int)1614934290
+                   ** (int)0
+                   ** (array)({ /* sizeof() == 1 */
+                        ({ /* sizeof() == 2 */
+                          /adm/daemons/taskd,
+                          (: init_dynamic_quest,     1 :)
+                        })
+                      })
+    -- 第  2  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /<driver>
+        [ 函式名称 ]: <fake>()
+        [ 呼叫行数 ]: 未知
+    -- 第  3  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /adm/daemons/taskd.c
+        [ 函式名称 ]: init_dynamic_quest(int)
+        [ 呼叫行数 ]: 128
+        [ 传入参数 ]:
+                   ** (int)1
+        [ 程式变数 ]:
+                   ** (int)60
+    -- 第  4  笔 --
+        [ 触动物件 ]: /adm/daemons/taskd
+        [ 程式档案 ]: /adm/daemons/taskd.c
+        [ 函式名称 ]: spread_quest(mapping, int)
+        [ 呼叫行数 ]: 179
+        [ 传入参数 ]:
+                   ** (mapping)([ /* sizeof() == 3 */
+                        "fin_func" : "NULL",
+                        "owner_name" : "/d/baiyun/npc/zhongpu",
+                        "file_name" : "/questobj/ouxuepu",
+                      ])
+                   ** (int)1
+        [ 程式变数 ]:
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (int)0
+                   ** (array)({ })
+                   ** (int)0
+                   ** (int)0
+                   ** (string)"/d/shaolin/fanting.c"
+    -- 第  5  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /d/shaolin/fanting.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 23
+        [ 传入参数 ]:
+
+    -- 第  6  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: setup()
+        [ 呼叫行数 ]: 153
+        [ 传入参数 ]:
+
+    -- 第  7  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /std/room/door_room.c
+        [ 函式名称 ]: reset()
+        [ 呼叫行数 ]: 64
+        [ 传入参数 ]:
+
+    -- 第  8  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: reset()
+        [ 呼叫行数 ]: 87
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 1 */
+                        "/d/shaolin/npc/monk9" : 1,
+                      ])
+                   ** (mapping)([ ])
+                   ** (array)({ /* sizeof() == 1 */
+                        "/d/shaolin/npc/monk9"
+                      })
+                   ** (int)0
+                   ** (int)0
+                   ** (array)({ })
+    -- 第  9  笔 --
+        [ 触动物件 ]: /d/shaolin/fanting
+        [ 程式档案 ]: /std/room.c
+        [ 函式名称 ]: make_inventory(string)
+        [ 呼叫行数 ]: 36
+        [ 传入参数 ]:
+                   ** (string)"/d/shaolin/npc/monk9"
+        [ 程式变数 ]:
+                   ** (int)0
+    -- 第  10 笔 --
+        [ 触动物件 ]: /d/shaolin/npc/monk9 ("空签")
+        [ 程式档案 ]: /d/shaolin/npc/monk9.c
+        [ 函式名称 ]: create()
+        [ 呼叫行数 ]: 11
+        [ 传入参数 ]:
+
+        [ 程式变数 ]:
+                   ** (array)({ /* sizeof() == 7 */
+                        "弈",
+                        "林",
+                        "粹",
+                        "签",
+                        "华",
+                        "阳",
+                        "峙"
+                      })
+    -- 第  11 笔 --
+        [ 触动物件 ]: /d/shaolin/npc/monk9 ("空签")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: create_family(string, int, string)
+        [ 呼叫行数 ]: 55
+        [ 传入参数 ]:
+                   ** (string)"少林寺"
+                   ** (int)23
+                   ** (string)"弟子"
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "少林寺",
+                        "privs" : -1,
+                        "generation" : 23,
+                        "title" : "弟子",
+                      ])
+    -- 第  12 笔 --
+        [ 触动物件 ]: /d/shaolin/npc/monk9 ("空签")
+        [ 程式档案 ]: /feature/apprentice.c
+        [ 函式名称 ]: assign_title(string, int)
+        [ 呼叫行数 ]: 37
+        [ 传入参数 ]:
+                   ** (string)"弟子"
+                   ** (int)0
+        [ 程式变数 ]:
+                   ** (mapping)([ /* sizeof() == 4 */
+                        "family_name" : "少林寺",
+                        "privs" : -1,
+                        "generation" : 23,
+                        "title" : "弟子",
+                      ])
+                   ** (int)23
+    -- 第  13 笔 --
+        [ 触动物件 ]: /adm/obj/simul_efun
+        [ 程式档案 ]: /adm/obj/simul_efun.c
+        [ 函式名称 ]: chinese_number(int)
+        [ 呼叫行数 ]: 4
+        [ 传入参数 ]:
+                   ** (int)23
+──────────────<Bugs Report>──────────────
+

@@ -1,0 +1,25 @@
+桃源村 
+
+桃林               『桃花瓣』『蘑菇』get all from grass 『桃花枝』look 桃树;pick 桃枝 只有春天才能摘到
+桃林               『麻雀』
+山谷               『野兔』
+小茶栈             『瞎老爹』『二胡琴』『莲儿』『青布衫』『小二哥』『茶壶』『桃片糕』『米酒』
+渔家               『彩儿』『鱼线』『 梭子』 get all from basket
+农家               『镰刀』『小钩子』『蓑衣』get all from wall
+农家               『绣花针』『细麻线』  get all from basket
+内宅               『郭大娘』
+打谷场             『鱼骨头』 get all from bowl
+密林               『藤萝段』 chop vine『藤萝绳』 make
+青石道路           『小猫咪』
+安然居             『阿黄』  
+小院               『铁镐』『扫把』get all from 木棚
+厨房               『蜡烛』『火摺子』『葱花』『菜刀』get all from oven『葱油饼』get all from pot
+正厅               『水晶球』 swing qiuqian 当看见 你忽然发现有东西在书房内发出耀眼的光，光一闪即失
+                    时，west search 书房『钓鱼杆』的制作方法：凑齐细竹竿、小钩子、鱼线 然后make
+                    
+山谷 -
+    此处更加靠近潭水，不必下水，站在潭边你就可以清楚的感觉到刺骨的寒意。
+潭水碧绿不知有多深，水中有一巨石，水从高处落下冲击在巨石上溅起点点白色的
+水花。潭边长满了不知名的花草，一棵小树斜斜地生长在潭水边。
+在这里可以钓到『石斑鱼』 『鲇鱼』 『虎纹鱼』
+可以用小虾(buy from fishseller in cx)钓，put shrimp in pole ，fishing

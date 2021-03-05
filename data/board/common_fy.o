@@ -1,0 +1,2 @@
+#/obj/board/common_fy.c
+dbase (["capacity":99,"name":"一般用途留言板","board_id":"common_fy","no_get":1,"no_reset":1,"notes":({(["title":"hi","msg":"i am the first ","time":1509701805,"author":"无名侠(noname)",]),}),"location":"/d/fy/fyge","id":"board","long":"这是一个供人留言记事的留言板。",])

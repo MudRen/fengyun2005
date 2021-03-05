@@ -1,0 +1,44 @@
+[0;1;37m────────────────────────────────[0m
+		[0;1;36m风云2005武功类指令[0m
+[0;1;37m────────────────────────────────[0m   
+
+[37m修炼武功指令[0m
+Abandon         放弃一些不必要的武技
+Learn           花费潜能学习武功技能
+Research        进一步钻研武功技能
+Study           读书
+Practice        练习
+Exercise        吐纳练功，增长内力、魔力、法力
+Exert           运用内功，可恢复体力、精力、心神
+
+[37m使用武功指令[0m
+Enable          定义所使用的特殊武功 
+		Enable none 取消目前使用的特殊技能
+Enforce         定义所运用伤敌的内力值，
+		Enforce的值 = 你的force enable/3
+Perform         使用特殊武功的特殊招式
+Cast            使用咒术的特殊招式
+Conjure         使用法术的特殊招式
+Curse           使用降头术的特殊招式
+
+[37m专用武功指令[0m
+官府：	Alert 
+狼山：	Xiao
+丐帮：	Beg		Inform	Inquire	Juji
+铁雪：	Juxue
+富贵：	Baohu
+武当：	Setmark/Usemark
+快活林:	Poison	Herbheal
+神水宫：Seduce	Jiasi
+三清宫：Burn	Scribe
+少林寺：  Chant
+大昭寺：  Chant 	Roar
+兴国禅寺：Chant 	Roar
+
+通用：	Baohu	Steal
+
+
+[0;1;31m具体指令的格式、应用方法可使用Help命令
+例如：	help score	就会给出score指令的详细说明[0m
+[0;1;37m────────────────────────────────[0m   
+		按任意键返回上级菜单

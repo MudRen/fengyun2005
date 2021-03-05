@@ -1,0 +1,65 @@
+/d/shaolin/obj/xisuihe
+/d/huashan/npc/zhenzhen
+/d/huashan/npc/snake
+/daemon/class/beggar/dagou-stick/tianxiawugou
+
+/d/baiyun/obj/8sword
+/d/baiyun/jianlin
+
+# 将L0-L139的Quest经验奖励提高 20% -50%
+/adm/daemons/rewardd
+
+# 完善武器锻造系统
+# 增加 L110,L130,L135 的 锻造材料
+/obj/treasure/npc/obj/myx_heart
+/obj/treasure/npc/obj/duf_flower
+/obj/treasure/npc/mingyue
+/obj/treasure/npc/duf
+
+# 苍穹神剑
+# Remove /d/huangshan/obj/cq2, /d/wudang/npc/oldtaoist1
+
+/d/huangshan/npc/mas1
+/d/huangshan/npc/mas2
+/d/wudang/road2
+/d/wudang/pine3
+/d/wudang/npc/oldtaoist2
+/d/wudang/npc/oldtaoist3
+/d/wudang/npc/oldtaoist4
+/d/wudang/npc/oldtaoist5
+/d/wudang/npc/oldtaoist6
+/d/wudang/npc/oldtaoist7
+/obj/treasure/npc/oldtaoist1
+/obj/treasure/npc/obj/cq2
+
+# 蚩尤的刷新时间改为和沙龙相仿
+# delete /d/wolfmount/npc/chiyou, /d/wolfmount/npc/obj/tigersoul, /d/wolfmount/npc/obj/wolf-fist
+/d/wolfmount/chiyouku
+/d/wolfmount/cliffroad3
+/obj/treasure/npc/chiyou
+/obj/treasure/npc/obj/tigersoul
+/obj/treasure/npc/obj/wolf-fist
+!/adm/etc/spawn_table
+
+# 修正七情水仙不掉物品的错误
+/obj/treasure/npc/narcissus
+
+# 修正entermaze对NPC的错误
+/cmds/std/entermaze
+
+# 修正三清ABility中上君/天师效能颠倒的错误
+/obj/npc/heaven_soldier
+/obj/npc/taoist_guard
+
+# ＴＡＳＫ系统修正
+# 近期内将增加ＴＡＳＫ的奖励
+# 除保留原有的潜能、金钱、评价奖励外，达到一定数目后将奖励武器伤害、属性以及门派技能
+# 此次更新首先推出武器伤害奖励，具体情况请到白云行馆段公公处查询
+/d/fy/byroom
+/d/fy/npc/duangonggong
+/cmds/usr/destroy
+
+# Forbit L50+ id suicide -f, I hate recovery
+/cmds/usr/suicide
+
+

@@ -1,0 +1,111 @@
+
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+
+#format
+room_file:cmd_table:delay_time
+%s:%s:%d
+
+# The following lines are data, each non-blank line will fill in each field
+# in each record sequently.
+
+#room
+#command;command;....
+#delay
+
+/d/biancheng/teashop
+say 爹，我走了哈...;east
+2
+
+/d/biancheng/nstreet2
+south
+2
+
+/d/biancheng/nstreet1
+west
+5
+
+/d/biancheng/silkshop
+say 伙计，给我留块苏缎，回头叫我爹来拿。;south
+5
+
+/d/biancheng/road3
+east
+5
+
+/d/biancheng/road2
+east
+5
+
+/d/biancheng/road1
+say 怎么肚子饿了。。。;laugh;southeast
+5
+
+/d/zangbei/wild7
+emote 拿出块酱牛肉咬了几口。;east
+5
+
+/d/zangbei/wild6
+emote 向直共寺的方向看了看。;say 这个寺不好，太吵太吵。;east
+5
+
+/d/zangbei/wild5
+emote 向蚌普寺的方向看了看。;say 这个寺也不好，香火太少。;east
+5
+
+/d/zangbei/wild4
+east
+5
+
+/d/zangbei/wild3
+southeast
+5
+
+/d/zangbei/wild2
+say 走了这么多路，替我去买点糌粑吧，我慢慢走等你。;east
+10
+
+/d/zangbei/wild1
+east
+5
+
+/d/zangbei/yuzhu
+go northup
+5
+
+/d/eren/road0
+go northup
+5
+
+/d/eren/road1
+emote 累得呼呼直喘气。;southup
+5
+
+/d/eren/road2
+northup
+5
+
+/d/eren/valleyentry
+emote 一指远处的树木说：恶人谷去过么？;westup
+5
+
+/d/eren/road2a
+say 快到了。。。这儿的风景真不错。;northup
+5
+
+/d/eren/road2b
+westup
+5
+
+/d/eren/meihuaan
+say 到了;laugh;say 多谢一路相送，以后记得来看我哦。;emote 走近梅花庵消失了。
+-10
+
+
+
+
+
+
+

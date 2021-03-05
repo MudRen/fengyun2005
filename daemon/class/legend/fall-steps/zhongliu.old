@@ -1,0 +1,71 @@
+// Silencer@fengyun	June.2005
+// L50： 『中流』Super defense stance
+
+#include <ansi.h>
+#include <combat.h>
+
+inherit SSERVER;
+int perform(object me, object target)
+{
+	string msg, type;
+	int duration, extra, add, skill,num;
+	mapping buff;
+	object weapon;
+	
+	extra = me->query_skill("fall-steps",1);
+	skill = me->query_skill("six-sense",1);
+	
+	if ( extra < 150 || skill < 150 || me->query_skill("dormancy",1)<150) 
+		return notify_fail("『中流』需要150级的秋风步、六灵暗识、息若纳气！\n");
+		
+	if(!target) target = me;
+        if( target != me ) 
+        	return 	notify_fail("『中流』只能用在自己身上。\n");
+        	
+   	if (ANNIE_D->check_buff(me,"tx-turtle-stance")>0) {
+   		ANNIE_D->debuff(me,"tx-turtle-stance");
+   		me->set("timer/pfm/tx-turtle-stance",time());	
+		return 1;
+	}
+
+ 	duration = me->query("timer/pfm/tx-turtle-stance")+ 30 - time();
+    if (duration > 0)
+    	return notify_fail("『中流』每30秒钟最多激活一次（须等待"+(duration)+"秒）\n");
+    
+    if (weapon = me->query_temp("weapon")){
+    	if (weapon->query("skill_type") == "sword")
+    		msg = "$N剑法一变，从极快而变为极慢，剑尖上坠了千斤重物似的，慢腾腾的东刺一剑，西
+刺一剑，身畔周围八尺之内，便似布起了一道铁壁铜墙一般。\n";
+		else if (weapon->query("skill_type")=="blade")
+			msg = "$N刀法一变，从极快而变为极慢，刀尖上坠了千斤重物似的，慢腾腾的东劈一刀，西
+劈一刀，身畔周围八尺之内，便似布起了一道铁壁铜墙一般。\n";
+	}
+	
+	if (!msg)
+		msg = "$N招式瞬息万变，有如大海潮生，一渡末平，一波又起，周围八尺之内，便似布起了一道铁壁铜墙一般。\n";
+
+				    
+	buff =
+		([
+			"caster":	me,
+			"who": 		me,
+			"type": 	"afm-absshield",
+			"type2":	"tx-turtle-stance",
+			"att":		"bless",
+			"name":		"秋风步·中流",
+			"buff1": 	"resistance/kee",
+			"buff1_c":	 50,	
+			"buff2":	"apply/damage",
+			"buff2_c":	 -700,	
+			"shield_type": "force",
+			"shield_amount": 50,
+			"shield_msg":	"",
+/*			"buff3":	"hurtless",
+			"buff3_c":	1,*/
+			"time":  	 300,
+			"buff_msg":	 BRED + HIY +msg+NOR,
+		]);
+		
+	ANNIE_D->buffup(buff);
+	return 1;
+}

@@ -1,0 +1,53 @@
+
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+
+#format
+room_file:cmd_table:delay_time
+%s:%s:%d
+
+# The following lines are data, each non-blank line will fill in each field
+# in each record sequently.
+
+#room
+#command;command;....
+#delay
+
+/d/huashan/qipan
+north
+2
+
+/d/huashan/yaozi
+northwest
+2
+
+/d/huashan/chaoyang
+northwest
+2
+
+
+/d/huashan/xiaodao1
+westdown
+2
+
+/d/huashan/xiaodao
+north
+2
+
+/d/huashan/milin
+west
+2
+
+/d/huashan/milin2
+south
+2
+
+/d/huashan/milin1
+east
+2
+
+/d/huashan/milin3
+look
+-10

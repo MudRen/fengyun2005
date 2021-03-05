@@ -1,0 +1,8 @@
+#/obj/user.c
+pawn (["3615":"断掉的灭魂",])
+vpawn (["3615":100,])
+fpawn (["3615":"/d/baiyun/obj/8sword.c",])
+path ({"/cmds/std/","/cmds/usr/","/cmds/skill/",})
+dbase (["update":(["11_ability":1,"11_task_ability":1,"11_starrain":1,"11_fumostaff":1,"11_music":1,"11_bai-quan":1,"12_treasurebox":1,"11_duanhun-spear":1,"11_lingxi-zhi":1,"11_tianfeng_1":1,"11_liuxing-hammer":1,"11_wuche-axe":1,]),"per":16,"env":(["brief":0,"target":"tianpeng lang","equip_msg":2,"wimpy":50,"dmg_msg":1,"show_way":1,]),"fle":10,"max_kee":284,"next_delivery_time":1568117668,"MKS":2,"deposit":0,"gin":158,"cor":10,"level":7,"gift_points":10,"marks":(["delivery_success":2,]),"eff_kee":284,"con":15,"family":(["title":"酒童","master_name":"箫王孙","generation":2,"enter_time":1568115191,"privs":0,"family_name":"帝王谷","master_id":"master xiao",]),"int":10,"FINISH_QUEST":13,"achieved_level":7,"race":"人类","name":"卓温狄","potential":9399,"used_gift_points":10,"actions":,"atman":0,"distribute":(["con":5,"str":5,]),"tol":10,"max_atman":0,"combat_exp":76079,"max_sen":158,"class":"yinshi","eff_sen":158,"quest_time":1568123416,"once_menpai":(["yinshi":1,]),"str":15,"kee":284,"score":11,"force":0,"max_gin":158,"title":"帝王谷 酒童","max_force":0,"kar":10,"startroom":"/d/fy/fqkhotel","festival_record":([]),"water":191,"dur":10,"eff_gin":158,"national":"蒙古族","m_success":(["入帝王谷":1,]),"mana":0,"mud_age":13701,"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"food":190,"spi":10,"max_mana":0,"quest":0,"default_actions":,"id":"zwd","cps":10,"gender":"男性","bellicosity":37,"agi":10,"NO_PK":1,"birthday":1568111514,"sen":158,"age":10,])
+items ([])
+autoload ({})

@@ -1,0 +1,20 @@
+mirroring nsf (galileo.sscnet.ucla.edu:/u/ssc/chenj/FengYun/fy4/obj) completed successfully @ Wed Dec 26 16:36:10 PST 2001
+Got selfmake/weapons/dagger.o 1511
+Got selfmake/weapons/sword.o 1247
+Got selfmake/weapons/axe.o 1324
+Got selfmake/weapons/blade.o 1501
+Got selfmake/weapons/fork.o 1342
+Got selfmake/weapons/hammer.o 1619
+Got selfmake/weapons/spear.o 1464
+Got selfmake/weapons/staff.o 1501
+Got selfmake/weapons/whip.o 1535
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/whip.c
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/staff.c
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/spear.c
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/hammer.c
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/fork.c
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/blade.c
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/axe.c
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/sword.c
+unlink /u/fengyun/fy4/fy/obj/selfmake/weapons/dagger.c
+mirroring nsf (galileo.sscnet.ucla.edu:/u/ssc/chenj/FengYun/fy4/obj) completed successfully @ Wed Dec 26 16:49:13 PST 2001

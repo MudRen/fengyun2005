@@ -1,0 +1,123 @@
+/adm/daemons/eventd.c line 10: Warning: Unknown #pragma, ignored. before the end of line
+/feature/treemap.c line 1: Warning: Unknown #pragma, ignored. before 
+/adm/daemons/taskd.c line 294: Warning: Unused local variable 'j' before the end of line
+/adm/daemons/logind.c line 504: Warning: Unused local variable 'alle' before the end of line
+/adm/daemons/itemd.c line 7: Warning: Unknown #pragma, ignored. before 
+/std/room.c line 15: Warning: Unknown #pragma, ignored. before 
+/std/room.c line 15: Warning: Unknown #pragma, ignored. before 
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/feature/alias.c line 11: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char.c line 15: Warning: Unknown #pragma, ignored. before the end of line
+/std/char.c line 31: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char/npc.c line 7: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/d/taishan/npc/mantrainer.c line 5: Warning: Redeclaration of global variable 'last_input'. before 
+/d/huangshan/npc/hong.c line 2: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/d/huangshan/npc/lu.c line 2: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/d/fy/npc/tatoo.c line 2: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/d/fy/npc/servant.c line 11: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/d/quicksand/npc/xiaopan.c line 2: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/std/char/smart_npc.c line 14: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/d/quicksand/npc/shituo.c line 2: Warning: Redeclaration of global variable 'last_input'. before 
+/adm/daemons/smartd.c line 9: Warning: Redeclaration of global variable 'last_input'. before 
+/adm/daemons/smartd.c line 318: Warning: Unused local variable 'temp_setupc' before 
+/adm/daemons/smartd.c line 318: Warning: Unused local variable 'total' before 
+/adm/daemons/smartd.c line 318: Warning: Unused local variable 'x' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'j' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'k' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'count' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'km_chance' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'weapon' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'inv' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'zombie' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'npc_enemy' before 
+/adm/daemons/smartd.c line 413: Warning: Unused local variable 'pc_enemy' before 
+/adm/daemons/smartd.c line 504: Warning: Unused local variable 'immune' before 
+/adm/daemons/smartd.c line 541: Warning: Unused local variable 'b_flag' before 
+/adm/daemons/smartd.c line 652: Warning: Unused local variable 'inv' before 
+/adm/daemons/smartd.c line 652: Warning: Unused local variable 'msg' before 
+/adm/daemons/smartd.c line 652: Warning: Unused local variable 'weapon' before 
+/adm/daemons/smartd.c line 652: Warning: Unused local variable 'pfm' before 
+/adm/daemons/smartd.c line 652: Warning: Unused local variable 'k' before 
+/adm/daemons/smartd.c line 735: Warning: Unused local variable 'attack' before 
+/adm/daemons/smartd.c line 735: Warning: Unused local variable 'new_weapon' before 
+/adm/daemons/smartd.c line 1044: Warning: Unused local variable 'inv' before 
+/adm/daemons/smartd.c line 1044: Warning: Unused local variable 'instr' before 
+/adm/daemons/smartd.c line 2049: Warning: Unused local variable 'i' before 
+/adm/daemons/smartd.c line 2414: Warning: Unused local variable 'inv' before 
+/adm/daemons/smartd.c line 2414: Warning: Unused local variable 'instr' before 
+/adm/daemons/smartd.c line 2414: Warning: Unused local variable 'j' before 
+/adm/daemons/smartd.c line 2414: Warning: Unused local variable 'i' before 
+/adm/daemons/smartd.c line 2414: Warning: Unused local variable 'k' before 
+/adm/daemons/smartd.c line 2542: Warning: Unused local variable 'inv' before 
+/adm/daemons/smartd.c line 2542: Warning: Unused local variable 'instr' before 
+/adm/daemons/smartd.c line 2542: Warning: Unused local variable 'j' before 
+/adm/daemons/smartd.c line 2542: Warning: Unused local variable 'i' before 
+/adm/daemons/smartd.c line 2542: Warning: Unused local variable 'k' before 
+/adm/daemons/smartd.c line 2617: Warning: Unused local variable 'owner' before 
+/adm/daemons/smartd.c line 2651: Warning: Unused local variable 'j' before 	
+/adm/daemons/smartd.c line 2651: Warning: Unused local variable 'gotit' before 	
+/adm/daemons/smartd.c line 2685: Warning: Unused local variable 'i' before 	
+/adm/daemons/smartd.c line 2685: Warning: Unused local variable 'k' before 	
+/adm/daemons/smartd.c line 2760: Warning: Unused local variable 'inv' before 
+/adm/daemons/smartd.c line 2760: Warning: Unused local variable 'weapon' before 
+/adm/daemons/smartd.c line 2760: Warning: Unused local variable 'newweapon' before 
+/adm/daemons/smartd.c line 2760: Warning: Unused local variable 'k' before 
+/adm/daemons/smartd.c line 2779: Warning: Unused local variable 'weapon' before 
+/adm/daemons/smartd.c line 2779: Warning: Unused local variable 'inv' before 
+/adm/daemons/smartd.c line 2779: Warning: Unused local variable 'k' before 
+/adm/daemons/smartd.c line 2815: Warning: Unused local variable 'i' before 
+/adm/daemons/smartd.c line 2875: Warning: Unused local variable 'obj' before 
+/adm/daemons/smartd.c line 2894: Warning: Unused local variable 'obj' before 
+/adm/daemons/smartd.c line 2979: Warning: Unused local variable 'j' before 
+/adm/daemons/smartd.c line 3039: Warning: Unused local variable 'class_type' before 
+/d/huashan/npc/youke.c line 3: Warning: Redeclaration of global variable 'last_input'. before the end of line
+/adm/daemons/annied.c line 81: Warning: Unknown #pragma, ignored. before 
+/adm/daemons/annied.c line 324: Warning: Unused local variable 'caster' before 
+/adm/daemons/annied.c line 324: Warning: Unused local variable 'type' before 
+/adm/daemons/annied.c line 324: Warning: Unused local variable 'time' before 
+/adm/daemons/annied.c line 324: Warning: Unused local variable 'warn_time' before 
+/adm/daemons/annied.c line 324: Warning: Unused local variable 'buff_msg' before 
+/adm/daemons/annied.c line 324: Warning: Unused local variable 'warn_msg' before 
+/adm/daemons/annied.c line 572: Warning: Unused local variable 'type' before 
+/adm/daemons/annied.c line 572: Warning: Unused local variable 'type2' before 
+/adm/daemons/annied.c line 572: Warning: Unused local variable 'name' before 
+/adm/daemons/annied.c line 572: Warning: Unused local variable 'warn_msg' before 
+/adm/daemons/annied.c line 572: Warning: Unused local variable 'disa_msg' before 
+/adm/daemons/annied.c line 572: Warning: Unused local variable 'env_type_c' before 
+/adm/daemons/annied.c line 664: Warning: Unused local variable 'time' before 
+/adm/daemons/annied.c line 664: Warning: Unused local variable 'warn_time' before 
+/adm/daemons/annied.c line 993: Warning: Unused local variable 'i6' before 
+/adm/daemons/annied.c line 993: Warning: Unused local variable 'reward' before 
+/adm/daemons/annied.c line 1166: Warning: Unused local variable 'gold' before 
+/adm/daemons/brd.c line 411: Warning: Unused local variable 'file' before the end of line
+/adm/daemons/brd.c line 470: Warning: Unused local variable 't' before the end of line
+/adm/daemons/questd.c line 7: Warning: Unknown #pragma, ignored. before inherit F_ANNIE;

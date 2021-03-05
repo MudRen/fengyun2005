@@ -1,0 +1,40 @@
+inherit __DIR__"ann_residence.c";
+
+void create ()
+{
+  set("floor",8);
+
+  set ("short", "怒涛阁"+CHINESE_D->chinese_number(query("floor"))+"层");
+  set ("long", @LONG
+  
+    花无数  愁无数
+    
+    花好何须愁春去  戴花持酒祝东风
+    
+    千万莫匆匆
+    
+LONG);
+        set("exits", ([
+"812" : __DIR__"userroom/club1305341580",
+"811" : __DIR__"userroom/nanyan1305169403",
+"810" : __DIR__"userroom/micoo1305168761",
+"809" : __DIR__"userroom/guyan1305167511",
+"808" : __DIR__"userroom/minyan1305167263",
+"807" : __DIR__"userroom/wcyan1305166411",
+"806" : __DIR__"userroom/huayan1301132804",
+"805" : __DIR__"userroom/zcj1300902919",
+"804" : __DIR__"userroom/zsj1300822733",
+"803" : __DIR__"userroom/hzj1300805317",
+"802" : __DIR__"userroom/zdj1300756371",
+"801" : __DIR__"userroom/xinxin1299616238",
+  "down" : __DIR__"surge"+(query("floor")-1),
+  "up" : __DIR__"surge"+(query("floor")+1), 
+]));
+        set("coor/x",-15);
+        set("coor/y",-45);
+        set("coor/z",query("floor")*40);
+        setup();
+}
+
+/*
+*/

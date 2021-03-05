@@ -1,0 +1,124 @@
+
+
+
+
+[0;1;37m────────────────────────────────[0m
+    	           [0;1;36m风云２００５常用路径[0m
+ 
+[0;1;37m────────────────────────────────[0m
+
+风云北 
+千佛 
+#al fy2qf {#4 n;nw;n;ne;#5 n;#3 e} 
+#al qf2fy {#3 w;#5 s;sw;s;se;#4 s} 
+济南 
+#al fy2jn {#4 n;nw;n;ne;#5 n;#wa 5000;#3 e;s} 
+#al jn2fy {n;#3 w;#wa 5000;#5 s;sw;s;se;#4 s} 
+兴国寺 
+#al fy2xg {#4 n;nw;n;ne;#5 n;#wa 5000;#3 e;eu;eu;nu} 
+#al xg2fy {sd;wd;wd;#3 w;#wa 5000;#5 s;sw;s;se;#4 s} 
+清平山庄 
+#al fy2qp {#4 n;nw;n;ne;#5 n;#wa 5000;#3 e;#3 s;e;#3 ne;e} 
+#al qp2fy {w;#3 sw;w;#3 n;#3 w;#wa 5000;#5 s;sw;s;se;#4 s} 
+岱庙坊 
+#al fy2dm {#4 n;nw;n;ne;#5 n;#wa 5000;#3 e;#3 s;e;#3 ne;n;#2 ne;#2 n} 
+#al dm2fy {#2 s;#2 sw;s;#3 sw;w;#3 n;#3 w;#wa 5000;#5 s;sw;s;se;#4 s} 
+泰山 
+#al fy2ts {#4 n;nw;n;ne;#5 n;#wa 5000;#3 e;#3 s;e;#3 ne;n;#2 ne;#2 n;#wa 5000;n;#2 w;#4 n;#2 e;n} 
+#al ts2fy {s;#2 e;#4 s;#2 w;s;#wa 5000;#2 s;#2 sw;s;#3 sw;w;#3 n;#3 w;#wa 5000;#5 s;sw;s;se;#4 s} 
+老屋 
+#al fy2lw {#4 n;nw;n;ne;#5 n;#wa 5000;#3 n} 
+#al lw2fy {#3 s;#wa 5000;#5 s;sw;s;se;#4 s} 
+三清 
+#al fy2sq {#4 n;nw;n;ne;#5 n;#wa 4000;#2 wu;#4 nu;#wa 3000;climb up;#wa 4000;climb up;#wa 4000;#5 n;knock door;#wa 4000;n} 
+#al sq2fy {pull door;#wa 3000;#6 s;climb down;#wa 4000;climb down;#wa 4000;#4 sd;#wa 3000;#2 ed;#wa 4000;#5 s;sw;s;se;#4 s} 
+边城到二郎山 
+#al bc2els {se;#4 e;se;e} 
+#al els2bc {w;nw;#4 w;nw} 
+边城到白云庄 
+#al bc2byz {se;#4 e;se;#2 e;#2 nu;wu;#2 wd;#2 w;n} 
+#al byz2bc {s;#2 e;#2 eu;ed;#2 sd;#2 w;nw;#4 w;nw} 
+关外到二郎山 
+#al gw2els {w;n;#13 e;#wa 3000;n;ne;nw;w;#3 nw;#2 w;nw;#wa 3000;#2 w;nw;e;#4 w;nw;#wa 2000;se;#4 e;se;e} 
+#al els2gw {w;nw;#4 w;nw;#wa 2000;se;#4 e;se;#wa 3000;#2 e;se;#2 e;#3 se;e;se;sw;s;#wa 3000;#13 w;s;e} 
+关外到白云庄 
+#al gw2byz {w;n;#13 e;#wa 3000;n;ne;nw;w;#3 nw;#2 w;nw;#wa 3000;#2 w;nw;e;#4 w;nw;#wa 2000;se;#4 e;se;#2 e;#2 nu;wu;#2 wd;#2 w;n} 
+#al byz2gw {s;#2 e;#2 eu;ed;#2 sd;#2 w;nw;#4 w;nw;#wa 2000;se;#4 e;se;#wa 3000;#2 e;se;#2 e;#3 se;e;se;sw;s;#wa 3000;#13 w;s;e} 
+
+风云东 
+武当镇 
+#al fy2wdz {#10 e;#wa 3000;#3 s;} 
+#al wdz2fy {#3 n;#wa 3000;#10 w;} 
+武当 
+#al fy2wd {#10 e;#wa 3000;#3 s;#5 s;#wa 3000;#5 su;enter} 
+#al wd2fy {out;#5 nd;#wa 3000;#5 n;#3 n;#wa 3000;#10 w} 
+黑松山 
+#al fy2hss {#10 e;#wa 3000;ne;#2 n;ne;n} 
+#al hss2fy {s;sw;#2 s;sw;#wa 3000;#10 w} 
+奈何桥 
+#al fy2nhq {#11 e;#wa 2000;#3 eu;ne;#2 e;#4 s} 
+#al nhq2fy {#4 n;#2 w;sw;#3 wd;#wa 2000;#11 w} 
+奈何桥到帝王谷 
+#al nhq2dw {s;#8 east;d;touch 恶人像;#wa 1000;#3 east;open door;#3 east;#3 s;#3 w} 
+#al dw2nhq {#3 e;#3 n;#3 west;open door;#3 west;#wa 2000;u;#8 west;n} 
+
+风云南 
+沉香镇 
+#al fy2cx {#14 s;climb tree;#wa 7000;swing west;#wa 4000;swing west;#wa 7000;#4 w} 
+#al cx2fy {#6 e;climb tree;#wa 7000;swing north;#wa 4000;swing north;#wa 7000;#12 n} 
+南海 
+#al fy2nh {#14 s;climb tree;#wa 7000;swing south;#wa 4000;swing south;#wa 7000;su;s} 
+#al nh2fy {n;nd;#2 n;climb tree;#wa 7000;swing north;#wa 4000;swing north;#wa 7000;#12 n} 
+白云 
+#al fy2by {#14 s;climb tree;#wa 7000;swing south;#wa 4000;swing south;#wa 7000;su;s;#2 s;e;give 5 silver to old zhanggui;w;s;#2 e;give qiyue to old fox;sail south;#wa 4000;sail south;#wa 4000;sail south;#wa 2000}
+#al by2fy {yell;#wa 1000;down;sail north;#wa 4000;sail north;#wa 4000;sail north;#wa 2000;#2 w;#3 n;n;nd;#2 n;climb tree;#wa 7000;swing north;#wa 4000;swing north;#wa 7000;#12 n} 
+莽林 
+#al fy2ml {#14 s;climb tree} 
+万梅 
+#al fy2wm {#14 s;climb tree;#wa 7000;swing east;#wa 4000;swing east;#wa 7000;#4 e;#wa 2000;play qin;#wa 2000;e} 
+#al wm2fy {#7 w;climb tree;#wa 7000;swing north;#wa 4000;swing north;#wa 4000;#12 n} 
+千金楼 
+#al fy2qjl {#14 s;climb tree;#wa 7000;swing east;#wa 4000;swing east;#wa 7000;#4 e;#wa 2000;play qin;#wa 2000;e;#5 e;swim} 
+#al qjl2fy {e;ne;se;ne;#3 e;n;ne;#2 e;#3 n} 
+沉香到华山 
+#al cx2hs {n;nw;ne;nw;nw;ne;nd;nw;#2 w;#2 s} 
+#al hs2cx {#2 n;#2 e;se;su;sw;se;se;sw;se;s} 
+风云到华山 
+#al fy2hs {#14 s;climb tree;#wa 7000;swing west;#wa 4000;swing west;#wa 7000;#4 w;n;nw;ne;nw;nw;ne;nd;nw;#2 w;#2 s} 
+#al hs2fy {#2 n;#2 e;se;su;sw;se;se;sw;se;s;#6 e;climb tree;#wa 7000;swing north;#wa 4000;swing north;#wa 7000;#12 n} 
+嵩山 
+#al fy2sl {#9 w;#wa 3000;nw;ne;nw;#3 nu;u} 
+#al sl2fy {d;#3 sd;se;sw;se;#wa 3000;#9 e} 
+
+风云西 
+富贵山庄 
+#al fy2fg {#11 w;#wa 3000;#5 n;ne;n;e;#2 n} 
+#al fg2fy {#2 s;w;s;sw;#5 s;#wa 3000;#11 e} 
+黄山迎客松 
+#al fy2yks {#14 s;climb tree;#wa 7000;swing west;#wa 4000;swing west;#wa 7000;#4 w;s;w;#2 wu;wd;wu;n;wu;nw;ne;nu;wd;s;se} 
+#al yks2fy {nw;n;eu;sd;sw;se;ed;s;ed;eu;#2 ed;e;n;#wa 2000;#6 e;climb tree;#wa 7000;swing north;#wa 4000;swing north;#wa 7000;#12 n} 
+风云到关外 
+#al fy2gw {#14 s; climb tree;#wa 7000;swing west;#wa 4000;swing west;#wa 7000;#4 w;#wa 1000;n;nw;northeast;nw;nw;northeast;n;nd;n;nw;nw;w;w;w;#wa 3000;#13 w;s;e} 
+#al gw2fy {w;n;#12 e;#wa 2000;s;s;su;sw;se;#wa 1000;se;sw;se;s;#wa 1000;#6 e;#wa 2000;climb tree;#wa 7000;swing north;#wa 4000;swing north;#wa 4000;#12 n} 
+风云到绿洲 
+#al fy2lz {#14 s; climb tree;#wa 7000;swing west;#wa 4000;swing west;#wa 7000;#4 w;#wa 2000;n;nw;northeast;nw;nw;northeast;n;nd;n;nw;nw;w;w;w} 
+#al lz2fy {#13 w;s;e;#wa 4000;w;n;#12 e;#wa 2000;s;s;su;sw;se;#wa 1000;se;sw;se;s;#wa 2000;#6 e;#wa 2000;climb tree;#wa 7000;swing north;#wa 4000;swing north;#wa 4000;#12 n} 
+关外到太平镇 
+#al gw2tp {w;n;#13 e;#wa 3000;n;ne;nw;w;nw;nw;nw;sw} 
+#al tp2gw {ne;se;se;se;e;se;sw;s;#wa 3000;#13 w;s;e} 
+关外到恶人谷 
+#al gw2er {w;n;#13 e;#wa 3000;n;ne;nw;w;nw;nw;nw;sw;ne;#2 w;nw;nu;nu;su;nu;l rock;nd;nd;nd;e} 
+#al er2gw {w;su;su;su;l rock;sd;nd;sd;sd;se;#2 e;sw;ne;se;se;se;e;se;sw;s;#wa 3000;#13 w;s;e} 
+关外到边城 
+#al gw2bc {w;n;#13 e;#wa 3000;n;ne;nw;w;#3 nw;#2 w;nw;#wa 3000;#2 w;nw;e;#4 w;nw} 
+#al bc2gw {se;#4 e;se;#wa 3000;#2 e;se;#2 e;#3 se;e;se;sw;s;#wa 3000;#13 w;s;e} 
+关外到乌拉泊 
+#al gw2wlb {w;n;#10 e;#wa 3000;#2 nw;ne;#4 nw;wd;wu;#wa 2000;wd;wu;#2 nw;#2 w;n} 
+#al wlb2gw {s;#2 e;#2 se;ed;eu;ed;#wa 2000;eu;#4 se;sw;#2 se;#wa 3000;#10 w;s;e} 
+塞口 
+#al fy2sk {#17 w;s} 
+#al sk2fy {n;#17 e} 
+--    	
+[0;1;37m────────────────────────────────[0m
+                    [36m按其他键退出[0m
+[0;1;37m────────────────────────────────[0m

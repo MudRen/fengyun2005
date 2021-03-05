@@ -1,0 +1,6 @@
+Microsoft Windows XP (Version 5.12500)
+
+:> 请输入命令: DIR
+
+:> 当前目录:
+

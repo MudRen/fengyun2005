@@ -1,0 +1,10 @@
+#/obj/user.c
+pawn (["2078":"蝙蝠岛文学篇","633":"粗布少林僧衣","646":"指套",])
+vpawn (["2078":500,"633":100,"646":200,])
+fpawn (["2078":"/obj/book/literate_50b.c","633":"/d/shaolin/npc/obj/monk23_cloth.c","646":"/obj/generate/commonweapon/fist.c",])
+dbase (["update":(["11_ability":1,"11_task_ability":1,"11_starrain":1,"11_fumostaff":1,"11_music":1,"11_bai-quan":1,"11_duanhun-spear":1,"11_lingxi-zhi":1,"11_tianfeng_1":1,"11_liuxing-hammer":1,"11_wuche-axe":1,]),"per":12,"env":(["brief":0,"equip_msg":2,"wimpy":50,"show_way":1,]),"fle":10,"max_kee":382,"force_factor":0,"MKS":2,"deposit":41900,"gin":360,"cor":10,"level":3,"gift_points":10,"eff_kee":382,"con":10,"int":15,"FINISH_QUEST":6,"achieved_level":3,"race":"人类","name":"云雁","potential":4644,"used_gift_points":10,"actions":,"atman":110,"riddle":([]),"distribute":(["int":5,"str":5,]),"tol":10,"max_atman":55,"combat_exp":34977,"timer":(["quest_cancel":1566029682,"xu_map":1566029358,]),"max_sen":360,"cont_quest":1,"eff_sen":360,"quest_time":1566032191,"str":15,"kee":382,"score":202,"force":226,"max_gin":360,"learned_points":1,"title":"普通百姓","max_force":113,"kar":10,"startroom":"/d/fy/fqkhotel","water":187,"dur":10,"eff_gin":360,"national":"满族","m_success":(["新手入门":1,]),"mana":110,"annie":(["skill_cost":(["literate":1,]),]),"mud_age":4088,"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"food":187,"spi":10,"max_mana":55,"quest":(["exp_bonus":28,"quest_type":"寻","quest_location":"风云城","quest":"椒盐面筋",]),"default_actions":,"id":"jefft","cps":10,"gender":"男性","bellicosity":2,"agi":10,"NO_PK":1,"birthday":1566026940,"sen":360,"age":10,])
+skills (["force":15,"spells":10,"bolomiduo":28,"magic":10,"buddhism":1,"dodge":31,"move":21,"literate":33,"parry":31,"puti-steps":1,"unarmed":23,])
+learned (["force":0,"bolomiduo":0,"buddhism":0,"dodge":0,"move":0,"literate":0,"parry":0,"puti-steps":0,"unarmed":495,])
+skill_map (["force":"bolomiduo",])
+items ([])
+autoload ({})

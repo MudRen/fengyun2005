@@ -1,0 +1,202 @@
+# The two lines defines the data format in 2 lines as
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+#  file: (/obj/treasure/npc/jacky)文件名
+#  respawn_base：	基本多久重新生成一次？
+#  respawn_random:	上面的数值有多少随机加减？
+#  type：			(npc/item)是npc还是item
+#  self_init：(1/0)，是否有自己分布的函数，否则就用spawnd的default分布
+
+file:respawn_base:respawn_random:type:self_init
+%s:%d:%d:%s:%d
+
+# 0
+/obj/treasure/npc/rock2.c
+1
+1
+npc
+0
+
+# 1
+/obj/treasure/npc/rock.c
+1
+1
+npc
+0
+
+# 2
+/obj/treasure/npc/tsang.c
+1
+1
+npc
+0
+
+# 3
+/obj/treasure/npc/gusong.c
+1
+1
+npc
+0
+
+# 4
+/obj/treasure/npc/bear.c
+3
+2
+npc
+0
+
+# 5
+/obj/treasure/npc/jin.c
+1
+1
+npc
+0
+
+# 6
+/obj/treasure/npc/curse.c
+1
+1
+npc
+0
+
+# 7
+/obj/treasure/npc/meng.c
+1
+1
+npc
+0
+
+# 8
+/obj/treasure/npc/zhu.c
+1
+1
+npc
+0
+
+# 9
+/obj/treasure/npc/tie.c
+1
+1
+npc
+0
+
+# 10
+/obj/treasure/npc/zuo.c
+1
+1
+npc
+0
+
+# 11
+/obj/treasure/npc/xiao.c
+1
+1
+npc
+0
+
+# 12
+/obj/treasure/npc/kugua.c
+1
+1
+npc
+0
+
+# 13
+/obj/treasure/npc/zhao.c
+1
+1
+npc
+0
+
+# 14
+/obj/treasure/npc/du.c
+1
+1
+npc
+0
+
+# 15
+/obj/treasure/npc/murong.c
+1
+1
+npc
+0
+
+# 16
+/obj/treasure/npc/nu.c
+1
+1
+npc
+0
+
+# 17
+/obj/treasure/npc/duf.c
+1
+1
+npc
+0
+
+# 18
+/obj/treasure/npc/mingyue.c
+1
+1
+npc
+0
+
+# 19
+/obj/treasure/obj/specialbook.c
+3
+1
+item
+1
+
+#20
+/obj/treasure/obj/iron.c
+12
+12
+item
+1
+
+#21
+/obj/treasure/obj/iron2.c
+12
+12
+item
+1
+
+#22
+/obj/treasure/obj/skeleton.c
+72
+24
+item
+1
+
+#23
+/obj/treasure/npc/sand_dragon.c
+24
+24
+npc
+0
+
+#24
+/obj/treasure/npc/narcissus.c
+1
+1
+npc
+0
+
+#25
+/obj/treasure/npc/chiyou.c
+24
+24
+npc
+0
+
+#25
+/obj/treasure/npc/oldtaoist1.c
+24
+24
+npc
+0

@@ -1,0 +1,16 @@
+#
+# When you download some files and work elsewhere, or want to work on some 
+# files for a relatively long time, please add your entry to this /AlertLog, 
+# so others won't change it.
+#
+# Also, when you want to edit some files, make sure they are not listed in
+# /AlertLog, all files listed in /AlertLog will be overwrite in the future.
+#
+#
+# Format:
+#
+# Checkout : Date (id)       # Start to lock those files
+# File     : <list of files> #
+# Checkin  : Date            # Time of finish, unlock
+#
+

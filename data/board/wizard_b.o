@@ -1,0 +1,2 @@
+#/obj/board/wizard_b.c
+dbase (["capacity":88,"name":"管理事项板","board_id":"wizard_b","no_get":1,"no_reset":1,"id":"board","notes":0,"location":"/d/wiz/hall","long":"这是一个供管理人员们相互留言的板。",])

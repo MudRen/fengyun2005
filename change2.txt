@@ -1,0 +1,294 @@
+﻿/adm/daemons/combatd
+/adm/daemons/smartd
+
+/feature/ability
+/cmds/usr/ability
+
+/std/char/npc_bas
+/std/char/npc_mid
+/std/char/npc_adv
+
+# ALL SCROLLS
+@/obj/book/class/
+
+# 皓月
+/daemon/skill/chillblade
+/daemon/skill/heart-listening
+/daemon/skill/snowforce
+/daemon/skill/starrain
+/daemon/skill/stormdance
+/obj/specials/moon/iceshield
+@/daemon/class/moon/
+/obj/weapon/blade/glacier
+@/d/xiangsi/mazenpc/
+/d/xiangsi/npc/gits
+/d/xiangsi/npc/master
+/d/xiangsi/npc/suluo
+/d/xiangsi/npc/seablue
+
+# 天枫
+@/daemon/class/ninja/
+/daemon/skill/enmeiryu
+/daemon/skill/ghosty-steps
+/daemon/skill/ghost-force
+/daemon/skill/ittouryu
+/daemon/skill/ninjitsu
+!/doc/help/menpai/tianfeng.txt
+
+# 快活林
+/cmds/skill/herbheal
+/cmds/skill/poison
+@/daemon/class/knight/
+/daemon/skill/dream-herb
+/daemon/skill/hanshan-strike
+/daemon/skill/longlife-force
+/daemon/skill/windy-steps
+/daemon/skill/xuanyuan-axe
+/feature/damage
+!/doc/help/menpai/kuaihuo.txt
+@/obj/medicine/
+/obj/book/class/dream-herb_huanmengluo_3
+/obj/book/class/dream-herb_huanmengluo_2
+/d/loulan/npc/chai
+/d/loulan/npc/qi
+/d/loulan/npc/bu
+/obj/npc/poison_spirit
+
+# 神水
+@/daemon/class/shenshui/
+/daemon/skill/nine-moon-sword
+/daemon/skill/nine-moon-claw
+/daemon/skill/nine-moon-spirit
+/daemon/skill/nine-moon-spirit
+/daemon/skill/nine-moon-force
+/daemon/skill/bai-quan
+/daemon/skill/chaos-steps
+/daemon/skill/qingpingforce
+/daemon/skill/qingpingsword
+/d/shenshui/npc/master
+/d/shenshui/npc/swordmaster
+/d/shenshui/npc/shui_tianji
+/d/shenshui/npc/obj/pipe
+/cmds/skill/jiasi
+!/doc/help/menpai/shenshui.txt
+
+
+# 三清
+@/daemon/class/taoist/
+/daemon/skill/necromancy
+/daemon/skill/scratmancy
+/daemon/skill/taoism
+/daemon/skill/gouyee
+/daemon/skill/notracesnow
+/daemon/skill/tenderzhi
+/daemon/skill/scratching
+/daemon/skill/snowshade-sword
+/obj/npc/hell_guard
+/obj/npc/heaven_soldier
+/obj/npc/taoist_guard
+/obj/npc/devil_guard
+!/doc/help/menpai/sanqing.txt
+
+# LAMA
+/d/guanwai/npc/master
+/d/guanwai/npc/yellama
+/cmds/skill/2word
+/cmds/skill/3word
+/cmds/skill/roar
+@/daemon/class/lama/
+/daemon/skill/bloodystrike
+/daemon/skill/bolomiduo
+/daemon/skill/jin-gang
+/daemon/skill/fengmo-staff
+/daemon/skill/lamaism
+/daemon/skill/kwan-yin-spells
+!/doc/help/menpai/dazhaosi.txt
+
+# NINJA
+@/daemon/class/ninja/
+/daemon/skill/enmeiryu
+/daemon/skill/ittouryu
+/daemon/skill/ninjitsu
+/daemon/skill/ghosty-force
+/daemon/skill/ghosty-steps
+
+
+# 官府
+/d/jinan/npc/doorguard
+/d/jinan/npc/governor
+/d/chenxiang/npc/governor
+/d/death/npc/yuefei
+@/daemon/class/official/
+@/daemon/class/shaolin/puti-steps/
+/obj/npc/huwei
+/obj/npc/shiwei
+/obj/npc/danei_guard
+/obj/npc/spirit_guard
+/daemon/skill/changquan
+/daemon/skill/leadership
+/daemon/skill/strategy
+/daemon/skill/puti-steps
+/daemon/skill/yue-spear
+/daemon/skill/manjianghong
+/cmds/skill/alert
+/daemon/class/baiyun/feixian-sword/tianwaifeixian
+!/doc/help/menpai/chaoting.txt
+/daemon/condition/bandaged
+/std/armor/cloth
+/obj/item/bandage
+
+# 丐帮
+/cmds/skill/beg
+/cmds/skill/steal
+/cmds/skill/inform
+/cmds/skill/juji
+/cmds/skill/inquire
+/d/taishan/zhongtian
+/d/fy/zuisheng
+/d/biancheng/smallroad4
+/obj/npc/inform_beggar
+/d/jinan/npc/master4
+/d/jinan/npc/master5
+@/daemon/class/beggar/
+/daemon/skill/begging
+/daemon/skill/dagou-stick
+/daemon/skill/doggiesteps
+/daemon/skill/dragonstrike
+/daemon/skill/huntunforce
+/daemon/skill/stealing
+!/doc/help/menpai/gaibang.txt
+
+#帝王谷
+/d/palace/npc/master
+/d/palace/npc/master2
+@/daemon/class/yinshi/
+/obj/npc/solidghost
+/daemon/skill/celecurse
+/daemon/skill/cursism
+/daemon/skill/flying-dragon
+/daemon/skill/iceheart
+/daemon/skill/qiankunwuxing
+/daemon/skill/thunderwhip
+/daemon/skill/zuixian-steps
+!/doc/help/menpai/diwanggu.txt
+/obj/npc/solidghost
+
+# 铁雪技能
+/d/resort/npc/master
+/d/resort/npc/master2
+@/daemon/class/legend/
+/daemon/skill/diesword
+/daemon/skill/dormancy
+/daemon/skill/fall-steps
+/daemon/skill/meihua-shou
+/daemon/skill/qidaoforce
+/daemon/skill/six-sense
+/daemon/skill/shortsong-blade
+!/doc/help/menpai/tiexue.txt
+/cmds/skill/juxue
+/d/resort/exerhouse
+/obj/specials/legend/ice
+/obj/specials/legend/mblade
+/obj/specials/legend/msword
+
+# 华山变动
+
+# 清风剑法系数升至1.7
+# 弹指神通系数降至1.8
+# 弹指神通可以用来招架
+# 弹指神通增加一个特技『心有千结』
+# 映月流辉每轮生效的几率降低25%，生效次数不变
+# 离人夜归分为三个阶段L150(50%),L170(70%),L200(90%)，需对应卷轴激活。
+# 战斗舞蹈自我忙乱从三减为一，但攻防在三回合内仍然会暂时下降
+
+@/daemon/class/huashan/
+/daemon/skill/qingfeng-sword
+/daemon/skill/anxiang-steps
+/daemon/skill/cloud-dance
+/daemon/skill/tanzhi-shentong
+/daemon/skill/hanmei-force
+/daemon/skill/spring-water
+/daemon/skill/zhaixin-claw
+!/doc/help/menpai/huashan.txt
+/d/huashan/npc/kumeimaster
+/d/huashan/npc/zhenzhen
+
+# 兴国
+# 改进drift_sense的公式
+# soul_sense 和 三清的vision 可以施用于队友
+# 斗战胜诀时间延长为3分钟，时间结束后不再减去增加量。
+# 增加『诛仙诀』
+@/daemon/class/bonze/
+/daemon/skill/essencemagic
+/daemon/skill/lotusforce
+/daemon/skill/dabei-strike
+/daemon/skill/nodust-steps
+/daemon/skill/cloudstaff
+/d/qianfo/npc/master
+/d/qianfo/npc/master2
+/d/qianfo/npc/master3
+!/doc/help/menpai/xingguo.txt
+
+# 富贵
+# 擒龙、
+/d/fugui/npc/guo
+/d/fugui/npc/wang
+@/daemon/class/fugui/
+/daemon/skill/skyforce
+/daemon/skill/eagle-claw
+/daemon/skill/hawk-steps
+/daemon/skill/xuezhan-spear
+/daemon/skill/henglian
+/daemon/class/GENERIC/PERFORM/yutianbigao
+/daemon/class/GENERIC/PERFORM/bafangfengyu
+!/doc/help/menpai/fugui.txt
+
+# 狼山
+/d/wolfmount/npc/buzhan
+/d/wolfmount/npc/tiezhan
+/d/wolfmount/npc/zhuwu
+@/daemon/class/wolfmount/
+/cmds/skill/xiao
+/obj/npc/wolf
+/obj/npc/shade_curse_figure
+/daemon/skill/assassin-hammer
+/daemon/skill/summonwolf
+/daemon/skill/wolf-claw
+/daemon/skill/wolf-force
+/daemon/skill/wolf-strike
+/daemon/skill/xueyeqianzong
+/daemon/skill/wolf-curse
+!/doc/help/menpai/wolfmount.txt
+
+
+# 少林
+/cmds/skill/chant
+@/daemon/class/shaolin/
+/daemon/skill/dabei-strike
+/daemon/skill/duanhun-spear
+/daemon/skill/fumostaff
+/daemon/skill/lianxin-blade
+/daemon/skill/liuxing-hammer
+/daemon/skill/puti-steps
+/daemon/skill/wuche-axe
+/daemon/skill/xiaochengforce
+/daemon/skill/xisui
+/daemon/skill/yijinjing
+/daemon/skill/yiyangzhi
+/daemon/skill/yizhichan
+/daemon/skill/zen
+!/doc/help/menpai/shaolin.txt
+/d/shaolin/npc/master_17_1
+/d/shaolin/npc/master_17_2
+/d/shaolin/npc/master_17_4
+/d/shaolin/npc/master_17_5
+/d/shaolin/npc/master_17_6
+/d/shaolin/npc/master_18
+/d/shaolin/npc/master_19
+/d/shaolin/npc/master_20
+/d/shaolin/npc/master_21
+/d/shaolin/npc/master_22
+/d/shaolin/npc/master_23
+/d/songshan/npc/damo
+/d/songshan/damocave
+

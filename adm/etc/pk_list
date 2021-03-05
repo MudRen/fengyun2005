@@ -1,0 +1,16 @@
+
+#  by Silencer@fy4 3/6/2003
+#  The two lines defines the data format
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+#  hunted: 通缉犯 id
+#  name:  通缉犯名字		
+#  start_time:  开始通缉时间
+#  reward: 悬赏
+#  initializer 发起人
+
+hunted:name:start_time:reward:initializer
+%s:%s:%d:%d:%s
+

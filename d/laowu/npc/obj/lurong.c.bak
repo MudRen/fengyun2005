@@ -1,0 +1,23 @@
+// medicine.c
+
+inherit MEDICINE;
+
+void create()
+{
+	set_name("鹿茸",({"lurong"}));
+        if( clonep() )
+                set_default_object(__FILE__);
+	else {
+	    	set("long","一包鹿茸，可以用来治疗300点外伤。\n");
+        	set("unit","盒");
+        	set("base_unit","包");
+        	set("base_value", 1000);
+        	set("base_weight",60);
+	    	set("type","cure");
+	    	set("field","kee");
+	    	set("heal_type","kee/300");
+	    	set("usage_type","herb");	
+	    	set("volumn", 2);
+	}
+	set_amount(2);
+}

@@ -1,0 +1,49 @@
+#define X_COOR 0
+#define Y_COOR 0
+#define Z_COOR 0
+#define R_FLAG 0
+#define FREE_SPACE 4
+#define OWNER "bigtie7001"
+#define TIMESTAMP "anniestamp"
+#define CLASS "bigwiz7001"
+inherit ROOM;
+inherit F_ANNIE;
+
+int restore();
+int restore_item();
+
+void create()
+{
+set("short", "SHORT_TITLE");
+set("long", @LONG
+LONG_TITLE
+LONG
+);
+        set("exits", ([
+]));
+set("objects", ([
+       ]) );
+        set("coor/x",X_COOR);
+        set("coor/y",Y_COOR);
+        set("coor/z",Z_COOR);
+        set("room_flag",R_FLAG);
+        set("owner", OWNER);
+        set("class", CLASS);
+        set("timestamp",TIMESTAMP);
+        set("free_space",FREE_SPACE);
+        setup();
+
+}
+void init()
+{
+        int flag;
+        flag = (int) query("room_flag");
+        if(flag & 1) set("valid_startroom",1);
+        if(flag & 2) set("NONPC",1);
+        if(flag & 4) set("no_fight",1);
+        if(flag & 8) set("no_magic",1);
+        if(flag & 16) set("outdoors","residence");
+
+        if (!query("already_loaded"))
+        {
+                set("already_loaded",1);

@@ -1,0 +1,310 @@
+/d/shaolin/obj/xisuihe
+/d/huashan/npc/zhenzhen
+/d/huashan/npc/snake
+/daemon/class/beggar/dagou-stick/tianxiawugou
+
+
+
+# darkfy
+/cmds/usr/quit
+/daemon/class/assassin/sharen-sword/sharenruma
+/daemon/class/assassin/lefthand-sword/duxin
+
+
+-------------------------------------------------
+
+# ability2
+
+/cmds/std/give
+/cmds/usr/ability2
+/feature/ability
+/obj/item/treasurebook
+/adm/daemons/combatd
+/daemon/skill/lingxi-zhi
+/d/shaolin/obj/bigzhong
+/obj/npc/mengyan_guard
+/adm/daemons/rewardd
+@/daemon/class/GENERIC/PERFORM/
+@/daemon/class/GENERIC/CAST/
+
+/d/fy/npc/monk
+/obj/dungeon/boss
+
+/cmds/usr/help
+!/doc/help/help_game
+!/doc/help/game/pfm_r1
+!/doc/help/game/questbuff
+
+
+-------------------------------------------------
+
+# 铁雪中流改动，不再降低攻击伤害力，但每一小时内有使用时限
+# 铁雪剑法、刀法增加两个衍生的特技
+# 修正争春中的色彩显示错误
+/adm/daemons/combatd
+/daemon/class/legend/fall-steps/zhongliu
+/daemon/skill/birdiestrike
+/daemon/skill/fall-steps
+/daemon/skill/diesword
+/daemon/skill/shortsong-blade
+/daemon/skill/qidaoforce
+@/daemon/class/legend/diesword/
+@/daemon/class/legend/shortsong-blade/
+/daemon/class/legend/fall-steps/zhongliu
+/daemon/class/legend/fall-steps/wuye
+/daemon/class/legend/meihua-shou/taunt
+
+# 狼山召唤出狼的精、神值提高
+/obj/npc/wolf
+
+# 大昭刀枪不入的使用等级降低到１５０
+/daemon/skill/jin-gang
+/daemon/class/lama/jin-gang/daoqiangburu
+
+# 提高ｓｃｏｒｅ命令中监测伤害力的上限
+/cmds/usr/score
+
+# 怒真人、蚩尢杀伤力、防护力降低
+/daemon/class/berserker/gaunforce/damageup
+/obj/treasure/npc/nu
+/d/wolfmount/npc/chiyou
+
+# adjustion on maze
+/obj/dungeon/standardmaze_room
+
+
+--------------------------------------------------
+# 修正蟠龙锁关和观音咒的说明错误
+/daemon/skill/xuezhan-spear
+/daemon/skill/kwan-yin-spells
+
+
+
+# 三清NPC的技能变化
+# smartd fixes
+# fixed a bug for smartd
+
+# 提高朝廷护卫的精、神值
+
+/obj/npc/huwei
+/daemon/class/shaolin/wuche-axe/xuanfengzhan
+/daemon/class/shaolin/yizhichan/nianhua
+/d/shaolin/npc/master_18b
+/d/taiping/npc/anzihao
+/obj/npc/spirit_guard
+/daemon/class/shaolin/puti-steps/san
+/daemon/class/GENERIC/PERFORM/npc_bolangyiji
+/daemon/class/npc/xinyue-dagger/douzhuanxingyi
+/adm/daemons/smartd
+/std/char/npc_bas
+/std/char/npc_mid
+
+# adjustion on nn=3 maze
+/d/fy/npc/monk
+/obj/dungeon/blocker
+/obj/dungeon/boss
+/obj/dungeon/standardmaze_room
+
+
+
+--------------------------------------------------
+4/17
+
+# 蚩尤和沙龙的气血减少、护甲降低、等级降低
+# 蚩尤、沙龙的谜题奖励所有在场者
+/d/wolfmount/npc/chiyou
+/d/wolfmount/npc/obj/wolf-fist
+/obj/treasure/npc/sand_dragon
+
+# 垂笠僧的任务在fail后重新刷新的奖励将计入上一次所杀死的Bandit
+/d/fy/npc/monk
+/cmds/std/entermaze
+# 垂笠僧与垂暮老人划清界限
+/adm/daemons/questd
+
+
+4/16
+
+# 修正朝廷阵法三的说明中错误
+/daemon/skill/puti-steps
+
+# 皓月
+# 不老寒泉可连续饮用，功效可由千金方加强
+# （请将原来的泉水倒掉重灌）
+/d/xiangsi/hanquan
+# 无方变幻的持续时间、ＣＤＴ、Ａｂｉｌｉｔｙ变动
+/daemon/class/moon/heart-listening/wufangbianhuan
+/daemon/skill/heart-listening
+/feature/ability
+
+# 丐帮
+# 时乘六龙的引字诀不再有ｃｄｔ限制
+/daemon/class/beggar/dagou-stick/yinzijue
+# 倏忽诀的持续时间、ＣＤＴ、Ａｂｉｌｉｔｙ变动
+/daemon/skill/huntunforce
+/daemon/class/beggar/huntunforce/shuhujue
+
+# 大昭
+# 伏虎式ｃｄｔ降低为４分钟，使用时不再有一轮忙乱
+#  降龙、疯魔式ｃｄｔ降低为１５分钟
+# ２word/3word的使用不再受战斗或忙乱与否的限制
+# 『唵』改为伤害心神而不再是精力，伤害心神前值为主
+@/daemon/class/lama/fengmo-staff/
+/daemon/class/lama/kwan-yin-spells/an
+/daemon/skill/fengmo-staff
+/cmds/skill/2word
+/cmds/skill/3word
+
+
+
+
+
+4/13
+
+
+------------------------------------------------------------------------------------
+4/11
+# Adjust difficulty of 2ppl/1ppl maze so that 1pp's duo maze is easier than 2pp's duo maze
+# kinda abusable if you know the trick
+/obj/dungeon/standardmaze_room
+
+
+
+4/10/2007
+# 守经楼失败损伤属性（类似于死亡），不再降低经验
+/d/shaolin/npc/master_17_1
+# Score 中伤害值显示方法与原来的类似，计入部分等级差别
+/cmds/usr/score
+# 武当道士松林处不再分布信件
+/d/wudang/pine3
+# 增加建筑地皮
+/p/residence/ann_residence
+
+
+4/9/2007
+# 阵法变换不再有失误几率
+/cmds/skill/perform
+# 『三才天地人阵』使用间隔提高到2分钟，每次使用可招满护卫
+# 『六子连芳阵』的使用时间独立，不再受其他阵法变换影响
+# 『七星斩将陣』提高枪法特技的伤害力
+# 『八卦金锁阵』再次使用时间降低至20分钟
+# 『九曜星宮阵』的命中率和伤害力都有较大程度的提高，增强Ability效果
+# 『十面埋伏阵』再次使用时间降低至15分钟，持续时间增加到２分钟，
+#	并可由ability进一步提高
+@/daemon/class/shaolin/puti-steps/
+/feature/ability
+/daemon/skill/puti-steps
+/daemon/skill/manjianghong
+# 修正侍卫满江红心法设置过低的错误
+/obj/npc/huwei
+/obj/npc/spirit_guard
+
+# 恢复垂笠老人的任务
+# 该任务在测试过程中，奖励和难度将在以后持续调整
+/d/fy/npc/monk
+/obj/dungeon/standardmaze
+/obj/dungeon/standardmaze_room
+/obj/dungeon/blocker
+/obj/dungeon/boss
+/std/char/npc_bas
+/cmds/std/entermaze
+/adm/daemons/questd
+
+
+# 战斗系统改进
+
+# 增加高力量对杀伤力的影响，
+# 原来力量的影响在90后逐步降低，
+# 考虑到物品改善、Research以及今后扩展需要
+# 这一上限现提高到120
+# 增大等级差异对杀伤力的影响
+# 这两个改变同时影响玩家与NPC
+# 在score命令中假设是相同等级间的伤害，所以显示数值会有所下降
+# 具体的伤害力的提高可从大沙袋上测试得到
+
+/adm/daemons/combatd
+/cmds/usr/score
+
+# BUSY技能在9轮内连续成功率下降50%，同时适用于玩家和NPC
+/adm/daemons/smartd
+
+
+
+# 修正明霞石狮子失去战斗对象的错误
+/d/cyan/npc/lion
+# 修正三清精气神符脱离战斗时的错误
+/daemon/class/taoist/scratmancy/fa
+/daemon/class/taoist/scratmancy/jing
+/daemon/class/taoist/scratmancy/qi
+/daemon/class/taoist/scratmancy/shen
+# 七情水仙不掉物品的错误
+/obj/treasure/npc/narcissus
+# 降低天机广场的刷屏现象
+/d/fy/fysquareu
+/cmds/std/look
+/cmds/usr/id
+
+# miscellaneous
+# debug in give
+/cmds/std/give
+ 
+
+# 修正沙龙错误
+/obj/treasure/npc/sand_dragon
+# 修正皓月谜题中小纸袋遗失后无法继续的错误
+/d/xiangsi/nanzoulang
+# 皓月清辉描述中武器名字的错误
+/daemon/class/moon/chillblade/qinghui
+# 修正皓月七星伴月卷轴不起作用的错误
+/daemon/class/moon/starrain/qixingbanyue
+# 修正明霞石狮子失去战斗对象的错误
+/d/cyan/npc/lion
+# 修正三清精气神符脱离战斗时的错误
+/daemon/class/taoist/scratmancy/fa
+/daemon/class/taoist/scratmancy/jing
+/daemon/class/taoist/scratmancy/qi
+/daemon/class/taoist/scratmancy/shen
+# 七情水仙不掉物品的错误
+/obj/treasure/npc/narcissus
+# 连天衰草降低心神抵抗力的错误
+/daemon/class/moon/starrain/liantianshuaicao
+
+
+
+
+# need reboot.. 
+
+# 修正pawn 物品中原文件改变造成的错误
+/feature/pawnowner
+
+
+
+# 在look命令中补上一些提高闪避招架等物品的描述
+/cmds/std/look
+# 黑色大箱子显示常用命令
+/p/residence/npc/obj/emergency
+# 修正梦甜香恢复中的一个错误
+
+# 修正富贵的李广射石与少林佛光冲突的错误
+/daemon/class/fugui/xuezhan-spear/liguangsheshi
+
+# 修正李坏消失时的一个错误
+/d/qianjin/npc/lihuai
+/d/wiz/deathroom
+
+# works on huashan
+
+# (1) pseudu-busy changes
+/adm/daemons/combatd
+/cmds/usr/score
+
+# (2) perform 
+/daemon/class/tanzhi-shentong/tanzhijinghun
+
+
+/d/cyan/peak8
+
+=============================
+/d/palace/npc/feiyu
+/obj/treasure/npc/tie
+

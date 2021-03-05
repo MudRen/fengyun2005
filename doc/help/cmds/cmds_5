@@ -1,0 +1,45 @@
+[0;1;37m────────────────────────────────[0m
+		[0;1;36m风云2005探险类指令[0m
+[0;1;37m────────────────────────────────[0m   
+
+[37m最常见的动作词（一般系统不会再作提示）[0m
+
+Ask	向NPC询问有关线索		
+Answer	回答NPC提出的问题
+Keychain　利用如意燧链执行一些特殊的功能
+
+Climb	爬山、爬树
+Dash	快跑冲入某地（树林、灌木、瀑布等）
+Dive	在水源（湖、河、瀑布等）处潜入水底
+Jump	从高处（大树、楼房等）跳下，或者跳向某地
+Pull/Push	拉/推某物
+Open/Close	开关门或阻隔物
+Pick	摘取某物
+Read	阅读某印刷品的说明
+Turn	转动某物
+Use	使用某物
+
+
+Around 	在当前地点到处转转，寻找可能的出口或暗道
+Dig	在当前地点掘地勘查，需要有特定的工具如铁镐
+Listen	在当前地点聆听周围的动静以得到线索
+Search	在当前地点仔细搜索以得到线索
+Smell	在当前地点依赖嗅觉以得到线索
+
+
+[37m其他常用的动作词（在特定环境下使用，系统会有一定提示）[0m  
+
+  Accept  Agree  Approach  Bet  Blow  Bomb  Burn  Catch
+  Charge  Chop  Combine  Cook  Cure  Cut  Dash  Enjoy 	Enter
+  Faint   Fold  	Fry/Kao  Kneel  Lian  Make 	Move  
+  Play  	Pour  Print  Pushaside 	Remake	Remember  Ring
+  Sail  Salute  Shoot  Sit  Smell  Smile  Strike  Swim  Swing
+　Throw  Tie  Touch  Train  Turn  Wash  Wave  Work  Write
+  Yong
+
+
+
+[0;1;31m具体指令的格式、应用方法可使用Help命令
+例如：	help score	就会给出score指令的详细说明[0m
+[0;1;37m────────────────────────────────[0m   
+		按任意键返回上级菜单

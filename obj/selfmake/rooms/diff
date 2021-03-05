@@ -1,0 +1,53 @@
+int valid_enter(object me)
+{
+        int flag;
+// means no enter at the beginning.
+        int enter = 0;
+    flag = (int) query("room_flag");
+// always let owner go in:
+        if((string)me->query("id") == (string)query("owner"))
+        enter = 1;
+        if(flag & 16)
+        enter = 1;
+        if(flag & 512)
+        if((string)me->query("id") == (string)query("owner"))
+        enter = 1;
+        if(flag & 1024)
+        if((string)me->query("class") == (string)query("class"))
+        enter = 1;
+        if(flag & 2048) 
+        {
+                if(strlen(query("invite")) && strsrch((string)query("invite"),"["+(string)me->query("id")+"]") != -1)
+                enter = 1;
+        }
+//      write(sprintf("%d", enter));    
+        return enter;
+}
+
+4.0
+=--------------------------------------=
+ 
+int valid_enter(object me)
+{
+        int flag;
+// means no enter at the beginning.
+        int enter = 1;
+        flag = (int) query("room_flag");
+// always let owner go in:
+        if((string)me->query("id") == (string)query("owner"))
+        enter = 0;
+        if(flag & 16)
+        enter = 0;
+        if(flag & 512)
+        if((string)me->query("id") == (string)query("owner"))
+        enter = 0;
+        if(flag & 1024)
+        if((string)me->query("class") == (string)query("class"))
+        enter = 0;
+        if(flag & 2048) 
+        if((string)query("invite") == (string)me->query("id"))
+        enter = 0;      
+        return enter;
+}
+4.1
+=------------------------------------=
