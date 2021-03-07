@@ -32,7 +32,7 @@ mixed compile_object(string file)
 
 
 protected void crash(string error, object command_giver, object current_object)
-{	
+{
 	log_file(LOG, MUD_NAME + " crashed on: " + ctime(time()) +", error: " + error + "\n");
 	log_file(LOG, "command_giver: " + (command_giver ? file_name(command_giver) : "none") + "\n");
 	log_file(LOG, "current_object: " + (current_object ? file_name(current_object) : "none") + "\n");
@@ -44,7 +44,7 @@ protected void crash(string error, object command_giver, object current_object)
 	log_file(LOG, "this_player(1): "+sprintf("%O\n", this_player(1)));
 	log_file(LOG, "this_player_command: " + (this_player() ? sprintf("%O\n",this_player()->query_last_input()) : "none"));
 	log_file(LOG, "previous_object(): "+sprintf("%O\n", previous_object()));
-	
+
 	foreach( object ob in users() )
 	{
 		reset_eval_cost();
@@ -56,7 +56,7 @@ protected void crash(string error, object command_giver, object current_object)
 
 	efun::shout("风云核心发生系统错误！\n");
 	efun::shout("重新启动风云系统。\n");
-	
+
 	foreach( object ob in users() )
 		flush_messages(ob);
 }
@@ -67,7 +67,7 @@ protected void crash(string error, object command_giver, object current_object)
 // Return:          Array of nonblank lines that don't begin with '#'
 // Note:            must be declared nosave (else a security hole)
 protected string *update_file(string file)
-{ 
+{
 	string *list;
 	string str;
 	int i;
@@ -135,7 +135,11 @@ void log_error(string file, string message)
                         if( find_object(CHANNEL_D) )
                                 CHANNEL_D->do_sys_channel("sys", user->query("id")+" "+user->query("name")+"编译时段"+error_type+"："+message);
                 }
-                tell_object(user, "\n编译时段"+error_type+"：" + message);
+                if (error_type == "错误")
+                {
+                        /* code */
+                        tell_object(user, "\n编译时段" + error_type + "：" + message);
+                }
         }
         else
         {
