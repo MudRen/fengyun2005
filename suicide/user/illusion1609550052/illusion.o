@@ -1,8 +1,0 @@
-#/obj/user.c
-alias ([])
-path ({"/cmds/std/","/cmds/usr/","/cmds/skill/",})
-dbase (["update":(["11_ability":1,"11_starrain":1,"11_task_ability":1,"11_fumostaff":1,"11_music":1,"11_bai-quan":1,"11_lingxi-zhi":1,"11_duanhun-spear":1,"11_tianfeng_1":1,"11_wuche-axe":1,"11_liuxing-hammer":1,]),"per":17,"class":"taoist","env":(["brief":0,"wimpy":50,"equip_msg":2,"show_way":1,]),"fle":10,"max_kee":289,"eff_sen":162,"once_menpai":(["taoist":1,]),"kee":244,"str":15,"score":230,"learned_points":1,"max_gin":272,"force":0,"title":"三清宫 弟子","deposit":0,"max_force":0,"gin":161,"kar":10,"level":11,"cor":10,"startroom":"/d/fy/fqkhotel","gift_points":10,"eff_kee":245,"festival_record":(["11_festival":"2020-12-25",]),"con":15,"water":106,"dur":10,"family":(["title":"弟子","privs":0,"enter_time":1608736369,"generation":7,"master_name":"清濯师太","family_name":"三清宫","master_id":"master qing",]),"national":"蒙古族","eff_gin":162,"m_success":(["新手入门":1,]),"int":10,"mana":30,"achieved_level":11,"annie":(["skill_cost":(["literate":1,]),]),"race":"人类","mud_age":1364,"name":"梦","spi":10,"potential":81333,"food":106,"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"max_mana":55,"used_gift_points":10,"id":"illusion","default_actions":,"actions":,"cps":10,"gender":"女性","atman":30,"riddle":([]),"tol":10,"distribute":(["con":5,"str":5,]),"combat_exp":168000,"max_atman":55,"max_sen":272,"agi":10,"birthday":1608736148,"NO_PK":1,"sen":161,"age":10,])
-skills (["spells":10,"literate":1,"magic":10,])
-learned (["literate":0,])
-items ([])
-autoload ({})

@@ -1,16 +1,16 @@
 /*	DOOR_ROOM by silencer@fengyun4
-***** 	To create a door in a room, 
+***** 	To create a door in a room,
 *****	you need inherit DOOR_ROOM and #include <room.h>
 	which has 	#define DOOR_CLOSED		1
 			#define DOOR_LOCKED		2
 			#define DOOR_SMASHED		4
-				
+
 A typical door format:
 
 create_door("west", "door", "檀木门", "east", DOOR_CLOSED);
 
 query_doors gives:
-  		"west" : ([ 
+  		"west" : ([
 	      			"id" : 		({ "west","檀木门","door",}) --- wierd old setup.
 	        		"door_id":	it should just be id....
 	        		"name" : 	"檀木门",
@@ -21,11 +21,11 @@ query_doors gives:
 
 	DOORS will be reset to old status during each reset.
 	More functions about LOCKED and SMASHED will be added later.
-	
+
 */
 
 
-#pragma save_binary
+// #pragma save_binary
 #include <ansi.h>
 #include <dbase.h>
 #include <room.h>
@@ -67,16 +67,16 @@ void reset() {
 // Redirect item_desc of the door to this function in default.
 string look_door(string dir)
 {
-    	
+
     	string arg;
-    	    	
+
     	if( !mapp(doors) || undefinedp(doors[dir]) )
         	return "你要看什麽？\n";
-    	
+
 	arg = dir;
 	if( !undefinedp(default_dirs[arg]) )
 			arg = default_dirs[arg];
-	
+
     	if( doors[dir]["status"] & DOOR_CLOSED )
         	return "向"+arg+"的方向有"YEL + doors[dir]["name"] + NOR"，现在关著。\n";
     	else
@@ -179,7 +179,7 @@ varargs void create_door(string dir, string door_id,mixed data,string other_side
     		set("item_desc/" + data,(: look_door, dir :) );
     		set("item_desc/" + door_id,(: look_door, dir :) );
 	}
-	
+
     	// check if the other room is set properly.
     	if( objectp(ob = find_object(exits[dir])) )
     	{
@@ -217,19 +217,19 @@ int reset_door(){
 	string *door_exit;
 //	object ob;
 	int i;
-	
+
 	if (!mapp(doors)) return 0;
 	door_exit = keys(doors);
 	if (!door_exit)	return 0;
-	
+
 	for (i = 0; i< sizeof(door_exit); i++) {
-		if (doors[door_exit[i]]["status"] != doors[door_exit[i]]["old_status"]) 
+		if (doors[door_exit[i]]["status"] != doors[door_exit[i]]["old_status"])
 			reset_single_door(door_exit[i],0);
 	}
 	return 1;
 }
 
-		
+
 
 int valid_leave(object me, string dir)
 {

@@ -1,7 +1,0 @@
-#/obj/user.c
-pawn (["330":"古松琴",])
-vpawn (["330":500,])
-fpawn (["330":"/d/qianfo/npc/obj/qin.c",])
-dbase (["update":(["11_ability":1,"11_starrain":1,"11_task_ability":1,"11_fumostaff":1,"11_music":1,"11_bai-quan":1,"12_treasurebox":1,"11_duanhun-spear":1,"11_lingxi-zhi":1,"11_tianfeng_1":1,"11_wuche-axe":1,"11_liuxing-hammer":1,]),"per":8,"env":(["brief3":"YES","no_others_cbm":"YES","brief":0,"target":"playman","equip_msg":2,"wimpy":50,"dmg_msg":"YES","savemymoney":"YES","revive":1,]),"fle":10,"max_kee":250,"deposit":60886,"gin":281,"level":2,"cor":10,"gift_points":10,"marks":(["delivery_success":1,]),"KILLED":1,"eff_kee":250,"con":15,"int":15,"FINISH_QUEST":9,"achieved_level":2,"race":"人类","name":"聂小凤","potential":3406,"used_gift_points":10,"actions":,"atman":0,"tol":10,"distribute":(["con":5,"int":5,]),"combat_exp":28406,"max_atman":0,"death_revive":1507390079,"max_sen":281,"cont_quest":3,"eff_sen":281,"quest_time":1507390555,"str":10,"kee":250,"score":62,"max_gin":281,"force":0,"title":"普通百姓","max_force":0,"kar":10,"startroom":"/d/fy/church","water":198,"dur":10,"eff_gin":281,"national":"满族","m_success":(["遨游地宫":1,"巧入万梅":1,]),"mana":0,"annie":(["古松琴":1,]),"mud_age":2013,"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"food":198,"spi":10,"max_mana":0,"quest":0,"id":"nxf","default_actions":,"cps":10,"gender":"女性","bellicosity":0,"agi":10,"NO_PK":1,"birthday":1507388720,"sen":281,"age":10,])
-items (["黑玉发簪":1,"大棉袄":1,"[1;36m相公袍[2;37;0m":1,])
-autoload ({})

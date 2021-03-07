@@ -5,27 +5,27 @@
 // 處理各種buff的監測輿實行,提供list,提供debuff能力
 
 	/* struct mapping buff:
-	object caster,	
+	object caster,
 	object who,
 	string type,	---- BUFF的种类，这是用来检验的关键参数。
 
 	提升攻防性能的参数：
-	
+
 	powerup(dodge/atk)		dodgeup		atkup
-	powerup2(damageup/armorup)	damageup	armorup		
+	powerup2(damageup/armorup)	damageup	armorup
 	parryup
-	
+
 	defdown(-parry/dodge)
 	powerdown(-dodge/atk)
 	pseudo-busy (具有被busy的parry*2/5,dodge*2/5 同时atk*2/3特点,但是仍然可以出招,给攻击性门派)
-	
+
 	提升自身属性的参数：
 	moveup			ironup (金刚类）
 	strup			cpsup
-	
+
 	haste			slow		berserk		counter(反击)
-	evade			criticalup		
-				
+	evade			criticalup
+
 	特种功能的参数：
 	feat（41特有）	damageshield	prtshield	vampiric
 	fastrecover 	forcefeat
@@ -35,30 +35,30 @@
 	stoneskin (block kee damage)
 	skillup (某样特殊技能系数提高的标识)
 	soft_damage	Target的普通攻击不伤害最大值
-	
+
 	提升精气神等的参数		gks	kee
 
 	提升ＦＭＡ等的参数		fma
-	
+
 	天机的五大神功：Quest_atk, quest_dmg, quest_atk, quest_parry, quest_kee
-	
+
 		string type2,	--- powerup 包括了dodgeup,所以powerup的pfm应该使用type2定义dodgeup.
 		string att,		--- BUFF 的大致分类（Bless 或是 Curse)
 		string name,	--- BUFF 的名字，一般武功名+特殊功能名，如 混沌功·斗寒诀
-				
+
 		stribg buff0,	--- 增加一个参数，不受special_func限制，可以用来定义一些mark
 		int buff0_c,
 		string buff1,	--- 具体的buff内容，最多可以有三个参数
 		int buff1_c,			当special_fuct定义为1时，buff1,buff2,buff3只能定义为kee/gin/sen
-		string buff2,			
+		string buff2,
 		int buff2_c,
 		string buff3,
 		int buff3_c,
-		
+
 		string shield_type,	---用于 SHIELD类的BUFF
 		int shield_amount,
 		string shield_desc,
-		
+
 		string buffup_name,
 		string buffup_type,
 		int buffup_ratio,
@@ -66,19 +66,19 @@
 		string disable_type,
 		string env_type		--- 加一个env的setup, for invisibility
 		int	env_type_c
-		
+
 		int time,			--- 持续时间
 		string buff_msg,	--- BUFF时看到的信息。
 		string warn_msg,	--- BUFF即将消失时的提示信息（可缺省）
 		string disa_msg,	--- BUFF消失时的提示信息（可缺省）
 		int disa_type,		--- BUFF消失时的提示方式	0: tell 1: message_vision
-		
+
 		function finish_fuction,	// disa_type == 2: exec this function when buffup interrupted and tell, 3 exec w.b.i and m_v.
 		int special_func			// special_func: 1 - kee/gks buffup. 2 - evasion/parry  3 - FMA buffup.
 */
 
 
-#pragma optimize all
+// #pragma optimize all
 
 #include <ansi.h>
 inherit F_DBASE;
@@ -161,12 +161,12 @@ int remove_buffup(object who,int index_num,int flag)
 	buff3=buff["buff3"];
 	buff3_c=buff["buff3_c"];
 
-	
+
 	if (buff0 && buff0 != "" && (buff0 != "block_msg/all" || who->query_temp("block_msg/all")>=1 )
 							 && (buff0 != "disable_inputs"|| who->query_temp("disable_inputs")>=1 )
 							 && (buff0 != "is_unconcious" || who->query_temp("is_unconcious")>=1 ) )
 		who->add_temp(buff0,-buff0_c);
-			
+
 	special_func = buff["special_func"];
 
 	if (special_func && special_func != 0)
@@ -243,17 +243,17 @@ int remove_buffup(object who,int index_num,int flag)
 		{
 			who->add_temp(buff1,-buff1_c);
 			if (who->query_temp(buff1) == 0)	who->delete_temp(buff1);		// Added to clear those unnecessary xx:0 which causes problems
-		}		
-		if (buff2 && buff2 != "" && (buff2 != "block_msg/all" || who->query_temp("block_msg/all")>=1 ) 
+		}
+		if (buff2 && buff2 != "" && (buff2 != "block_msg/all" || who->query_temp("block_msg/all")>=1 )
 								 && (buff2 != "disable_inputs"|| who->query_temp("disable_inputs")>=1 )
 								 && (buff2 != "is_unconcious" || who->query_temp("is_unconcious")>=1 ) )
 		{
 			who->add_temp(buff2,-buff2_c);
 			if (who->query_temp(buff2) == 0)	who->delete_temp(buff2);
 		}
-				
+
 		if (buff3 && buff3 != "" && (buff3 != "block_msg/all" || who->query_temp("block_msg/all")>=1 )
-								 && (buff3 != "disable_inputs" || who->query_temp("disable_inputs")>=1) 
+								 && (buff3 != "disable_inputs" || who->query_temp("disable_inputs")>=1)
 								 && (buff3 != "is_unconcious" || who->query_temp("is_unconcious")>=1 ))
 		{
 			who->add_temp(buff3,-buff3_c);
@@ -269,11 +269,11 @@ int remove_buffup(object who,int index_num,int flag)
 		else
 			who->delete_temp("condition_type");
 	}
-	
+
 	shield_type = buff["shield_type"];
 	shield_amount = buff["shield_amount"];
 	shield_desc = buff["shield_desc"];
-	
+
 	if (shield_type && shield_type != "")
 	{
 		// damage shield
@@ -283,11 +283,11 @@ int remove_buffup(object who,int index_num,int flag)
 		else if (buff["type"] == "healshield" && (shield_type == "kee" || shield_type == "gin" || shield_type == "sen"))
 			who->delete_temp("heal_shield");
 		// atman/force/mana absorption shield
-		else if (buff["type"] == "afm-absshield" 
+		else if (buff["type"] == "afm-absshield"
 			&& (shield_type == "atman" || shield_type = "force" || shield_type == "mana"))
 			who->delete_temp("afm_abs_shield");
 		// force shield
-		else	
+		else
 			who->delete_temp("shield_force");
 	}
 
@@ -310,16 +310,16 @@ int remove_buffup(object who,int index_num,int flag)
 	}
 	else
 		tell_object(who,YEL"你所受到的"WHT+name+YEL"的效用消失了。\n"NOR);
-			
+
 	who->delete_temp("buff_name/"+index_num);
 	who->set_temp("buff_type/"+buff["type"],0);
 	if (buff["type2"])
 		who->set_temp("buff_type/"+buff["type2"],0);
 	who->delete_temp("buff/"+index_num);
 	who->delete_temp("buff_time/"+index_num);
-	
+
 	delete("list/"+ index_num);
-	
+
 	return 1;
 }
 
@@ -340,13 +340,13 @@ int warn(object who,int index_num,int warn_time)
 	name = buff["name"];
 
 	if (warn_msg && warn_msg == "none"){
-	
-	}	
+
+	}
 	else if (warn_msg && warn_msg != "")
 		tell_object(who,warn_msg);
 	else
 		tell_object(who,YEL"你所受到的"WHT+name+YEL"的效用快要消失了。\n"NOR);
-	
+
 	call_out("remove_buffup",warn_time,who,index_num);
 	return 1;
 }
@@ -382,8 +382,8 @@ int buffup(mapping buff)
 	string disable_type, env_type, condition_type;
 	int env_type_c;
 	int special_func;
-	
-	
+
+
 	if (!mapp(buff))
 		return 0;
 
@@ -395,7 +395,7 @@ int buffup(mapping buff)
 
 	index_num = query("index");	// get buffup index
 	set("list/"+ index_num, buff["who"]->query("id") + ":  " + buff["name"]);
-	add("index",1);				
+	add("index",1);
 
 	who->set_temp("buff/"+index_num,buff);
 	who->set_temp("buff_type/"+buff["type"],index_num);
@@ -422,7 +422,7 @@ int buffup(mapping buff)
 
 	if (buff0 && buff0 != "")
 		who->add_temp(buff0,buff0_c);
-		
+
 	special_func = buff["special_func"];
 
 	if (special_func && special_func != 0)
@@ -502,18 +502,18 @@ int buffup(mapping buff)
 	env_type = buff["env_type"];
 	if (env_type && env_type != "")
 		who->set("env/"+ env_type, buff["env_type_c"]);
-	
+
 	condition_type = buff["condition_type"];
 	if (stringp(condition_type) && condition_type!="") {
 		if (who->query_temp("condition_type"))
 			who->set_temp("marks/condition_type", who->query_temp("condition_type"));
 		who->set_temp("condition_type",buff["condition_type"]);
 	}
-	
+
 	shield_type = buff["shield_type"];
 	shield_amount = buff["shield_amount"];
 	shield_desc = buff["shield_desc"];
-	
+
 	if (shield_type && shield_type != "")
 	{
 		// damage shield
@@ -531,7 +531,7 @@ int buffup(mapping buff)
 			who->set_temp("heal_shield/msg",shield_desc);
 		}
 		// atman/force/mana absorption shield
-		else if (buff["type"] == "afm-absshield" 
+		else if (buff["type"] == "afm-absshield"
 			&& (shield_type == "atman" || shield_type = "force" || shield_type == "mana"))
 		{
 			who->set_temp("afm_abs_shield/type",shield_type);
@@ -558,15 +558,15 @@ int buffup(mapping buff)
 		who->add_temp("buffup/"+buffup_name+"_amount",buffup_ratio);
 	}
 
-	
+
 	time = buff["time"];
 	warn_time = time / 40;
 	if (warn_time < 15)
 		warn_time = 15;
 	if (warn_time > time)
 		warn_time = 3;	// 3秒内消失的buff?...应该没有bah?
-				
-	
+
+
 	call_out("warn",time - warn_time,who,index_num,warn_time);
 	return 1;
 }
@@ -575,11 +575,11 @@ int check_buff(object who,string what)	// 是否已有类似BUFF?
 {
 	if (who->query_temp("buff_type/"+what))
 		return who->query_temp("buff_type/"+what);
-	
+
 	if (what == "kee")	// DWG KEE BUFFUP/??? ALL BUFFUP
 		if (who->query_temp("buff_type/gks"))
 			return who->query_temp("buff_type/gks");
-	
+
 	if (what == "gks")	// DWG KEE BUFFUP/??? ALL BUFFUP
 		if (who->query_temp("buff_type/kee"))
 			return who->query_temp("buff_type/kee");
@@ -673,7 +673,7 @@ mapping read_text(string file)
 	lines =  read_file(file);
 
 	if(lines)
-	{  
+	{
 		line = explode(lines,"\n");
 		sscanf(line[0],"stock_gold=%d",lotto_money);
 		sscanf(line[1],"round=%d",roundnum);
@@ -699,20 +699,20 @@ string write_list()
 	string outp;
 	string *mterm;
 	rm(LOTTO);
-	write_file(LOTTO,"stock_gold="+lotto_money+"\n",0); 
-	write_file(LOTTO,"round="+roundnum+"\n",0); 
-	write_file(LOTTO,"roll_round="+roll_round+"\n",0); 
-	write_file(LOTTO,"roll_result="+roll_result+"\n",0); 
-	write_file(LOTTO,"count="+countnum+"\n",0); 
-   	set_eval_limit(1); 
+	write_file(LOTTO,"stock_gold="+lotto_money+"\n",0);
+	write_file(LOTTO,"round="+roundnum+"\n",0);
+	write_file(LOTTO,"roll_round="+roll_round+"\n",0);
+	write_file(LOTTO,"roll_result="+roll_result+"\n",0);
+	write_file(LOTTO,"count="+countnum+"\n",0);
+   	set_eval_limit(1);
 	if(mapp(lotto_lst) && sizeof(lotto_lst))
 	{
 		mterm = keys(lotto_lst);
 		for(i=0;i<sizeof(mterm);i++) {
 	    	reset_eval_cost();
 			outp=mterm[i]+":"+lotto_lst[mterm[i]]+"\n";
-			write_file(LOTTO,outp,0); 
-		}       
+			write_file(LOTTO,outp,0);
+		}
 	}
 }
 
@@ -774,7 +774,7 @@ mapping lotto_checkout(string id)
 	sscanf(roll_result,"%d-%d-%d-%d-%d:%d",i1,i2,i3,i4,i5,i0);
 	r1=0;r2=0;r3=0;r4=0;r5=0;
 
-   	set_eval_limit(1); 
+   	set_eval_limit(1);
 	if(mapp(lotto_lst) && sizeof(lotto_lst))
 	{
 		mterm = keys(lotto_lst);
@@ -813,7 +813,7 @@ mapping lotto_checkout(string id)
 				map_delete(lotto_lst,mterm[i]);
 			}
 
-		}       
+		}
 	}
 	data =
 	([
@@ -838,7 +838,7 @@ mapping lotto_getlist(string id)
 	mapping player_data;
 	mapping data = ([ ]);
 
-   	set_eval_limit(1); 
+   	set_eval_limit(1);
 	if(mapp(lotto_lst) && sizeof(lotto_lst))
 	{
 		mterm = keys(lotto_lst);
@@ -850,7 +850,7 @@ mapping lotto_getlist(string id)
 			if (player_data["id"] == id)
 //				return lotto_lst;
 				data[mterm[i]]=outp;
-		}       
+		}
 	}
 	return data;
 }
@@ -885,7 +885,7 @@ int lotto_roll(object me)
 
 	// Remove Old Data.
 
-   	set_eval_limit(1); 
+   	set_eval_limit(1);
 	if(mapp(lotto_lst) && sizeof(lotto_lst))
 	{
 		mterm = keys(lotto_lst);
@@ -896,7 +896,7 @@ int lotto_roll(object me)
 			player_data=lotto_get_player_data(outp);
 			if (player_data["round"] < roundnum)
 				map_delete(lotto_lst,mterm[i]);
-		}       
+		}
 	}
 
 	// Generalt Result.
@@ -930,7 +930,7 @@ int lotto_roll(object me)
 
 	r1=0;r2=0;r3=0;r4=0;r5=0;r6=0;
 
-   	set_eval_limit(1); 
+   	set_eval_limit(1);
 	if(mapp(lotto_lst) && sizeof(lotto_lst))
 	{
 		mterm = keys(lotto_lst);
@@ -958,7 +958,7 @@ int lotto_roll(object me)
 				if (player_data["num1"] == i0 || player_data["num2"] == i0 || player_data["num3"] == i0 || player_data["num4"] == i0 || player_data["num5"] == i0 || player_data["num6"] == i0)
 					c0=1;
 			}
-			
+
 			if (c == 5)
 				r1++;
 			else if (c == 4 && c0 == 1)
@@ -971,7 +971,7 @@ int lotto_roll(object me)
 				r5++;
 //			else if (c == 2 && c0 == 1)
 //				r6++;
-		}       
+		}
 /*
 		me->add("r1",r1);
 		me->add("r2",r2);
@@ -980,13 +980,13 @@ int lotto_roll(object me)
 		me->add("r5",r5);
 		me->add("r6",r6);
 */
-		
+
 	}
         CHANNEL_D->do_channel( this_object(), "announce",
 		sprintf(HIW"本期%s\n产生了特等奖%d注，一等奖%d注，二等奖%d注，三等奖%d注，安慰奖%d注！"NOR,lotto_get_roll_result(),r1,r2,r3,r4,r5));
 
 	// Next Round Start.
-	
+
 	roundnum++;
 
 	lotto_prog();
@@ -1023,13 +1023,13 @@ int lotto_swarm_add(object me,string arg)
 		set("drop/fixed_drop", ({"xx", "xx", "xx" });
 		set("drop/bg",20);
 		set("drop/common",100);
-		set("drop/rare",0);	
+		set("drop/rare",0);
 		set("drop/amount",2);
 		set("drop/common_drop",({ "aa", "bb", "cc",	}) );
 		set("drop/rare_drop",({ "aa1", "bb1", "cc1"	}) );
 
 	drop generating process.
-	1) fixed drop, It will always drop, and randomly picked from a list 
+	1) fixed drop, It will always drop, and randomly picked from a list
 	2) subjected to a zero drop "drop/bg"
 	3) common_drop generated with chance
 	4) rate_drop generated with chance
@@ -1044,38 +1044,38 @@ void generate_drop_item(object me,object who)
 		string *list, name, announce_name,title;
 		object item, *team, killer,gold;
 
-		
+
 		if (objectp(killer = who->query("possessed")))
 			who = killer;
-					
+
 		// 确认杀人者
 		if (mapp(team=who->query_team()) && sizeof(team)) {
 			if (!stringp(name = who->query_temp("team_name")))
-				name = "无名帮";	
+				name = "无名帮";
 		} else
 			name = who->query("name");
-		
+
 		// Gold reward
 /*		if (me->query("gold")) {
 			gold = new("/obj/money/gold");
 			gold ->set_amount(me->query("gold"));
-			if (gold)	
+			if (gold)
 				gold ->move(me);
-		}*/	
-		
+		}*/
+
 		// People involved
 		if (sizeof(team)) {
 			announce_name = "";
 			for (i=0;i<sizeof(team);i++){
 				if (objectp(team[i]))
-					announce_name += team[i]->name(1) + "（" + team[i]->query("id")+"）"; 
-			}			
+					announce_name += team[i]->name(1) + "（" + team[i]->query("id")+"）";
+			}
 		}else
 			announce_name = who->name(1) + "（" + who->query("id") + "）";
 		title=me->query("title");
                 if(!title){title="";}
                 if(title){title=" "+replace_string(title,NOR,HIY)+" ";}
-                
+
 		// announce vitory
 		if (me->query("real_ph") || me->query("real_boss")) {
 			CHANNEL_D->do_sys_channel("info",sprintf("武林快讯：%s在%s中杀死了%s%s(%s) ！！！",
@@ -1085,15 +1085,15 @@ void generate_drop_item(object me,object who)
 			if (sizeof(team))
 				CHANNEL_D->do_sys_channel("info",sprintf(NOR WHT"%s成员："CYN"%s"HIY, who->query_temp("team_name"),announce_name));
 		}
-		
-		
+
+
 		// Drop generated
-				
+
 		drop = me->query("drop");
 		if (!drop || !mapp(drop))
 			return;
 
-		fd = drop["fixed_amount"];		
+		fd = drop["fixed_amount"];
 		cd = drop["common"];
 		rd = drop["rare"];
 		bg = drop["bg"];
@@ -1103,7 +1103,7 @@ void generate_drop_item(object me,object who)
 		seed = random(100)+1;
 
 		me->revive(1);
-	
+
 		if (fd) {
 			for (i=0;i<fd;i++) {
 				list = drop["fixed_drop"];
@@ -1115,7 +1115,7 @@ void generate_drop_item(object me,object who)
 			}
 		}
 
-/*			
+/*
 		if (seed <= bg)							// BG
 		{
 			me->ccommand("say RPWT lah。");
@@ -1126,13 +1126,13 @@ void generate_drop_item(object me,object who)
 			return;
 		}
 */
-		
+
 		for (i=0; i<amount; i++)
 		{
 			seed = random(cd+rd)+1;
 			if (seed > rd)						// Common drop
 			{
-				list = drop["common_drop"];	
+				list = drop["common_drop"];
 				cd = random(sizeof(list));
 	//			ccommand("say 我有一"+list[cd]+"。");
 				item = new(list[cd]);
@@ -1141,14 +1141,14 @@ void generate_drop_item(object me,object who)
 			}
 			if (seed <= rd)						// Rare Drop
 			{
-				list = drop["rare_drop"];	
+				list = drop["rare_drop"];
 				cd = random(sizeof(list));
 	//			ccommand("say 我有一"+list[cd]+"。");
 				item = new(list[cd]);
 	//			me->ccommand("say "+HIY+"我有一"+item->query("unit")+item->name()+HIY+"。"+NOR);
 				if (item)	item->move(me);
 			}
-			
+
 			if (item)
 			if (me->query("real_ph") || me->query("real_boss"))
 			{
@@ -1158,7 +1158,7 @@ void generate_drop_item(object me,object who)
 				log_file("riddle/annie_log", sprintf("[%s] %s 在%s中杀死了%s(%s)，得到了%s。\n",
 					ctime(time()), announce_name,
 					environment(me)->query("short"),
-					me->query("name"),me->query("id"),					
+					me->query("name"),me->query("id"),
 					item->query("name")));
 			}
 		}
@@ -1177,12 +1177,12 @@ int query_lottto_num(){
 
 
 /*
- 
-               (\~~~/)            
-               ( ．．)        
 
-               (_____)~．      
-   
+               (\~~~/)
+               ( ．．)
+
+               (_____)~．
+
 　　　　　　　- FengYun - 　　　
 　　　　　　annie 10.2003
 　　　dancing_faery@hotmail.com

@@ -1,7 +1,0 @@
-#/obj/user.c
-alias (["g":"give $1 to tianji",])
-dbase (["update":(["11_ability":1,"11_task_ability":1,"11_starrain":1,"11_fumostaff":1,"11_music":1,"11_bai-quan":1,"11_duanhun-spear":1,"11_lingxi-zhi":1,"11_tianfeng_1":1,"11_liuxing-hammer":1,"11_wuche-axe":1,]),"per":5,"env":(["brief":0,"equip_msg":2,"wimpy":50,"show_way":1,]),"fle":10,"max_kee":282,"deposit":0,"gin":177,"cor":10,"level":4,"gift_points":10,"eff_kee":282,"con":15,"family":(["title":"顽童","master_name":"铁少","generation":2,"enter_time":1562254064,"privs":0,"family_name":"铁雪山庄","master_id":"master tieshao",]),"int":10,"FINISH_QUEST":3,"achieved_level":4,"race":"人类","name":"傻傻哥","potential":11718,"used_gift_points":10,"actions":,"atman":110,"riddle":([]),"distribute":(["con":5,"str":5,]),"tol":10,"max_atman":55,"combat_exp":49132,"max_sen":266,"class":"legend","eff_sen":178,"quest_time":1562255371,"once_menpai":(["legend":1,]),"str":15,"kee":282,"score":227,"force":0,"max_gin":266,"learned_points":1,"title":"铁雪山庄 顽童","max_force":0,"kar":10,"startroom":"/d/fy/fyge","festival_record":([]),"water":181,"dur":10,"eff_gin":178,"national":"蒙古族","m_success":(["铁雪侠隐":1,"新手入门":1,]),"mana":110,"annie":(["skill_cost":(["literate":1,]),]),"mud_age":1804,"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"food":181,"spi":10,"max_mana":55,"quest":0,"default_actions":,"id":"ssg","cps":10,"gender":"男性","agi":10,"NO_PK":1,"birthday":1562253814,"sen":177,"age":10,])
-skills (["spells":10,"literate":1,"magic":10,])
-learned (["literate":0,])
-items ([])
-autoload ({})

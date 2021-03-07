@@ -1,4 +1,4 @@
-//#pragma optimize all
+//// #pragma optimize all
 
 #include "/adm/simul_efun/atoi.c"
 #include "/adm/simul_efun/chinese.c"

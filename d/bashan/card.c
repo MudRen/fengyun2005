@@ -1,4 +1,4 @@
-#pragma optimize all
+// #pragma optimize all
 
 #include <ansi.h>
 #include <dbase.h>
@@ -27,7 +27,7 @@ string blank_string = "□□□□□□□□□□□□□□□□□□□
 int now_player = 0;
 
 /*
-type: 
+type:
 1: Source
 2: Def/Heal
 3: Attack
@@ -36,7 +36,7 @@ type:
 */
 
 mapping *cardlist = ({
-	([      
+	([
 		"index":		1,
 		"chance":		90,
 		"name":			"鬼斧神工",
@@ -48,7 +48,7 @@ mapping *cardlist = ({
 		"bas_1_max":	10,
 		"cost_force":	3,
     ]),
-	([      
+	([
 		"index":		2,
 		"chance":		10,
 		"name":			"酒气破霄",
@@ -206,7 +206,7 @@ int show_cards(object me,int i)
 	for (j=1; j<99; j++)
 	{
 		tmp="p"+i+"/card_"+j;
-//		message_vision(tmp,me);		
+//		message_vision(tmp,me);
 		if (!query(tmp))
 			break;
 		str += j+".";
@@ -366,7 +366,7 @@ int use_card(object me,string who,string arg)
 					else
 						set(str,0);
 					break;
-			
+
 			}
 			str="%i"+i;
 			tmp=replace_string(tmp,str,(""+damage));
@@ -429,7 +429,7 @@ int do_use(string arg)
 	object me = this_player();
 	if (!query("player_1") || !query("player_2"))
 		return 0;
-	
+
 	if (!arg)
 		return 0;
 
@@ -437,11 +437,11 @@ int do_use(string arg)
 		use_card(me,"p1",arg);
 	else if (me == query("player_2") && now_player == 1)
 		use_card(me,"p2",arg);
-	else 
+	else
 		return notify_fail("现在不是你行动的时机。\n");
 
 	return 1;
-		
+
 }
 
 int skip_turn(object me,string who)
@@ -479,9 +479,9 @@ int skip_turn(object me,string who)
 	// this turn end
 	now_player = 1 - now_player;
 
-	
+
 	return 1;
-	
+
 }
 
 int do_skip(string arg)
@@ -489,16 +489,16 @@ int do_skip(string arg)
 	object me = this_player();
 	if (!query("player_1") || !query("player_2"))
 		return 0;
-	
+
 	if (me == query("player_1") && now_player == 0)
 		skip_turn(me,"p1");
 	else if (me == query("player_2") && now_player == 1)
 		skip_turn(me,"p2");
-	else 
+	else
 		return notify_fail("现在不是你行动的时机。\n");
 
 	return 1;
-		
+
 }
 
 /*

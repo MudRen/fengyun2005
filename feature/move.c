@@ -2,11 +2,11 @@
 // Copyright (C) 1995 - 2001, by Daniel Q. Yu and Tie Yu. All rights reserved.
 // This software can not be used, copied, or modified in any form without
 // the written permission from authors.
-// 
+//
 // Last modification:
 //		- 07/22/2001 by Daniel Q. Yu.
 //
-#pragma optimize
+// #pragma optimize
 
 #include <dbase.h>
 #include <room.h>
@@ -16,20 +16,20 @@
 nosave int weight = 0;
 nosave int encumb = 0, max_encumb = 0;
 
-nomask int query_encumbrance() { 
-	return encumb; 
+nomask int query_encumbrance() {
+	return encumb;
 }
 
-nomask int over_encumbranced() { 
-	return encumb > max_encumb; 
+nomask int over_encumbranced() {
+	return encumb > max_encumb;
 }
 
-nomask int query_max_encumbrance() { 
-	return max_encumb; 
+nomask int query_max_encumbrance() {
+	return max_encumb;
 }
 
-nomask void set_max_encumbrance(int e) { 
-	max_encumb = e; 
+nomask void set_max_encumbrance(int e) {
+	max_encumb = e;
 }
 
 nomask void add_encumbrance(int w) {
@@ -52,8 +52,8 @@ void over_encumbrance() {
 	tell_object(this_object(), "你的负荷过重了！\n");
 }
 
-nomask int query_weight() { 
-	return weight; 
+nomask int query_weight() {
+	return weight;
 }
 
 nomask void set_weight(int w) {
@@ -68,8 +68,8 @@ nomask void set_weight(int w) {
 
 // This is the "current" weight of an object, which is used on weight
 // checking in move().
-nomask int weight() { 
-	return weight + encumb; 
+nomask int weight() {
+	return weight + encumb;
 }
 
 varargs int move(mixed dest, int silently) {
@@ -79,7 +79,7 @@ varargs int move(mixed dest, int silently) {
 	if(query("equipped") && !this_object()->unequip()) {
 		return notify_fail("你没有办法取下这样东西。\n");
 	}
-	
+
 	// Find the destination ob for moving.
 	if(objectp(dest)) {
 		ob = dest;
@@ -92,7 +92,7 @@ varargs int move(mixed dest, int silently) {
 	} else {
 		return notify_fail(sprintf("move: invalid destination %O.\n", dest));
 	}
-	
+
 	// Check if the destination ob can hold this object.
 	// Beforce checking it, we check if the destination is environment of
 	// this_object() (or environment of its environment). If it is, then

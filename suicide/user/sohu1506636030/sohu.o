@@ -1,7 +1,0 @@
-#/obj/user.c
-alias (["uw":"unwield all","wi":"wield all",])
-dbase (["kar":10,"sen":245,"achieved_level":2,"cont_quest":7,"actions":,"FINISH_QUEST":11,"title":"普通百姓","bellicosity":52,"learned_points":1,"default_actions":,"name":"搜狐","MKS":2,"birthday":1506634952,"score":210,"deposit":44200,"potential":3000,"eff_kee":156,"food":202,"max_kee":156,"age":10,"distribute":(["int":5,"str":5,]),"kee":156,"gin":250,"water":202,"eff_gin":250,"used_gift_points":10,"last_news":1506620870,"max_gin":250,"timer":(["quest_cancel":1506635462,]),"mud_age":1017,"level":2,"id":"sohu","eff_sen":250,"combat_exp":21000,"max_sen":250,"gift_points":10,"startroom":"/d/fy/fqkhotel","festival_record":([]),"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"force":0,"tol":10,"race":"人类","annie":(["skill_cost":(["literate":1,]),]),"fle":10,"update":(["11_liuxing-hammer":1,"11_wuche-axe":1,"11_music":1,"11_duanhun-spear":1,"11_fumostaff":1,"11_tianfeng_1":1,"11_ability":1,"11_task_ability":1,"11_starrain":1,"11_lingxi-zhi":1,"11_bai-quan":1,]),"agi":10,"dur":10,"max_force":0,"int":15,"gender":"男性","cor":10,"m_success":(["铁雪侠隐":1,"新手入门":1,]),"str":15,"max_mana":0,"quest":0,"con":10,"atman":0,"mana":0,"spi":10,"riddle":([]),"per":7,"max_atman":0,"quest_time":1506635935,"env":(["brief3":"YES","equip_msg":2,"dmg_msg":1,"target":"bee","checkbrief":1,"wimpy":50,]),"cps":10,"NO_PK":1,"marks":(["delivery_success":1,]),"national":"蒙古族",])
-skills (["magic":10,"spells":10,"literate":1,])
-learned (["literate":0,])
-items ([])
-autoload ({})

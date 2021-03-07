@@ -2,12 +2,12 @@
 // Copyright (C) 1995 - 2001, by FengYun Workshop. All rights reserved.
 // This software can not be used, copied, or modified in any form without
 // the written permission from authors.
-// 
+//
 // Last modification:
 //		- 08/16/2001 by Daniel Q. Yu.
 //			* Create to replace cron.c and all scheduled events.
 
-#pragma optimize all
+// #pragma optimize all
 
 #include <ansi.h>
 #include <globals.h>
@@ -28,7 +28,7 @@ void create() {
 
 	// Start the heart_beat, after one min
 	call_out("run_heart_beat", 60);
-	
+
 	// clean up the action list, need run more often when testing.
 	call_out("clean_action_list", 3600);
 }
@@ -48,7 +48,7 @@ void add_event(int event_time, object ob, function event_function) {
 void run_heart_beat() {
 	int cur_time, i, j;
 	mixed* event_list;
-	
+
 	remove_call_out("run_heart_beat");
 	cur_time = time();
 	i = last_time + 1;
@@ -62,7 +62,7 @@ void run_heart_beat() {
 		map_delete(action_list, i);
 		for(j=0; j<sizeof(event_list); j++) {
 			if(objectp(event_list[j][0])) {
-				evaluate(event_list[j][1]);	
+				evaluate(event_list[j][1]);
 			}
 		}
 	}
@@ -76,7 +76,7 @@ int reset_heart_beat(int i) {
 void clean_action_list() {
 	mixed *event_list, *keyList;
 	int i/*, j*/, cur_time;
-	
+
 	remove_call_out("clean_action_list");
 	keyList = keys(action_list);
 	cur_time = time() - 10;
@@ -85,10 +85,10 @@ void clean_action_list() {
 			map_delete(action_list, keyList[i]);
 			continue;
 		}
-		event_list = action_list[keyList[i]];	
+		event_list = action_list[keyList[i]];
 		event_list = filter_array(event_list, (: objectp($1[0]) :));
 		if(sizeof(event_list)) {
-			action_list[keyList[i]] = event_list;	
+			action_list[keyList[i]] = event_list;
 		} else {
 			map_delete(action_list, keyList[i]);
 		}
@@ -102,17 +102,17 @@ mapping query_action_list() {
 	mixed *event_list, *keyList;
 	int i, j, k, cur_time;
 	string delay;
-	
+
 	clean_action_list();
 	cur_time = time();
 	keyList = keys(action_list);
 	if(sizeof(keyList)) {
 		for(i=0; i<sizeof(keyList); i++) {
-			event_list = action_list[keyList[i]];	
+			event_list = action_list[keyList[i]];
 			j = keyList[i] - cur_time;
 			k = keyList[i] % 1440;
 			delay = sprintf("%d hour %d min %d sec --- %d:%d", j/3600, (j%3600)/60, j%60
-					, k/60, k%60); 
+					, k/60, k%60);
 			debug_list[delay] = event_list;
 		}
 	}
@@ -125,9 +125,9 @@ mapping query_action_list() {
 
 void auto_update_objects() {
 	int delay;
-	
+
 	check_dns();
-	
+
 	delay = time() + 900 + random(900);
 	add_event(delay, this_object(), (: auto_update_objects :));
 }
@@ -137,15 +137,15 @@ void check_dns() {
 	mapping mud_list;
 	mixed *muds;
 	object dns;
-	
+
 	if(!dns = find_object(DNS_MASTER)) {
 	// dns not started, not our problem
 		return;
 	}
-	
+
 	mud_list = (mapping) DNS_MASTER->query_muds();
 	muds=keys(mud_list);
-	if(sizeof(muds)<= 1) { 
+	if(sizeof(muds)<= 1) {
 		destruct(dns);
 		call_other(DNS_MASTER,"???");
 	}

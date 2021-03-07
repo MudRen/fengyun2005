@@ -1,8 +1,0 @@
-#/obj/user.c
-alias (["g":"give $1 to tianji",])
-path ({"/cmds/std/","/cmds/usr/","/cmds/skill/",})
-dbase (["update":(["11_ability":1,"11_starrain":1,"11_task_ability":1,"11_fumostaff":1,"11_music":1,"11_bai-quan":1,"11_lingxi-zhi":1,"11_duanhun-spear":1,"11_tianfeng_1":1,"11_wuche-axe":1,"11_liuxing-hammer":1,]),"per":12,"class":"lama","env":(["brief":0,"wimpy":50,"equip_msg":2,"show_way":1,]),"fle":10,"max_kee":281,"eff_sen":156,"quest_time":1611244382,"once_menpai":(["lama":1,]),"kee":281,"str":15,"score":210,"learned_points":1,"max_gin":156,"force":0,"title":"大昭寺 藏僧","deposit":0,"max_force":0,"gin":156,"kar":10,"level":1,"cor":10,"startroom":"/d/fy/fyge","gift_points":10,"eff_kee":281,"con":15,"water":104,"dur":10,"family":(["title":"藏僧","privs":0,"enter_time":1611242776,"generation":22,"master_name":"云松","family_name":"大昭寺","master_id":"master yunsong",]),"national":"蒙古族","eff_gin":156,"m_success":(["新手入门":1,"铁雪侠隐":1,]),"int":10,"FINISH_QUEST":3,"mana":0,"achieved_level":1,"annie":(["skill_cost":(["literate":1,]),]),"race":"人类","mud_age":2079,"name":"余十五","spi":10,"potential":1750,"food":104,"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"quest":(["exp_bonus":13,"quest_type":"杀","quest_location":"帝王谷","quest":"杀人蜂",]),"max_mana":0,"used_gift_points":10,"id":"ssa","default_actions":,"actions":,"cps":10,"gender":"男性","atman":0,"riddle":([]),"tol":10,"distribute":(["con":5,"str":5,]),"combat_exp":18000,"max_atman":0,"max_sen":156,"cont_quest":3,"agi":10,"birthday":1611242522,"NO_PK":1,"sen":156,"age":10,])
-skills (["spells":10,"literate":1,"magic":10,])
-learned (["literate":0,])
-items ([])
-autoload ({})

@@ -4,7 +4,7 @@
 // the written permission from authors.
 //
 
-#pragma optimize all
+// #pragma optimize all
 #include <ansi.h>
 #include <combat.h>
 inherit F_CLEAN_UP;
@@ -63,27 +63,27 @@ int check_flee(object me, string arg)  {
 // 	mapping 	my,your;
    	object 	*enemy;
    	int	/*num,*/ fp, bp, i, level;
-   	
+
    	fp = me->query_agi();
-	
+
 	enemy = me->query_enemy();
    	i = sizeof(enemy);
    	while (i--) {
-		if( objectp(enemy[i]) && environment(enemy[i])== environment(me) && living(enemy[i])) 
+		if( objectp(enemy[i]) && environment(enemy[i])== environment(me) && living(enemy[i]))
 		{
 			if (enemy[i]->query("possessed"))		continue;
 			if (enemy[i]->query_temp("is_unconcious"))	continue;
 			// Since x5 can usually kill 1, Let it not blocking x5.
 			if (enemy[i]->query("combat_exp")< me->query("combat_exp")/5) 	continue;
 			bp = enemy[i]->query_agi();
-			if (fp > bp*2)	continue;	
+			if (fp > bp*2)	continue;
 			if (enemy[i]->is_busy())
 				bp = bp * 3/5;
 			level = F_LEVEL->get_level(me->query("combat_exp"));
 			if ( level <30) fp = fp*3;
-			else if (level < 40) fp = fp*2;		
+			else if (level < 40) fp = fp*2;
 			if((random(fp + bp) < bp)
-				|| enemy[i]->query_temp("block_all_escape")) 
+				|| enemy[i]->query_temp("block_all_escape"))
 			{
 				message_vision(YEL "$N向" + arg + "逃去！\n" NOR, me);
 				message_vision(RED "$N身影一闪，挡在了$n的面前！\n" NOR, enemy[i], me);
@@ -101,7 +101,7 @@ int main(object me, string arg) {
 	mapping exit;
 //	mapping block;
 //	int water_lvl;
-	
+
 	if( !arg ) return notify_fail("你要往哪个方向走？\n");
 
 	if( me->over_encumbranced() )
@@ -112,7 +112,7 @@ int main(object me, string arg) {
 
 	if (stringp(me->query_temp("no_move")))
 		return notify_fail(me->query_temp("no_move"));
-				
+
 	env = environment(me);
 	if(!env) return notify_fail("你哪里也去不了。\n");
 	if(env->query_temp("lock_scene"))
@@ -127,8 +127,8 @@ int main(object me, string arg) {
 			return 0;
 	}
 
-	
-//	在fy4里尚未用到此功能，需要时再说。        
+
+//	在fy4里尚未用到此功能，需要时再说。
 /*      if( mapp(block = env->query("blocks"))&& blk=block[arg]) {
 		if( objectp(blocker = present(blk, env)) &&  living(blocker))
 		return notify_fail("这个方向的路被"+ blocker->name() + "挡住了 。\n");
@@ -147,19 +147,19 @@ int main(object me, string arg) {
 		}
 //		call_other(dest, "???");
 	}
-	
+
 	if( !(obj = find_object(dest)) )
 		return notify_fail("无法移动。\n");
 
 /*	if (userp(me) && ANNIE_D->check_buff(me,"fugitive")>0
 		 && (obj->query("no_fight") || obj->query("no_death_penalty")))
 		return notify_fail("你身负重案，那些地方不敢收留你呀！\n");*/
-	
+
 	if (env)
 	if (!env->valid_leave(me, arg) ) {
 		return 0;
 	}
-	 
+
 	if( !undefinedp(default_dirs[arg]) )
 			dir = default_dirs[arg];
 		else if (dest->query("short")) dir=dest->query("short");
@@ -173,7 +173,7 @@ int main(object me, string arg) {
 			return 0;
 		}
 
-		if (me->query_temp("timer/no_escape") > time()) 
+		if (me->query_temp("timer/no_escape") > time())
 			return notify_fail("你现在不能逃跑！\n");
 
 		// 每3个heart_beat里只有一次逃跑的尝试可能成功。
@@ -186,39 +186,39 @@ int main(object me, string arg) {
 		}
 		if (me->query("timer/insurance") + 259200 < time())
 			drop_things(me);
-		
+
 		if (me->query("fleeout_message")) {
 		    mout = replace_string( me->query("fleeout_message"), "$d", dir );
 		    mout = mout + "。\n";
 		 }
-         else 
+         else
          	mout = "往" + dir + "落荒而逃了。\n";
-         if (me->query("fleein_message")) 
+         if (me->query("fleein_message"))
          	min  = me->query("fleein_message") + "。\n";
-         else  
+         else
          	min = "跌跌撞撞地跑了过来，模样有些狼狈。\n";
 
 	} else {
 // Let's add this messages here to make go and come more interesting...
 		if( mout = me->query("leave_msg"))
 			mout = "往" + dir + mout +"。\n";
-		else 
+		else
 			mout = "往" + dir + "离开。\n";
 		if( min = me->query("arrive_msg") )
 			min = min + "。\n";
 		else
 			min = "走了过来。\n";
 	}
-	
+
 	if (userp(me))
 	if (obj->query("underwater") > me->query_skill("swimming",1))
 		return notify_fail("你的游泳技能太差，没法过去呀（需要技能"+obj->query("underwater")+"级）\n");
-		
+
 	if (!userp(me) && obj->query("NONPC"))
 		return notify_fail("你不可去那里。\n");
 	else if( function_exists("valid_enter", obj) && !obj->valid_enter(me))
 		return notify_fail("你不可去别人的私宅。\n");
-		
+
 	if(!me->is_ghost())
 		if( me->query("self_go_msg") )		// this is for 自定义的不带主语的离开
 			message( "vision", me->query("leave_msg")+"\n", environment(me), ({me}) );
@@ -233,15 +233,15 @@ int main(object me, string arg) {
 				message( "vision", me->query("arrive_msg")+"\n", environment(me), ({me}) );
 			else if(me->query("env/invisibility"))
 				message("vision","似乎有什么东西闪了进来。\n",environment(me),({me}));
-			else	
+			else
 				message( "vision", me->name()+ min, environment(me), ({me}) );
 		me->set_temp("pending", 0);
-		
+
 		if(env)
 		if(environment(me) != env) {
 			all_inventory(env)->follow_me(me, arg);
 		}
-		
+
 		return 1;
 	}
 
@@ -273,7 +273,7 @@ int help(object me) {
 	write(@HELP
 [0;1;37m────────────────────────────────[0m
 [0;1;36m指令格式 : 	go <方向>[0m
-[0;1;37m────────────────────────────────[0m   
+[0;1;37m────────────────────────────────[0m
 
 让你往指定的方向移动。
 
@@ -294,7 +294,7 @@ int help(object me) {
 ５．如果逃跑者等级低于３０，ａ*２
 ６．如果逃跑者等级低于４０，ａ*２
 
-[0;1;37m────────────────────────────────[0m   
+[0;1;37m────────────────────────────────[0m
 HELP
 	);
 	return 1;

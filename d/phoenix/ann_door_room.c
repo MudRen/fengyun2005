@@ -1,6 +1,6 @@
 
 
-#pragma save_binary
+// #pragma save_binary
 
 #include <dbase.h>
 #include <ansi.h>
@@ -120,7 +120,7 @@ int do_map(string arg)
 	    room_name = environment(me)->query("short");
 
 	    room_name = ngstr(room_name);
-//	    write(room_name); 
+//	    write(room_name);
 	    map = replace_string(map,room_name,BGRN HIW""+room_name+""NOR);
 	    write (map);
 	    write ("\n\n你现在所处地点的地名为  "+ HIR""+room_name + NOR"\n");
@@ -153,18 +153,18 @@ int	do_go(string arg)
 
 
 /*	DOOR_ROOM by silencer@fengyun4
-***** 	To create a door in a room, 
+***** 	To create a door in a room,
 *****	you need inherit DOOR_ROOM and #include <room.h>
 	which has 	#define DOOR_CLOSED		1
 			#define DOOR_LOCKED		2
 			#define DOOR_SMASHED		4
-				
+
 A typical door format:
 
 create_door("west", "door", "檀木门", "east", DOOR_CLOSED);
 
 query_doors gives:
-  		"west" : ([ 
+  		"west" : ([
 	      			"id" : 		({ "west","檀木门","door",}) --- wierd old setup.
 	        		"door_id":	it should just be id....
 	        		"name" : 	"檀木门",
@@ -175,23 +175,23 @@ query_doors gives:
 
 	DOORS will be reset to old status during each reset.
 	More functions about LOCKED and SMASHED will be added later.
-	
+
 */
 
 
 
 string look_door(string dir)
 {
-    	
+
     	string arg;
-    	    	
+
     	if( !mapp(doors) || undefinedp(doors[dir]) )
         	return "你要看什麽？\n";
-    	
+
 	arg = dir;
 	if( !undefinedp(default_dirs[arg]) )
 			arg = default_dirs[arg];
-	
+
     	if( doors[dir]["status"] & DOOR_CLOSED )
         	return "向"+arg+"的方向有"YEL + doors[dir]["name"] + NOR"，现在关著。\n";
     	else
@@ -294,7 +294,7 @@ varargs void create_door(string dir, string door_id,mixed data,string other_side
     		set("item_desc/" + data,(: look_door, dir :) );
     		set("item_desc/" + door_id,(: look_door, dir :) );
 	}
-	
+
     	// check if the other room is set properly.
     	if( objectp(ob = find_object(exits[dir])) )
     	{
@@ -332,19 +332,19 @@ int reset_door(){
 	string *door_exit;
 	object ob;
 	int i;
-	
+
 	if (!mapp(doors)) return 0;
 	door_exit = keys(doors);
 	if (!door_exit)	return 0;
-	
+
 	for (i = 0; i< sizeof(door_exit); i++) {
-		if (doors[door_exit[i]]["status"] != doors[door_exit[i]]["old_status"]) 
+		if (doors[door_exit[i]]["status"] != doors[door_exit[i]]["old_status"])
 			reset_single_door(door_exit[i],0);
 	}
 	return 1;
 }
 
-		
+
 
 int valid_leave(object me, string dir)
 {
@@ -362,24 +362,24 @@ int	do_look(string arg)
 	string *dir, l;
 	mapping exits;
 	object env;
-		
+
 	exits = query("exits");
 	if (!mapp(exits) || sizeof(exits)<1)	return 0;
-		
+
 	dir = keys(exits);
 	if (member_array(arg, dir) == -1)	return 0;
-	
+
 	l=query("exits/"+arg);
 	if (l[0..0] != "/")
 		l = "/d/phoenix/base/"+query("owner")+"/"+query("area")+"/"+l;
 
 //	write("l is "+ l + "\n");
-	
+
 	env = find_object(l);
 	if (!env)	env = load_object(l);
 	if (env)	{
 		"/cmds/std/look"->look_room(me, env);
 	}	else
-		write("ERROR: no object\n"); 
+		write("ERROR: no object\n");
 	return 1;
 }

@@ -7,12 +7,12 @@
 //		- 08/21/2001 by Daniel Q. Yu.
 //			* Rewrite heart_beat function.
 //		--06/2005 by Silencer
-//			* allow update_condition() take place in busy			
+//			* allow update_condition() take place in busy
 //			* add continue_action() when ppl is unconcious, otherwise busy won't count
 
 
 
-#pragma save_binary
+// #pragma save_binary
 
 #include <action.h>
 #include <ansi.h>
@@ -86,7 +86,7 @@ void heart_beat() {
 		disable_commands();
 		return;
 	}*/
-		
+
 	if (query_temp("in_heart_beat"))
 		return;
 
@@ -94,7 +94,7 @@ void heart_beat() {
 
 	// If we are dying because of mortal wounds?
 	if( my["eff_kee"] < 0 || my["eff_sen"] < 0 || my["eff_gin"] < 0
-			|| my["kee"] < -2 * my["con"]  || my["sen"] < -2 * my["con"] 
+			|| my["kee"] < -2 * my["con"]  || my["sen"] < -2 * my["con"]
 			|| my["gin"] < -2 * my["con"]) {
 		remove_all_enemy();
 		die();
@@ -103,7 +103,7 @@ void heart_beat() {
 
 	// If we are unconcious, just return;
 	if(query_temp("is_unconcious"))  {
-		if(is_busy()) 
+		if(is_busy())
 			continue_action();
 		return;
 	}
@@ -111,7 +111,7 @@ void heart_beat() {
 	// If we're dying or falling unconcious?
 	if( my["kee"] < 0 || my["sen"] < 0 || my["gin"] < 0) {
 		remove_all_enemy();
-		if(is_busy()) 
+		if(is_busy())
 			continue_action();
 		unconcious();
 		return;
@@ -121,9 +121,9 @@ void heart_beat() {
 	if(is_busy()) {
 		continue_action();
 //		return;				// This will cause no update_condition();
-	} 
+	}
 	else
-	
+
 	{
 		// Is it time to flee?
 		if(is_fighting() && intp(wimpy_ratio = (int)query("env/wimpy"))
@@ -152,7 +152,7 @@ void heart_beat() {
 			my["sen"]--;
 			attack();
 		}
-	
+
 		// chat() may do anything -- include destruct(this_object())
 		// objectp check is added for some strange this_object() return 0 reason.
 		// If you want NPC to do something in busy... inherit SMART_NPC
@@ -171,9 +171,9 @@ void heart_beat() {
 	}
 
 	cnd_flag = update_condition();
-	
+
 	if (!this_object())	return;
-		
+
 	if (!living(this_object())) return;
 
 	// 讓我們在這裡檢測player的異常狀態。
@@ -219,18 +219,18 @@ int visible(object ob)
 //	This period will last 0-2sec after you escape from fight due to heart-beat.
 	if (ob->is_fighting())	return 1;
 
-/*		
+/*
 	// 下面两个情况，既然战斗了，wiz就不必要再隐身了。
 	// 战斗中的双方始终可见
 	if (is_fighting(ob) || ob->is_fighting(this_object()))	return 1;
-	
+
 	// 玩家对所有战斗中的玩家可见
-	if (userp(this_object()) && userp(ob) && ob->is_fighting())	return 1;	
+	if (userp(this_object()) && userp(ob) && ob->is_fighting())	return 1;
 */
-	
+
 	if( intp(invis) && (invis > lvl) )
 		return 0;
-	
+
 	if( ob->is_ghost() ) {
 		if( is_ghost() ) return 1;
 		if( query_temp("apply/astral_vision") ) return 1;

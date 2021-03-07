@@ -2,9 +2,9 @@
 // Copyright (C) 1995 - 2001, by FengYun Workshop. All rights reserved.
 // This software can not be used, copied, or modified in any form without
 // the written permission from authors.
-// 
+//
 
-#pragma optimize all
+// #pragma optimize all
 
 #include <ansi.h>
 inherit F_DBASE;
@@ -18,7 +18,7 @@ void create() {
 void setup_unique(object obj) {
 	int max_num;
 	string id;
-	
+
 	if(!clonep(obj)) {
 		return;
 	}
@@ -37,7 +37,7 @@ void setup_unique(object obj) {
 
 void remove_unique(object obj) {
 	string id;
-	
+
 	if(!clonep(obj)) {
 		return;
 	}

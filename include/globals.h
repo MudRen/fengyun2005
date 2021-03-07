@@ -5,19 +5,19 @@
 // (See	config file	of driver)
 
 // Directories
-// globals.h 
+// globals.h
 // this file will be automatically included by the driver
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
 #define SAVE_EXTENSION __SAVE_EXTENSION__
-//#pragma optimize 
+//// #pragma optimize
 
 #define private protected
 #define static nosave
 
 
-#define DEBUG_CHANNEL(x) CHANNEL_D->	do_sys_channel( "sys", "debug："+(string)x) 
+#define DEBUG_CHANNEL(x) CHANNEL_D->	do_sys_channel( "sys", "debug："+(string)x)
 #define	COMMAND_DIR				"/cmds/"
 #define	CONFIG_DIR				"/adm/etc/"
 #define	DATA_DIR				"/data/"
@@ -67,7 +67,7 @@
 #define REWARD_D				"/adm/daemons/rewardd"
 #define SPAWN_D					"/adm/daemons/spawnd"
 //节日使者
-#define FESTIVAL_D              "/adm/daemons/festivald" 
+#define FESTIVAL_D              "/adm/daemons/festivald"
 
 //added by suu for quest npc
 #define QUESTNPC_D			"/adm/daemons/questnpcd"
@@ -78,7 +78,7 @@
 //added by annie for buff/debuff control
 #define ANNIE_D					"/adm/daemons/annied"
 
-//added by annie. 
+//added by annie.
 //0:Local 1:Develop 2:Test 3:Live
 #define SERV					3
 #define LOCAL					0
@@ -149,7 +149,7 @@
 #define	PIGROOM					"/std/room/pigroom"
 #define DOOR_ROOM				"/std/room/door_room"
 #define NEWBIE_HELP_ROOM		"/std/room/startroom"
-#define XROOM 					"/std/room/xroom" 
+#define XROOM 					"/std/room/xroom"
 
 #define	SKILL					"/std/skill"
 #define	SSERVER					"/std/sserver"
@@ -204,7 +204,7 @@
 //#define	SAVE_EXTENSION			".o"
 // Profiling switches
 //
-// If you changed any of these defines,	you'll need	reboot to make it 
+// If you changed any of these defines,	you'll need	reboot to make it
 // in effect.
 #undef PROFILE_COMMANDS
 

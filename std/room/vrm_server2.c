@@ -41,7 +41,7 @@
  * 据自己的系统考量调整。                             *
  ******************************************************/
 
-#pragma optimize
+// #pragma optimize
 
 #define UP		32	// damn,ansi.h already defined U
 #define D		16
@@ -158,10 +158,10 @@ private void refresh_maze();
 // 调试信息。
 private string mroom_fname(int x,int y,int z)
 	{ return sprintf("%s/%d/%d/%d",base_name(this_object()),x,y,z);}
-	
+
 int query_maze_length(){
 	return l;
-}	
+}
 
 int query_maze_height(){
 	return m;
@@ -172,7 +172,7 @@ int query_maze_altitude(){
 }
 
 // 重置全域变量.
-private void refresh_vars() 
+private void refresh_vars()
 {
 	newpath = ({});
 	all = 0;
@@ -188,10 +188,10 @@ private int check_vars()
 
 	if( (m < 2) || m > MAX_LONG )
 		return 0;
-		
+
 	if( h > MAX_LONG )
 		return 0;
-		
+
 	inherit_rooms -=({0});
 	if( !n = sizeof(inherit_rooms) )
 		return 0;
@@ -360,10 +360,10 @@ private void create_maze()
 	for(i=0;i<l;i++)
 		for(j=0;j<m;j++)
 			all[i][j] = allocate(h);	// 建立数组.
-	
+
 	CHANNEL_D->do_sys_channel("sys",sprintf("Start buliding maze"));
 	CHANNEL_D->do_sys_channel("sys",sprintf("Start buliding maze in %s",base_name(this_object())));
-	
+
 	enter = new(class coordinate);
 
 	switch (entry_dir)
@@ -558,12 +558,12 @@ private void create_maze()
 
 	// 迷宫创建完毕。
 	maze_built = 1;
-	
+
 	if (refresh_delay > 0  )
 	{
 		EVENT_D->add_event(time()+refresh_delay,this_object(),(:refresh_maze:));
 	}
-	
+
 	// 绘制完成的迷宫地图。
 	// 地图文件为同目录下同名的'.map' 文件，
 	// 绘制地图也许可利于区域巫师的工作。
@@ -817,7 +817,7 @@ void remove()
 	string fname = base_name(this_object());
 	object m_room;
 	int x,y,z;
-	
+
 	for(x=0;x<l;x++)
 		for(y=0;y<m;y++)
 			for(z=0;z<h;z++)
@@ -863,7 +863,7 @@ int has_player()
 			}
 		}
 	}
-				
+
 	if(objectp(m_room = find_object(sprintf("%s/entry",fname))))
 		if (player_in(m_room))
 			return 1;
@@ -891,7 +891,7 @@ int player_in(object m_room)
 
 //	把所有玩家从迷宫里搬走。
 int remove_all_players(object maze_room,object exile_room,string remove_msg){
-	
+
 	string fname = base_name(maze_room);
 	object m_room,*inv;
 	int x,y,z,k,num,length,height,altitude;
@@ -899,8 +899,8 @@ int remove_all_players(object maze_room,object exile_room,string remove_msg){
 	length=maze_room->query_maze_length();
 	height=maze_room->query_maze_height();
 	altitude=maze_room->query_maze_altitude();
-	
-	
+
+
 	for(x=0;x<length;x++)
 	{
 		for(y=0;y<height;y++)
@@ -912,30 +912,30 @@ int remove_all_players(object maze_room,object exile_room,string remove_msg){
 					inv=all_inventory(m_room);
 					num=sizeof(inv);
 					while(num--) {
-						if (userp(inv[num])) 
-							inv[num]->move(exile_room);	
+						if (userp(inv[num]))
+							inv[num]->move(exile_room);
 						if (inv[num]->query("possessed"))
 						if (userp(inv[num]->query("possessed")))
-							inv[num]->move(exile_room);	
-					}	
-				}	
+							inv[num]->move(exile_room);
+					}
+				}
 			}
 		}
 	}
-				
+
 	if(objectp(m_room = find_object(sprintf("%s/entry",fname)))) {
 		tell_room(m_room,remove_msg);
 		inv=all_inventory(m_room);
 		num=sizeof(inv);
 		while(num--) {
 			if (userp(inv[num]))
-				inv[num]->move(exile_room);	
+				inv[num]->move(exile_room);
 			if (inv[num]->query("possessed"))
 			if (userp(inv[num]->query("possessed")))
-				inv[num]->move(exile_room);	
+				inv[num]->move(exile_room);
 		}
 	}
-	
+
 	if(objectp(m_room = find_object(sprintf("%s/exit",fname))))	{
 		tell_room(m_room,remove_msg);
 		inv=all_inventory(m_room);
@@ -945,10 +945,10 @@ int remove_all_players(object maze_room,object exile_room,string remove_msg){
 				inv[num]->move(exile_room);
 			if (inv[num]->query("possessed"))
 			if (userp(inv[num]->query("possessed")))
-				inv[num]->move(exile_room);		
+				inv[num]->move(exile_room);
 		}
 	}
-	
+
 }
 
 
@@ -964,7 +964,7 @@ void set_maze_long(int mlong, int mheight,int maltitude)
 		maltitude = 0;
 
 	// 最小为 5，再小了没什么意义。
-	if( (mlong < 2) || mlong > MAX_LONG 
+	if( (mlong < 2) || mlong > MAX_LONG
 		|| mheight<2 || mheight > MAX_LONG || maltitude > MAX_LONG)
 		return;
 
@@ -1005,14 +1005,14 @@ void set_entry_dir(string dir)
 {
 	if(!stringp(dir))
 		return;
-	
+
 	if (dir == "maze_enter")
 	{
 		dir="north";
 		private_flag=1;
 	}
 	else
-		private_flag=0;	
+		private_flag=0;
 
 	// 入口方向的合法性检查.
 	if(member_array(dir,valid_dirs) == -1)
@@ -1176,13 +1176,13 @@ void set_outdoors(int outd)
 void set_maze_refresh(int m_refresh)
 {
 	if (intp(m_refresh) && m_refresh>=1)
-		refresh_delay = m_refresh; 
+		refresh_delay = m_refresh;
 }
 
 /*	*** 以上是预设迷宫参数的接口函数 ***
 
-		
-		
+
+
 		***************** 以下是创建迷宫的主函数 ************************
 
 
@@ -1195,7 +1195,7 @@ void set_maze_refresh(int m_refresh)
 	1。迷宫创建文件 -- 定义迷宫大小，方位，基本描述，迷宫房间文件
 	2。迷宫房间定义文件--迷宫房间的具体定义
 	3。本文件
-	
+
 // 	创造迷宫房间，由 VIRTUAL_D 调用。*/
 
 nomask object query_maze_room(string str)
@@ -1203,7 +1203,7 @@ nomask object query_maze_room(string str)
 	int idx,idx2,x,y,z,exits;
 	object ob;
 	string f;
-	
+
     	seteuid(ROOT_UID);
 	seteuid(geteuid());
 	if( previous_object() && (geteuid(previous_object()) != ROOT_UID) )
@@ -1219,7 +1219,7 @@ nomask object query_maze_room(string str)
 	if(str == "entry")	// 迷宫入口房间
 	{
 		f = inherit_rooms[random(sizeof(inherit_rooms))];
-                                               
+
 		//ob = new(f);
 		ob = load_object(f);
 		if(!ob)	return 0;
@@ -1270,15 +1270,15 @@ nomask object query_maze_room(string str)
 			case "north":	ob->set("coor/x",link_entry_room_x + (leave->x - enter->x)*s);
 					ob->set("coor/y",link_entry_room_y - m*s -2*s);
 					ob->set("coor/z",link_entry_room_z);
-					break;		
+					break;
 			case "up":	ob->set("coor/x",link_entry_room_x + (leave->x - enter->x)*s);
 					ob->set("coor/y",link_entry_room_y + (leave->y - enter->y)*s);
 					ob->set("coor/z",link_entry_room_z - h*s -2*s);
-					break;		
+					break;
 			case "down":ob->set("coor/x",link_entry_room_x + (leave->x - enter->x)*s);
 					ob->set("coor/y",link_entry_room_y + (leave->y - enter->y)*s);
 					ob->set("coor/z",link_entry_room_z + h*s +2*s);
-					break;		
+					break;
 		}
 		ob->set("exit_room",1);
 		ob->setup_exit_room();
@@ -1309,7 +1309,7 @@ nomask object query_maze_room(string str)
 	ob->set("virtual_room",1);
 	ob->set("perma_exist",1);
 	ob->set("no_fly",1);
-	
+
 //	根据入口坐标和迷宫大小来定义房间坐标
 	switch (entry_dir) {
 		case "east":	ob->set("coor/x",x*s-l*s+link_entry_room_x-s);
@@ -1336,8 +1336,8 @@ nomask object query_maze_room(string str)
 				ob->set("coor/y",y*s-to_int(m/2)*s + link_entry_room_y);
 				ob->set("coor/z",z*s+link_entry_room_z+s);
 				break;
-	}		
-				
+	}
+
 
 //	setting exits directions:
 	if(exits&W)
@@ -1360,18 +1360,18 @@ nomask object query_maze_room(string str)
 		ob->set(sprintf("exits/%s",reverse_dir[entry_dir]),
 			sprintf("%s/exit",base_name(this_object())));
 
-	
+
 	if(is_outdoors)		ob->set("outdoors",1);
 
 //	指向迷宫房间定义文件来设定房间描述
-	
-	f->setup_room_desc(ob,l,m,x,y,z);	
-	
-//	指向迷宫房间定义文件来设定怪物/物品	
+
+	f->setup_room_desc(ob,l,m,x,y,z);
+
+//	指向迷宫房间定义文件来设定怪物/物品
 	f->setup_npc_obj(ob,l,m,x,y,z);
-	
+
 //	指向迷宫房间定义文件来设定物品描述
-	
+
 	return ob;
 }
 

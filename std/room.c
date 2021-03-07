@@ -2,17 +2,17 @@
 // Copyright (C) 1995 - 2001, by FengYun Workshop. All rights reserved.
 // This software can not be used, copied, or modified in any form without
 // the written permission from authors.
-// 
+//
 
 //	11/10/2002	removed room_item_force_refresh to save system load, only 5-6 rooms use that one.
 //	11/13/2002	removed return_home to simplify code.
 //	11/19/2002	added a function to check if there is user in room.
-//			-- by silencer@fy4 
+//			-- by silencer@fy4
 //	3/12/2003	Major change in room, removed all door-related function to DOOR_ROOM
-//			-- by silencer@fy4 
+//			-- by silencer@fy4
 
 
-#pragma save_binary
+// #pragma save_binary
 
 #include <dbase.h>
 
@@ -26,13 +26,13 @@ void create() {
 	}
 }
 
-int query_max_encumbrance() { 
-	return 100000000000; 
+int query_max_encumbrance() {
+	return 100000000000;
 }
 
 object make_inventory(string file) {
 	object ob;
-	
+
 	ob = new(file);
 	if(objectp(ob)) {
 		ob->move(this_object());
@@ -46,13 +46,13 @@ void reset() {
 	string *list;
 	int i,j;
 	object *inv;
-	
+
     	// I put this one here to get rid the function of trash collecting...Tie
     	// since the quest feature, rooms hardly get swapped out.
 	inv = all_inventory();
 	for(i=sizeof(inv)-1; i>=0; i--) {
-		if(!inv[i]->is_character() 
-				&& inv[i]->query("startroom") !=base_name(this_object()) 
+		if(!inv[i]->is_character()
+				&& inv[i]->query("startroom") !=base_name(this_object())
 				&& !inv[i]->query("no_reset")) {
 			destruct(inv[i]);
 		}
@@ -60,7 +60,7 @@ void reset() {
 
 	//
 	// Check loaded objects to match the objects specified in "objects"
-	// while query("objects") is 
+	// while query("objects") is
 	// ([ <object filename>: <amount>, ..... ])
 	// and query_temp("objects") is
 	// ([ <object filename>: ({ob1, ob2, ...}), .... ])
@@ -73,7 +73,7 @@ void reset() {
 	if(!mapp(ob = query_temp("objects"))) {
 		ob = allocate_mapping(sizeof(ob_list));
 	}
-	
+
 	list = keys(ob_list);
 	for(i=0; i<sizeof(list); i++) {
 		// Allocate an array if we have multiple same object specified.
@@ -88,17 +88,17 @@ void reset() {
 					continue;
 				}
 
-/* 强制再生在游戏中仍然存在的物件，--- 使用非常有限，移到特定的room文件 Silencer。 				
+/* 强制再生在游戏中仍然存在的物件，--- 使用非常有限，移到特定的room文件 Silencer。
 
 				else if (  query("refresh_all_items") &&  environment(ob[list[i]]) != this_object() ) {
 					ob[list[i]] = make_inventory(list[i]);
 					continue;
 				}					*/
-				
+
 // 呼唤NPC回归出生地，一般只有两类NPC需要，
 // random_move（）的见 std/char/npc 处理。.注意Riddle NPC的处理。
-// pursuer 的不多，就直接在NPC里写个return_home来处理。--- Silencer 				
-/*				if(environment(ob[list[i]]) != this_object() 
+// pursuer 的不多，就直接在NPC里写个return_home来处理。--- Silencer
+/*				if(environment(ob[list[i]]) != this_object()
 						&& ob[list[i]]->is_character()) {
 					if(!ob[list[i]]->return_home(this_object())) {
 						add("no_clean_up", 1);
@@ -140,7 +140,7 @@ int usr_in()
 {
 	object *inv = deep_inventory(this_object());
 	int i = sizeof(inv);
-	
+
 	while (i--) {
 		if(userp(inv[i])) return 1;
 	}
@@ -178,4 +178,3 @@ int is_room()
 {
 	return 1;
 }
-

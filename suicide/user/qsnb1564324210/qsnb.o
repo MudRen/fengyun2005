@@ -1,9 +1,0 @@
-#/obj/user.c
-hate_list ([])
-hate_list_2 ([])
-alias (["gtj":"give $* to tianji",])
-dbase (["update":(["11_ability":1,"11_starrain":1,"11_task_ability":1,"11_fumostaff":1,"11_music":1,"11_bai-quan":1,"12_treasurebox":1,"11_lingxi-zhi":1,"11_duanhun-spear":1,"11_tianfeng_1":1,"11_wuche-axe":1,"11_liuxing-hammer":1,]),"per":7,"env":(["brief":0,"target":"tangzi","wimpy":40,"equip_msg":2,"show_way":1,]),"fle":10,"max_kee":665,"eff_sen":606,"quest_time":1564323939,"kee":665,"str":15,"score":230,"MKS":11,"learned_points":1,"max_gin":606,"force":384,"title":"普通百姓","deposit":182900,"max_force":192,"gin":606,"kar":10,"level":6,"cor":10,"startroom":"/d/fy/fqkhotel","marks":(["delivery_success":1,]),"gift_points":10,"eff_kee":665,"festival_record":([]),"con":15,"water":205,"dur":10,"national":"蒙古族","eff_gin":606,"m_success":(["巴山之秘":1,"新手入门":1,"巧入万梅":1,"明霞之秘":1,]),"int":10,"FINISH_QUEST":13,"mana":450,"achieved_level":6,"annie":(["skill_cost":(["literate":1,]),"古松琴":1,]),"race":"人类","mud_age":2928,"name":"千水凝冰","spi":10,"potential":8000,"food":205,"channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"quest":(["exp_bonus":50,"quest_type":"杀","quest_location":"泰山","quest":"毒蛇",]),"max_mana":225,"used_gift_points":10,"id":"qsnb","default_actions":,"actions":,"cps":10,"gender":"男性","atman":450,"riddle":([]),"tol":10,"distribute":(["con":5,"str":5,]),"combat_exp":69500,"max_atman":225,"bellicosity":64,"max_sen":606,"cont_quest":13,"agi":10,"birthday":1564321027,"NO_PK":1,"sen":606,"age":10,])
-skills (["force":42,"sword":31,"dodge":31,"move":21,"spells":41,"parry":75,"literate":22,"magic":41,"unarmed":35,])
-learned (["force":0,"sword":0,"dodge":0,"spells":0,"move":0,"parry":0,"literate":0,"magic":0,"unarmed":0,])
-items ([])
-autoload ({})

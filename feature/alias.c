@@ -8,9 +8,9 @@
 mapping alias;
 
 nosave string last_input, orginal_input;
-nosave string *history, last_input;
+nosave string *history;
 nosave int last_cmd, repeat_cnt = 0;
-nosave int last_check, maxcom  = 0; 
+nosave int last_check, maxcom  = 0;
 string process_input(string str);
 string query_last_input() { return last_input; }
 
@@ -69,7 +69,7 @@ nomask int process_input_do(string verb, string args)
 }
 
 string process_input(string str)
-{     
+{
 	 string verb, doargs;
 	string *args, cmd, argstr;
 	int i, j;
@@ -85,14 +85,14 @@ string process_input(string str)
 	if( str==last_input ) {
 		repeat_cnt++;
 /*
-		if((repeat_cnt > MAX_REPEAT)&& !wizardp(this_object()) 
+		if((repeat_cnt > MAX_REPEAT)&& !wizardp(this_object())
 		&& !this_object()->is_fighting()) {
 		message_vision("忽然一阵闪光罩住了$N。\n",this_object());
         	this_object()->set_temp("last_location", base_name(environment(this_object())));
 		tell_object(this_object(),"你被怀疑为机器人．\n");
         	room = load_object(AREA_WIZ"courthouse");
         	this_object()->move(room);
-		repeat_cnt = 0;	
+		repeat_cnt = 0;
 		}
 */
 	} else {
@@ -131,34 +131,34 @@ string process_input(string str)
 	   if( sscanf(str, "%s %s", verb, doargs) != 2 ) verb = str;
 
         if( !doargs || !doargs[0] ) doargs = 0;
-        
+
         if( process_input_do(verb, doargs) ) return "";
-        last_input = (string)ALIAS_D->process_global_alias(str);     
+        last_input = (string)ALIAS_D->process_global_alias(str);
 	return last_input;
 }
 
 int set_alias(string verb, string replace)
 {
 	if( !replace ) {
-		if(mapp(alias) ) 
+		if(mapp(alias) )
 		{
 			if (member_array(verb, keys(alias))!= -1)
 			{
 				map_delete(alias, verb);
-				write(sprintf("去除 alias ：%s \n", verb));	
+				write(sprintf("去除 alias ：%s \n", verb));
 			}
 			else
-				write(sprintf("你不曾设置这个 alias ：%s \n", verb));	
+				write(sprintf("你不曾设置这个 alias ：%s \n", verb));
 		}
 		return 1;
 	} else {
 		if( !mapp(alias) ) alias = ([ verb:replace ]);
 		else if( sizeof(alias) > MAX_ALIASES )
 			return notify_fail("您设定的 alias 太多了，请先删掉一些不常用的。\n");
-		else 
+		else
 		{
 			alias[verb] = replace;
-			write(sprintf("设定：%s ＝　%s \n", verb,replace));	
+			write(sprintf("设定：%s ＝　%s \n", verb,replace));
 		}
 		return 1;
 	}

@@ -2,18 +2,18 @@
 // Copyright (C) 1995 - 2001, by FengYun Workshop. All rights reserved.
 // This software can not be used, copied, or modified in any form without
 // the written permission from authors.
-// 
+//
 
-#pragma optimize all
+// #pragma optimize all
 inherit F_ANNIE;
 #include <ansi.h>
 
 string wait_period(int timep);
-int basic_quest_reward(int exp); 
+int basic_quest_reward(int exp);
 int special_reward(object me, string qname);
 void give_reward(object who,object accomplisher, mapping quest);
 void log_quest(object me, object owner, mapping quest, int reward_exp, int used_time, int base);
-int holiday_bonus = 300;   	// 05/20/2008 fixed to x2 reward  注：额外的任务奖励。 
+int holiday_bonus = 300;   	// 05/20/2008 fixed to x2 reward  注：额外的任务奖励。
 int chance = 20;
 int level_chance = 80;
 
@@ -23,7 +23,7 @@ void create() {
 
 
 int query_holiday(){
-	return holiday_bonus;	 
+	return holiday_bonus;
 }
 
 int set_holiday(int bonus){
@@ -37,7 +37,7 @@ int set_holiday(int bonus){
 int accept_quest_object(object who, mixed ob, object me)
 {
     int val, delay, i, gr;
-    string name; 
+    string name;
     object* mem;
     mapping quest;
 
@@ -49,11 +49,11 @@ int accept_quest_object(object who, mixed ob, object me)
 	if (objectp(ob)) name = ob->query("name");
 	else if (stringp(ob))	name = ob;
 	else	return 0;
-		
+
     mem = pointerp(who->query_team()) ? who->query_team() : ({ who });
     for(i=0; i<sizeof(mem); i++) {
 	if (mem[i]) {
-	    if(mapp(quest = mem[i]->query("quest")) 
+	    if(mapp(quest = mem[i]->query("quest"))
 	      && name == quest["quest"]
 	      && (string)(quest["quest_type"]) == "寻"
 	      && (time() - mem[i]->query("quest_time") <= 900)) {
@@ -77,19 +77,19 @@ int give_quest(object who, mapping me)
     string qstr;
     object* mem;
 
-    //	以防万一    
+    //	以防万一
     if(who->is_ghost() || who->is_zombie()) {
-	tell_object(who,"鬼魂不可要任务，请立即报告巫师，否则以利用BUG处理。\n");	
+	tell_object(who,"鬼魂不可要任务，请立即报告巫师，否则以利用BUG处理。\n");
 	return notify_fail("\n");
     }
 
-    //	现有的Quest还没有完成	
-    time = who->query("quest/duration")>1 ? who->query("quest/duration") : 900; 
+    //	现有的Quest还没有完成
+    time = who->query("quest/duration")>1 ? who->query("quest/duration") : 900;
     if(qex =  who->query("quest") && (time() - who->query("quest_time") < time)) {
 		return 0;
     }
 
-    //	Cancel后的下一个时间还没到。	
+    //	Cancel后的下一个时间还没到。
     if((who->query("next_time")) > time()) {
 	return 0;
     }
@@ -120,28 +120,28 @@ int give_quest(object who, mapping me)
     else
 		n1 = 15;
 
-    if(!random(n1))	{ 	
+    if(!random(n1))	{
 		tag = "_repeat";
-		if (sizeof(mem)>1) 
+		if (sizeof(mem)>1)
 	    	quest = QUEST_D(tag)->query_quest(combatexp/1000);
 		else {
 			quest = QUEST_D(tag+"_solo")->query_quest(combatexp/1000);
     	}
     }
 
-    // DEBUG LINE   
+    // DEBUG LINE
    if (wizardp(who)) {
-    	if (who->query("wiz_quest")=="repeat") 
+    	if (who->query("wiz_quest")=="repeat")
     	{
     		tag = "_repeat";
     	   	quest = QUEST_D(tag)->query_quest(combatexp/1000);
     	} else if (who->query("wiz_quest")=="special") {
     		tag = "_special";
     	   	quest = QUEST_D(tag)->query_quest(combatexp/1000);
-    	}  		
+    	}
 	}
 	// DEBUG LINE END
-	
+
     if (!sizeof(quest) || !quest) {
 	if (!random(30)) {
 	    tag = "_special";
@@ -149,33 +149,33 @@ int give_quest(object who, mapping me)
 	    	quest = QUEST_D(tag)->query_quest(combatexp/1000);
 		else
 			quest = QUEST_D(tag+"_solo")->query_quest(combatexp/1000);
-	} 
+	}
     } else
     {
 	// 如果 qlist_repeat 为真，delete repeat cancel mark.
 		who->delete_temp("timer/quest_cancel");
 		who->delete("marks/quest_cancel");
-    }	
+    }
 
-    //	CHANNEL_D->do_sys_channel("sys", sprintf("%O\n",quest) );	
+    //	CHANNEL_D->do_sys_channel("sys", sprintf("%O\n",quest) );
 
     if (!sizeof(quest) || !quest) {
-		if( num_file < 100) 		tag="_small";		
+		if( num_file < 100) 		tag="_small";
 		else if( num_file <= 1000) 	tag="_middle";
 		else if (num_file <= 5000) 	tag="_large";
-		else	tag="_super"; 
-		
-		quest = QUEST_D(tag)->query_quest(combatexp/1000);	
+		else	tag="_super";
+
+		quest = QUEST_D(tag)->query_quest(combatexp/1000);
     }
 
     if (tag == "_special" || tag == "_repeat") {
 		qmirror = mapping_copy(quest);// nip pointer bug.
 		who->set("quest",qmirror);
 		who->set("quest_time", (int)time());
-		who->add_temp("quest_number", 1);	
-		qstr = quest["short"];						
+		who->add_temp("quest_number", 1);
+		qstr = quest["short"];
 //		CHANNEL_D->do_sys_channel("sys",sprintf("%O ?? %O: %s", quest, qmirror, qstr));
-    } else 
+    } else
     {
 		who->set("quest", quest);
 		who->set("quest_time", (int)time());
@@ -185,7 +185,7 @@ int give_quest(object who, mapping me)
 		else qstr="";
 
 		if(quest["quest_type"] == "寻") {
-	    	qstr += HIW"找回『"NOR + quest["quest"] + HIW"』给" 
+	    	qstr += HIW"找回『"NOR + quest["quest"] + HIW"』给"
 	    	+ me["employer"] + HIW"。"NOR;
 		} else if(quest["quest_type"] == "杀") {
 	    	qstr += HIW"替" + me["employer"] + HIW"杀了『"NOR
@@ -194,28 +194,28 @@ int give_quest(object who, mapping me)
     }
 
 //	I don't like 寻 at higher level (>=90), 强制性转换
-	if (F_LEVEL->get_level(combatexp)>= level_chance && quest["quest_type"] == "寻" 
-			&& (random(100)<chance || who->query("chuili_unfinished"))) { 
+	if (F_LEVEL->get_level(combatexp)>= level_chance && quest["quest_type"] == "寻"
+			&& (random(100)<chance || who->query("chuili_unfinished"))) {
 		tag = "_repeat";
 		quest = ([
 			"quest":	"探访垂笠老僧",
 			"long":		"天机老人说：听闻最近有神秘组织频繁活动，你不妨去找城隍庙的和尚打听打听。",
 			"short":	"去城隍庙找垂笠老僧打听神秘组织的情形",
-			"owner":	"monk",		
-			"location":	"城隍庙",		
-			"duration":		1800,			
-			"cancel": -1,	// CC +200% 
-			"difficulty":	400,			
-			"exp_l":		6000,						
-			"exp_h":		10000,					
-			"quest_type":	"special",		
+			"owner":	"monk",
+			"location":	"城隍庙",
+			"duration":		1800,
+			"cancel": -1,	// CC +200%
+			"difficulty":	400,
+			"exp_l":		6000,
+			"exp_h":		10000,
+			"quest_type":	"special",
 		]),
 		qmirror = mapping_copy(quest);// nip pointer bug.
 		who->set("quest",qmirror);
 		who->set("quest_time", (int)time());
 		who->add_temp("quest_number", 1);
-		who->set("chuili_unfinished",1);	// 这个Mark只有在做完后才会消失，如果你不做，所有“寻”都会变成垂笠	
-		qstr = quest["short"];						
+		who->set("chuili_unfinished",1);	// 这个Mark只有在做完后才会消失，如果你不做，所有“寻”都会变成垂笠
+		qstr = quest["short"];
 	}
 
     //	公布Quest的内容：
@@ -228,7 +228,7 @@ int give_quest(object who, mapping me)
 		else
 		    tell_object(who, WHT + me["name"] + WHT"说道：请" + qstr + NOR"\n");
 	    }
-	    else 
+	    else
 		tell_object(mem[i], WHT + "队友 "+ who->name() + WHT" 现在的任务是: " + qstr + NOR"\n");
 
 	}
@@ -247,9 +247,9 @@ int give_quest(object who, mapping me)
 /*  Quest 奖励方式，只跟个人有关，不存在总体奖励的概念
 		base = 受奖励者对应等级的基本Ｑｕｅｓｔ奖励 *75% (+ full_team 就是100%)
 		bonus1 = Quest 难度，x1--x2
-			(1)	比较难杀+5, 
+			(1)	比较难杀+5,
 			(2)	比较远+5, (包括物品) After 5M, this is no longer the case.
-			(3)	肯定有生命危险+10-15, 
+			(3)	肯定有生命危险+10-15,
 		bonus2 = Team	+5% per person to 25% top
 
 	4.0 system base参考:
@@ -261,7 +261,7 @@ int give_quest(object who, mapping me)
 */
 
 
-void give_reward(object who, object accomplisher, mapping quest) 
+void give_reward(object who, object accomplisher, mapping quest)
 {
 	int team_size, i, level, base, d_bonus, team_bonus, combat_exp, silver, money, q_bonus, half;
 	int h_bonus;
@@ -311,7 +311,7 @@ void give_reward(object who, object accomplisher, mapping quest)
 			// 最终奖励经验值。 REWARD CAPPED at 10M, 多余的进入ability或者只用来增加pot
 			combat_exp = base*(100+d_bonus+team_bonus)/100/team_size;
 
-			// Holiday rewards, 50=*0.5, 100 = *2, 200= *3 
+			// Holiday rewards, 50=*0.5, 100 = *2, 200= *3
 			combat_exp = combat_exp*(100+query_holiday())/100;
 
 			half = 1;
@@ -329,7 +329,7 @@ void give_reward(object who, object accomplisher, mapping quest)
 			}
 			combat_exp = combat_exp/half;
 
-			if( mem[i]->query("env/ability" ) 
+			if( mem[i]->query("env/ability" )
 				&& F_LEVEL->get_level(mem[i]->query("combat_exp"))>=80
 				&& mem[i]->query("saved_quest")/60/100 < mem[i]->query("learned_ability")+6 ) {
 				mem[i]->add("saved_quest", 60/team_size/half);
@@ -434,7 +434,7 @@ int flower_delivery_reward(object me, object who,object flower) {
     success_time = (int)me->query("marks/delivery_success");
     me ->set("marks/delivery_success",success_time+1);
 
-    if (me->query("quest/quest")== "送花") 
+    if (me->query("quest/quest")== "送花")
 	amount = 10;
     else
 	amount = 1;
@@ -451,7 +451,7 @@ int flower_delivery_reward(object me, object who,object flower) {
 		message_vision("$N甜甜地对$n一笑说，多谢多谢。\n",who,me);
 		break;
 	    case 2:
-		message_vision("$N满面春风，笑意盈盈，拍了拍$n道：“这是给你的，辛苦你了”。\n",who,me );	
+		message_vision("$N满面春风，笑意盈盈，拍了拍$n道：“这是给你的，辛苦你了”。\n",who,me );
 		break;
     }
 
@@ -463,7 +463,7 @@ int flower_delivery_reward(object me, object who,object flower) {
 
     if (me->query("quest/quest")== "送花") {
 			special_reward(me,"送花");
-    }    
+    }
     me->delete("delivery");
     me->delete("delivery_time");
 
@@ -478,18 +478,18 @@ int flower_delivery_reward(object me, object who,object flower) {
 }
 
 //	纪录一些极高的奖励值
-void log_quest(object me, object owner, mapping quest, int reward_exp, int used_time, int base) 
+void log_quest(object me, object owner, mapping quest, int reward_exp, int used_time, int base)
 {
     if (reward_exp <1000) return;
 
     log_file("QUEST_REWARD",
       sprintf("%s(%s) 完成了 %s(%s) 的任务 ：  %s %s 难度 %d 时间 %s\n奖励经验：%d used_time: %d  base: %d\n",
-	me->name(1), geteuid(me), owner->name(1), geteuid(owner), quest["quest_type"], quest["quest"], quest["difficulty"], ctime(time()), 
+	me->name(1), geteuid(me), owner->name(1), geteuid(owner), quest["quest_type"], quest["quest"], quest["difficulty"], ctime(time()),
 	reward_exp, used_time, base));
 
 }
 
-//	Verify if you or team member has the qname quest	
+//	Verify if you or team member has the qname quest
 int verify_quest(object me, string qname){
 
     mapping quest;
@@ -499,15 +499,15 @@ int verify_quest(object me, string qname){
     mem = pointerp(me->query_team()) ? me->query_team() : ({ me });
     for(i=0; i<sizeof(mem); i++) {
 	if (objectp(mem[i])) {
-	    if(mapp(quest = mem[i]->query("quest")) 
+	    if(mapp(quest = mem[i]->query("quest"))
 	      && mem[i]->query("quest/quest") == qname)
 		return 1;
 	}
-    } 
+    }
     return 0;
-}	
+}
 
-//	should be included in the one above.. but well, too late	
+//	should be included in the one above.. but well, too late
 mapping return_quest(object me, string qname){
 
     mapping quest;
@@ -517,13 +517,13 @@ mapping return_quest(object me, string qname){
     mem = pointerp(me->query_team()) ? me->query_team() : ({ me });
     for(i=0; i<sizeof(mem); i++) {
 	if (objectp(mem[i])) {
-	    if(mapp(quest = mem[i]->query("quest")) 
+	    if(mapp(quest = mem[i]->query("quest"))
 	      && mem[i]->query("quest/quest") == qname)
 		return quest;
 	}
-    } 
+    }
     return 0;
-}	
+}
 
 /*	此函数由Special Quest调用
 	There are two kinds of Special Quest in FY2005
@@ -574,25 +574,25 @@ int give_quest_list(object who, mapping me)
     string qstr;
     object* mem;
 	mapping quest;
-	
+
     int j, k, count, s;
     mapping *quest_list = ({});
-    
+
     quest_list = allocate(3);
 
-    //	以防万一    
+    //	以防万一
     if(who->is_ghost() || who->is_zombie()) {
-		tell_object(who,"鬼魂不可要任务，请立即报告巫师，否则以利用BUG处理。\n");	
+		tell_object(who,"鬼魂不可要任务，请立即报告巫师，否则以利用BUG处理。\n");
 		return notify_fail("\n");
     }
 
-    //	现有的Quest还没有完成	
-    time = who->query("quest/duration")>1 ? who->query("quest/duration") : 900; 
+    //	现有的Quest还没有完成
+    time = who->query("quest/duration")>1 ? who->query("quest/duration") : 900;
     if(qex =  who->query("quest") && (time() - who->query("quest_time") < time)) {
 		return 0;
     }
 
-    //	Cancel后的下一个时间还没到。	
+    //	Cancel后的下一个时间还没到。
     if((who->query("next_time")) > time()) {
 		return 0;
     }
@@ -615,25 +615,25 @@ int give_quest_list(object who, mapping me)
     //	选择哪个quest文件，注意前两个有可能选空
     num_file = combatexp / 1000;
 
-    
+
     j = 0;
     k = 0;
-       
+
     while (j <3 && k< 10) {
       	// 最多只有一个 non-normal quest
 	    quest = ([]);
-	    
+
 	    if (!s) {
-		    if(!random(15))	{ 	
+		    if(!random(15))	{
 				tag = "_repeat";
-				if (sizeof(mem)>1) 
+				if (sizeof(mem)>1)
 			    	quest = QUEST_D(tag)->query_quest(combatexp/1000);
 				else {
 					quest = QUEST_D(tag+"_solo")->query_quest(combatexp/1000);
 		    	}
 		    	s = 1;
 		    }
-	
+
 		    if (!sizeof(quest) || !quest) {
 				if (!random(30)) {
 				    tag = "_special";
@@ -641,34 +641,34 @@ int give_quest_list(object who, mapping me)
 				    	quest = QUEST_D(tag)->query_quest(combatexp/1000);
 					else
 						quest = QUEST_D(tag+"_solo")->query_quest(combatexp/1000);
-				} 
+				}
 				s = 1;
 			}
 		}
-		
-    //	CHANNEL_D->do_sys_channel("sys", sprintf("%O\n",quest) );	
+
+    //	CHANNEL_D->do_sys_channel("sys", sprintf("%O\n",quest) );
 
 	    if (!sizeof(quest) || !quest) {
-			
-			if( num_file < 100) 		tag="_small";		
+
+			if( num_file < 100) 		tag="_small";
 			else if( num_file <= 1000) 	tag="_middle";
 			else if (num_file <= 5000) 	tag="_large";
-			else	tag="_super"; 
-			
-			quest = QUEST_D(tag)->query_quest(combatexp/1000);	
+			else	tag="_super";
+
+			quest = QUEST_D(tag)->query_quest(combatexp/1000);
 	    }
 
 	    if (tag == "_special" || tag == "_repeat") {
 			qmirror = mapping_copy(quest);// nip pointer bug.
 			qmirror["quest_des"] = quest["short"];
 	//		CHANNEL_D->do_sys_channel("sys",sprintf("%O ?? %O: %s", quest, qmirror, qstr));
-	    } else 
+	    } else
 	    {
 			if (quest["quest_location"])
 		    	qstr = HIW"到"+quest["quest_location"];
 			else qstr="";
 			if(quest["quest_type"] == "寻") {
-		    	qstr += HIW"找回『"NOR + quest["quest"] + HIW"』给" 
+		    	qstr += HIW"找回『"NOR + quest["quest"] + HIW"』给"
 		    	+ me["employer"] + HIW"。"NOR;
 			} else if(quest["quest_type"] == "杀") {
 		    	qstr += HIW"替" + me["employer"] + HIW"杀了『"NOR
@@ -677,12 +677,12 @@ int give_quest_list(object who, mapping me)
 			qmirror = mapping_copy(quest);
 			qmirror["quest_des"] = qstr;
 	    }
-	    
+
 	    quest_list[j] = mapping_copy(qmirror);
 	    j++;
 	    k++;
 	}
-	
+
     CHANNEL_D->do_sys_channel("sys", sprintf("%s quest_list is %O",HIW + who->name(), quest_list));
 
     return 1;
@@ -699,7 +699,7 @@ int dungeon_reward(object quester, string name, object*	rewardee, int d_bonus)
 	if( name == "垂笠老僧的任务") {
 		mem = rewardee;
 		team_size = sizeof(mem);
-	
+
 		// reward money, 单人　400 bonus 左右 /4 --> gold
 		money = d_bonus/4;
 		if( team_size ) {
@@ -711,7 +711,7 @@ int dungeon_reward(object quester, string name, object*	rewardee, int d_bonus)
 				// 最终奖励经验值。 REWARD CAPPED at 10M, 多余的进入ability或者只用来增加pot
 				combat_exp = base*(d_bonus)/100/team_size; // 这里不需要加１００了，d_bonus决定总体奖励
 
-				// Holiday rewards, 50=*0.5, 100=*2, 200=*3 
+				// Holiday rewards, 50=*0.5, 100=*2, 200=*3
 				combat_exp = combat_exp*(100+query_holiday())/100;
 				half = 1;
 				if( mem[i]->query("death/half_quest") < 0 ) {
@@ -729,7 +729,7 @@ int dungeon_reward(object quester, string name, object*	rewardee, int d_bonus)
 				}
 				combat_exp = combat_exp/half;
 
-				if( mem[i]->query("env/ability") 
+				if( mem[i]->query("env/ability")
 					&& F_LEVEL->get_level(mem[i]->query("combat_exp")) >= 80
 					&& mem[i]->query("saved_quest")/60/100 < mem[i]->query("learned_ability")+6 ) {
 					mem[i]->add("saved_quest", 60*d_bonus/100/team_size/half);
@@ -763,7 +763,7 @@ int dungeon_reward(object quester, string name, object*	rewardee, int d_bonus)
 				if( half == 2 ) {
 					if (mem[i]->query("death/half_quest") < 0 ) {
 	//					tell_object(mem[i],"（由于你最近的死亡，该任务奖励降为５０％）\n");
-	//					tell_object(mem[i],"（按这样的速度，大约还需要" + (-mem[i]->query("death/half_quest")/combat_exp)+ "个任务后就没有惩罚了）\n"); 	
+	//					tell_object(mem[i],"（按这样的速度，大约还需要" + (-mem[i]->query("death/half_quest")/combat_exp)+ "个任务后就没有惩罚了）\n");
 					} else {
 						mem[i]->delete("death");
 						tell_object(mem[i],"（恭喜，你的死亡损失已经全部消除了！）\n");
@@ -796,4 +796,3 @@ int set_level(int num){
 	level_chance = num;
 	return 1;
 }
-

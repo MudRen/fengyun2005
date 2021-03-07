@@ -1,7 +1,0 @@
-#/obj/user.c
-path ({"/cmds/std/","/cmds/usr/","/cmds/skill/",})
-dbase (["update":(["11_ability":1,"11_task_ability":1,"11_starrain":1,"11_fumostaff":1,"11_music":1,"11_bai-quan":1,"11_duanhun-spear":1,"11_lingxi-zhi":1,"11_tianfeng_1":1,"11_liuxing-hammer":1,"11_wuche-axe":1,]),"per":16,"env":(["ebuy":1,"brief":0,"equip_msg":2,"wimpy":50,"show_way":1,]),"fle":10,"eff_sen":142,"max_kee":225,"quest_time":1603547118,"str":15,"kee":225,"score":201,"force":0,"max_gin":252,"learned_points":1,"title":"普通百姓","max_force":0,"deposit":24000,"kar":12,"gin":142,"cor":10,"level":1,"startroom":"/d/fy/church","gift_points":10,"eff_kee":225,"con":13,"water":201,"dur":10,"eff_gin":142,"national":"汉族","m_success":(["新手入门":1,]),"int":10,"FINISH_QUEST":2,"mana":0,"achieved_level":1,"race":"人类","annie":(["skill_cost":(["literate":1,]),]),"mud_age":1381,"name":"雷明顿","channels":({"chat","fy","new","info","announce","vote","bangtalk","teamtalk",}),"food":201,"potential":1882,"spi":10,"used_gift_points":10,"max_mana":55,"quest":(["exp_bonus":8,"quest_type":"杀","quest":"烧饭的和尚","quest_location":"千佛山",]),"actions":,"default_actions":,"id":"lmd","cps":10,"atman":0,"gender":"男性","riddle":([]),"distribute":(["con":3,"kar":2,"str":5,]),"tol":10,"max_atman":55,"combat_exp":13662,"max_sen":252,"bellicosity":81,"agi":10,"cont_quest":2,"NO_PK":1,"birthday":1603546098,"sen":142,"age":10,])
-skills (["spells":10,"literate":1,"magic":10,"unarmed":21,])
-learned (["literate":0,"unarmed":0,])
-items ([])
-autoload ({})
