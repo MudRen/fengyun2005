@@ -1,19 +1,22 @@
 #define TRACE_DETAIL_LENGTH_LIMIT	300
 #define SPRINTF_OVERFLOW		65535
 #define LOG		"static/crashes"
-object connect()
+object connect(int port)
 {
-	object login_ob;
-	mixed err;
+        object login_ob;
+        mixed err;
+        if (port == 5555)
+        {
+                set_encoding("GBK");
+        }
+        err = catch(login_ob = new(LOGIN_OB));
 
-	err = catch(login_ob = new(LOGIN_OB));
-
-	if (err) {
-		write("现在有人正在修改使用者连线部份的程式，请待会再来。\n");
-		write(err);
-		destruct(this_object());
-	}
-	return login_ob;
+        if (err) {
+                write("现在有人正在修改使用者连线部份的程式，请待会再来。\n");
+                write(err);
+                destruct(this_object());
+        }
+        return login_ob;
 }
 
 // compile_object: This is used for loading MudOS "virtual" objects.
@@ -22,43 +25,43 @@ object connect()
 // associated.
 mixed compile_object(string file)
 {
-	object daemon;
-	if( daemon = find_object(VIRTUAL_D) )
-		return daemon->compile_object(file);
-	else
-		return 0;
+        object daemon;
+        if( daemon = find_object(VIRTUAL_D) )
+                return daemon->compile_object(file);
+        else
+                return 0;
 }
 
 
 
 protected void crash(string error, object command_giver, object current_object)
 {
-	log_file(LOG, MUD_NAME + " crashed on: " + ctime(time()) +", error: " + error + "\n");
-	log_file(LOG, "command_giver: " + (command_giver ? file_name(command_giver) : "none") + "\n");
-	log_file(LOG, "current_object: " + (current_object ? file_name(current_object) : "none") + "\n");
-	log_file(LOG, "call_stack(0): "+sprintf("%O\n", call_stack(0)));
-	log_file(LOG, "call_stack(1): "+sprintf("%O\n", call_stack(1)));
-	log_file(LOG, "call_stack(2): "+sprintf("%O\n", call_stack(2)));
-	log_file(LOG, "call_stack(3): "+sprintf("%O\n", call_stack(3)));
-	log_file(LOG, "this_player(): "+sprintf("%O\n", this_player()));
-	log_file(LOG, "this_player(1): "+sprintf("%O\n", this_player(1)));
-	log_file(LOG, "this_player_command: " + (this_player() ? sprintf("%O\n",this_player()->query_last_input()) : "none"));
-	log_file(LOG, "previous_object(): "+sprintf("%O\n", previous_object()));
+        log_file(LOG, MUD_NAME + " crashed on: " + ctime(time()) +", error: " + error + "\n");
+        log_file(LOG, "command_giver: " + (command_giver ? file_name(command_giver) : "none") + "\n");
+        log_file(LOG, "current_object: " + (current_object ? file_name(current_object) : "none") + "\n");
+        log_file(LOG, "call_stack(0): "+sprintf("%O\n", call_stack(0)));
+        log_file(LOG, "call_stack(1): "+sprintf("%O\n", call_stack(1)));
+        log_file(LOG, "call_stack(2): "+sprintf("%O\n", call_stack(2)));
+        log_file(LOG, "call_stack(3): "+sprintf("%O\n", call_stack(3)));
+        log_file(LOG, "this_player(): "+sprintf("%O\n", this_player()));
+        log_file(LOG, "this_player(1): "+sprintf("%O\n", this_player(1)));
+        log_file(LOG, "this_player_command: " + (this_player() ? sprintf("%O\n",this_player()->query_last_input()) : "none"));
+        log_file(LOG, "previous_object(): "+sprintf("%O\n", previous_object()));
 
-	foreach( object ob in users() )
-	{
-		reset_eval_cost();
+        foreach( object ob in users() )
+        {
+                reset_eval_cost();
 
-		if( objectp(ob) && objectp(environment(ob)) )
-			ob->save();
-	}
-	reset_eval_cost();
+                if( objectp(ob) && objectp(environment(ob)) )
+                        ob->save();
+        }
+        reset_eval_cost();
 
-	efun::shout("风云核心发生系统错误！\n");
-	efun::shout("重新启动风云系统。\n");
+        efun::shout("风云核心发生系统错误！\n");
+        efun::shout("重新启动风云系统。\n");
 
-	foreach( object ob in users() )
-		flush_messages(ob);
+        foreach( object ob in users() )
+                flush_messages(ob);
 }
 
 // Function name:   update_file
@@ -68,47 +71,47 @@ protected void crash(string error, object command_giver, object current_object)
 // Note:            must be declared nosave (else a security hole)
 protected string *update_file(string file)
 {
-	string *list;
-	string str;
-	int i;
-	str = read_file(file);
-	if (!str)
-		return ({});
-	list = explode(str, "\n");
-	for (i = 0; i < sizeof(list); i++) {
-		if (list[i][0] == '#') {
-			list[i] = 0;
-		}
-	}
-	return list;
+        string *list;
+        string str;
+        int i;
+        str = read_file(file);
+        if (!str)
+                return ({});
+        list = explode(str, "\n");
+        for (i = 0; i < sizeof(list); i++) {
+                if (list[i][0] == '#') {
+                        list[i] = 0;
+                }
+        }
+        return list;
 }
 
 // Function name:       epilog
 // Return:              List of files to preload
 string *epilog(int load_empty)
 {
-	string *items;
+        string *items;
 
-	items = update_file(CONFIG_DIR + "preload");
-	return items;
+        items = update_file(CONFIG_DIR + "preload");
+        return items;
 }
 
 // preload an object
 void preload(string file)
 {
-	int t1;
-	string err;
+        int t1;
+        string err;
 
-	if (file_size(file + ".c") == -1)
-		return;
+        if (file_size(file + ".c") == -1)
+                return;
 
-	t1 = time();
-	write("Preloading : " + file );
-	err = catch(call_other(file, "??"));
-	if (err)
-		write(" -> Error " + err + " when loading " + file + "\n");
-	else
-		write(".... Done.\n");
+        t1 = time();
+        write("Preloading : " + file );
+        err = catch(call_other(file, "??"));
+        if (err)
+                write(" -> Error " + err + " when loading " + file + "\n");
+        else
+                write(".... Done.\n");
 
 }
 
@@ -155,7 +158,7 @@ void log_error(string file, string message)
 // object so that the local admins can decide what strategy they want to use.
 int save_ed_setup(object who, int code)
 {
-	string file;
+        string file;
 
     if (!intp(code))
         return 0;
@@ -183,17 +186,17 @@ int retrieve_ed_setup(object who)
 // item in that room.  We get the chance to save users from being destructed.
 void destruct_env_of(object ob)
 {
-	if (!interactive(ob))
-		return;
-	tell_object(ob, "你所存在的空间被毁灭了。\n");
-	ob->move(VOID_OB);
+        if (!interactive(ob))
+                return;
+        tell_object(ob, "你所存在的空间被毁灭了。\n");
+        ob->move(VOID_OB);
 }
 
 // make_path_absolute: This is called by the driver to resolve path names in ed.
 string make_path_absolute(string file)
 {
-	file = resolve_path((string)this_player()->query("cwd"), file);
-	return file;
+        file = resolve_path((string)this_player()->query("cwd"), file);
+        return file;
 }
 
 // called if a user connection is broken while in the editor; allows
@@ -216,17 +219,17 @@ string get_bb_uid()
 
 string creator_file(string str)
 {
-	return (string)call_other(SIMUL_EFUN_OB, "creator_file", str);
+        return (string)call_other(SIMUL_EFUN_OB, "creator_file", str);
 }
 
 string domain_file(string str)
 {
-	return (string)call_other(SIMUL_EFUN_OB, "domain_file", str);
+        return (string)call_other(SIMUL_EFUN_OB, "domain_file", str);
 }
 
 string author_file(string str)
 {
-	return (string)call_other(SIMUL_EFUN_OB, "author_file", str);
+        return (string)call_other(SIMUL_EFUN_OB, "author_file", str);
 }
 
 string tracert_error(mapping error, int caught)
@@ -394,16 +397,16 @@ int valid_shadow( object ob ) { return 1; }
 //   object compile-time
 int valid_override( string file, string name )
 {
-	// simul_efun can override any simul_efun by Annihilator
-	if (file == SIMUL_EFUN_OB || file==MASTER_OB)
-		return 1;
+        // simul_efun can override any simul_efun by Annihilator
+        if (file == SIMUL_EFUN_OB || file==MASTER_OB)
+                return 1;
 
-	// Must use the move() defined in F_MOVE.
-	if(((name == "move_object") || (name == "destruct")) && (file != F_MOVE))
-		return 0;
+        // Must use the move() defined in F_MOVE.
+        if(((name == "move_object") || (name == "destruct")) && (file != F_MOVE))
+                return 0;
 
     //  may also wish to protect destruct, shutdown, snoop, and exec.
-	return 1;
+        return 1;
 }
 
 // valid_seteuid: determines whether an object ob can become euid str
@@ -415,7 +418,7 @@ int valid_seteuid( object ob, string str )
 // valid_socket: controls access to socket efunctions
 int valid_socket( object eff_user, string fun, mixed *info )
 {
-	return 1;
+        return 1;
 }
 
 // valid_asm: controls whether or not an LPC->C compiled object can use
@@ -465,34 +468,34 @@ int valid_save_binary( string filename )
 //   initiating the call, and the function by which they called it.
 int valid_write( string file, mixed user, string func )
 {
-	object ob;
+        object ob;
 
-	if( ob = find_object(SECURITY_D) )
-		return (int)SECURITY_D->valid_write(file, user, func);
+        if( ob = find_object(SECURITY_D) )
+                return (int)SECURITY_D->valid_write(file, user, func);
 
-	return 0;
+        return 0;
 }
 
 // valid_read: read privileges; called exactly the same as valid_write()
 int valid_read( string file, mixed user, string func )
 {
-	return 1;
+        return 1;
 }
 
 string object_name(object ob)
 {
-	if( ob ) return ob->name();
+        if( ob ) return ob->name();
 }
 
 void create()
 {
-	write("master: loaded successfully.\n");
+        write("master: loaded successfully.\n");
 }
 
 int valid_bind(object binder, object old_owner, object new_owner)
 {
-	if( geteuid(binder)==ROOT_UID ) return 1;
-	if( userp(new_owner) ) return 0;
-	if( clonep(new_owner) ) return 1;
-	return 0;
+        if( geteuid(binder)==ROOT_UID ) return 1;
+        if( userp(new_owner) ) return 0;
+        if( clonep(new_owner) ) return 1;
+        return 0;
 }

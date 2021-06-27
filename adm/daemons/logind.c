@@ -32,7 +32,7 @@ string *banned_id= ({
 	"corpse", "skeleton", "stone", "rock", "door", "ghost", "keeper",
 	"priest", "master", "table", "flower", "grass", "basket", "bag",
 	"box", "boy", "kid", "girl", "sword", "blade", "ironfist", "whip",
-	"hammer", "axe", "spear", "staff","cor", "fish", "shrimp", "ant", 
+	"hammer", "axe", "spear", "staff","cor", "fish", "shrimp", "ant",
 	"butterfly", "rat", "cat", "snake", "tiger", "bear", "wolf", "river", "hyena"
 	"liu","shiwei","huwei","bodyguard","spirit",
 });
@@ -88,12 +88,12 @@ void logon(object ob) {
 	}
 
 */
-  
+
         mapping tmp_time;
         object /**usr,*/ *login_usr;
         string str;
         int now_time;
-       set_encoding("gbk");
+       	// set_encoding("gbk");
         str = query_ip_number(ob);
         now_time = time() & 0xFFFFFFFE;
         if( mapp(tmp_time = blocks[str]) ) {
@@ -108,14 +108,14 @@ void logon(object ob) {
           login_usr = filter_array(children(LOGIN_OB), (: query_ip_number($1) == $2 :), str);
            if( (sizeof(login_usr) > 3&& str != PUBLIC_IP ) ) {
                 block_ip(str, 300, "您的IP产生了大量废弃连接！");
-               /* 
+               /*
                 for (i = 0; i < sizeof(login_usr); i ++){
                         destruct(login_usr[i]);
                           return;
             }*/
                 call_out("destruct_ob", 0, ob);
                 return;
-        }      
+        }
 	if (BAN_D->is_banned(query_ip_name(ob))  ||
 			BAN_D->is_banned(query_ip_number(ob))) {
 		write("对不起，您的地址被拒绝连线。
@@ -124,33 +124,33 @@ void logon(object ob) {
 		return;
 	}
 
-cat(WELCOME);
-get_encoding("", ob);
+	cat(WELCOME);
+	get_encoding("", ob);
 }
 
 private void get_encoding(string arg, object ob) {
-	
+
 	object *usr;
 	int i, wiz_cnt, ppl_cnt, login_cnt;
 	int log_num, extra_num;
-	
-	if(arg == "0" || arg == "０") {
-		 set_encoding("gbk");
-		ob->set_temp("char_encoding", "gbk");
-	} else if(arg == "1" || arg == "１") {
-		 set_encoding("utf-8");
-		ob->set_temp("char_encoding", "utf-8");
-	} else {
-	     set_encoding("gbk");
-		write("    0) 国标码 (gbk) \n");
-		 set_encoding("utf-8");
-		write("    1) utf编码 (utf-8) \n");
-	     set_encoding("gbk");
-	     write("   请选择您使用的内码:\n");
-		input_to((: get_encoding :), ob);
-		return;
-	}
-	write("\n\n");
+
+	// if(arg == "0" || arg == "０") {
+	// 	 set_encoding("gbk");
+	// 	ob->set_temp("char_encoding", "gbk");
+	// } else if(arg == "1" || arg == "１") {
+	// 	 set_encoding("utf-8");
+	// 	ob->set_temp("char_encoding", "utf-8");
+	// } else {
+	//      set_encoding("gbk");
+	// 	write("    0) 国标码 (gbk) \n");
+	// 	 set_encoding("utf-8");
+	// 	write("    1) utf编码 (utf-8) \n");
+	//      set_encoding("gbk");
+	//      write("   请选择您使用的内码:\n");
+	// 	input_to((: get_encoding :), ob);
+	// 	return;
+	// }
+	// write("\n\n");
 	UPTIME_CMD->main();
 	usr = users();
 	wiz_cnt = 0;
@@ -168,13 +168,13 @@ private void get_encoding(string arg, object ob) {
 
 //max_dummy
 	if (NETBAR_D->netbar_stat()) {
-		
+
 		for(i=0;i<sizeof(usr);i++)
 		if (ob!=usr[i]) {
 			if	(query_ip_name(ob)==query_ip_name(usr[i]))
-				log_num = log_num+1;			
-		}			
-		
+				log_num = log_num+1;
+		}
+
 		if  (
 				//调用netbar函数，设置不受限制的站点
 				!NETBAR_D->is_netbar(query_ip_number(ob))
@@ -190,12 +190,12 @@ private void get_encoding(string arg, object ob) {
 			return;
 		}
 		else
-		{       
+		{
 			log_num= (dummy_num+1)*extra_num - log_num -1;
 			write("您所在的地址("+YEL+query_ip_number(ob)+NOR")还允许有"YEL+chinese_number(log_num)+NOR"位玩家连线。\n\n");
 		}
 	}
-	
+
 	write("您的英文名字：");
 	input_to( (: get_id :), ob);
 }
@@ -243,7 +243,7 @@ private void get_id(string arg, object ob)
 		destruct(ob);
 		return;
 	}
-		
+
 	if( (string)ob->set("id", arg) != arg )
 	{
 		write("Failed setting user name.\n");
@@ -289,9 +289,9 @@ private void get_id(string arg, object ob)
 				write("\n");
 				write(alle[0]);
 				write("\n请输入以上校验码：");
-				input_to((:get_verify_code:),1,ob,alle[1],1);  */ //  add by ldb 关闭烦人的数字校验 
-			}                            
-			return;                
+				input_to((:get_verify_code:),1,ob,alle[1],1);  */ //  add by ldb 关闭烦人的数字校验
+			}
+			return;
 		}
 		write("您的人物储存档出了一些问题，请利用 guest 人物通知巫师处理。\n");
 		destruct(ob);
@@ -481,7 +481,7 @@ private void confirm_id(string yn, object ob)
 			write("\n");
 			write(alle[0]);
 			write("\n请输入以上校验码：");
-			input_to((:get_verify_code:),1,ob,alle[1],2);     */  
+			input_to((:get_verify_code:),1,ob,alle[1],2);     */
 			write("\n");
 			write( @TEXT
 [37m
@@ -500,7 +500,7 @@ TEXT
 					write("您的中文名字：");
 					input_to((:get_name:), ob);
 				return;
-	                                         
+
 }
 
 private void get_resp(string arg, object ob)
@@ -551,7 +551,7 @@ private void get_name(string arg, object ob)
 	}
 	else
 	{
-	
+
 		if( !check_legal_name(arg) )
 		{
 			write("您的中文名字：");
@@ -629,16 +629,16 @@ private void get_gender(string gender, object ob, object user)
 		input_to((:get_gender:), ob, user);
 		return;
 	}
-	
+
 	// New login bypass race
-	
+
 	user->set("national", "汉族");
 	log_file( "USAGE", sprintf("%s was created from %s (%s)\n",
 		user->query("id"),query_ip_name(ob), ctime(time()) ) );
 	init_new_player(user);
 	enter_world(ob,user);
 	return;
-		
+
 }
 
 
@@ -672,7 +672,7 @@ private void init_new_player(object user)
 	user->set("potential", 500);
 	user->set("score", 0);
 	set_attribute(user,10,10,10,10,10,10,10,10,5+random(15),10,10,10);
-	
+
 	user->setup();
 	user->set("food", user->max_food_capacity());
 	user->set("water", user->max_water_capacity());
@@ -690,7 +690,7 @@ varargs void enter_world(object ob, object user, int silent)
 	string id;
 	string mailfile;
 	int laston;
-	
+
 	user->set_temp("link_ob", ob);
 	ob->set_temp("body_ob", user);
 	exec(user, ob);
@@ -805,7 +805,7 @@ private void read_msg(string str, object user) {
 		startroom = NEWBIE_ROOM;
 		user->set_temp("first_time_login", 1);
 	}
-	
+
 	if (wizardp(user))
 		startroom = "/d/wiz/hall";
 
@@ -822,13 +822,13 @@ private void read_msg(string str, object user) {
 		startroom = START_ROOM;
 		user->set("startroom", START_ROOM);
 	}
-	
+
 	tell_room(startroom, user->query("name") +
 			  "连线进入这个世界。\n", ({user}));
 
 	CHANNEL_D->do_sys_channel("sys",
 			  sprintf("%s(%s)由%s连线进入。", user->name(),user->query("id"),query_ip_number(user)) );
-	
+
 	UPDATE_D->check_user(user);
 	if(!wizardp(user)){
 		STATUS_D->compare_status(user);
@@ -843,8 +843,8 @@ private void read_msg(string str, object user) {
 			else
 				tell_object(find_player(user->query("marry")),HIG"你的夫君"+user->query("name")+"上线了。\n"NOR);
 		}
-		
-		
+
+
 	write(HIY "\n现在共有"+HIR+"/cmds/wiz/sameip"->tot_usr(user)+HIY+
 		  "位玩家从你的站点（"+query_ip_number(user)+"）连线。\n\n"+NOR);
 	user->set_temp("successful_login", 1);
